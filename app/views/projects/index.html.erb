@@ -3,7 +3,7 @@
 <% @projects.each do |project| %>
   <div id="project-description-<%= project.id %>">
     <p><strong>"<%= project.title %>"</strong></p>
-    <p><%= project.description%>
+    <p><%= project.description%></p>
     <p><%= link_to 'Github Repository', project.git_repo, target: '_blank' %></p>
     <p>Technologies: <%= project.tech %></p>
     <% if project.demo_link.present? %>
