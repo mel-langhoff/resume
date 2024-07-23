@@ -276,6 +276,27 @@
           null
         ]
       },
+      "/Users/mel/Turing/projects/portfolio/portfolio/spec/features/home/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/mel/Turing/projects/portfolio/portfolio/spec/features/projects/index_spec.rb": {
         "lines": [
           1,
@@ -488,7 +509,7 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/home_controller.rb": {
+      "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/contact_controller.rb": {
         "lines": [
           1,
           1,
@@ -499,6 +520,14 @@
       "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -524,6 +553,6 @@
         ]
       }
     },
-    "timestamp": 1721774107
+    "timestamp": 1721774631
   }
 }
