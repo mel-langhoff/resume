@@ -276,6 +276,58 @@
           null
         ]
       },
+      "/Users/mel/Turing/projects/portfolio/portfolio/spec/features/resume/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mel/Turing/projects/portfolio/portfolio/spec/models/job_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mel/Turing/projects/portfolio/portfolio/app/models/job.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/mel/Turing/projects/portfolio/portfolio/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/home_controller.rb": {
         "lines": [
           1,
@@ -291,6 +343,6 @@
         ]
       }
     },
-    "timestamp": 1721764428
+    "timestamp": 1721769836
   }
 }
