@@ -37,8 +37,8 @@ RSpec.describe 'Resume Index Page', type: :feature do
       expect(page).to have_content(@xcel.title)
       expect(page).to have_content(@xcel.company)
       expect(page).to have_content(@xcel.location)
-      expect(page).to have_content(@xcel.start_date)
-      expect(page).to have_content(@xcel.end_date)
+      expect(page).to have_content(@xcel.formatted_start_date)
+      expect(page).to have_content(@xcel.formatted_end_date)
       expect(page).to have_content(@xcel.description)
     end
   end
