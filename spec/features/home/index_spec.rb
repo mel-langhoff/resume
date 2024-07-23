@@ -9,7 +9,7 @@ RSpec.describe 'Root Page', type: :feature do
         expect(page).to have_link("About", href: bio_path)
         expect(page).to have_link("Resume", href: resume_path)
         expect(page).to have_link("Projects", href: projects_path)
-        # expect(page).to have_link("Contact", href: contact_path)
+        expect(page).to have_link("Contact", href: contact_path)
         # expect(page).to have_link("Vinyl Collection", href: vinyls_path)
       end
     end
