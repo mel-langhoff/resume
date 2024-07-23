@@ -276,6 +276,42 @@
           null
         ]
       },
+      "/Users/mel/Turing/projects/portfolio/portfolio/spec/features/projects/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/mel/Turing/projects/portfolio/portfolio/spec/features/resume/index_spec.rb": {
         "lines": [
           1,
@@ -413,6 +449,45 @@
           null
         ]
       },
+      "/Users/mel/Turing/projects/portfolio/portfolio/spec/models/project_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mel/Turing/projects/portfolio/portfolio/app/models/project.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/home_controller.rb": {
         "lines": [
           1,
@@ -427,6 +502,18 @@
           null
         ]
       },
+      "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/projects_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/resume_controller.rb": {
         "lines": [
           1,
@@ -437,6 +524,6 @@
         ]
       }
     },
-    "timestamp": 1721771968
+    "timestamp": 1721774107
   }
 }
