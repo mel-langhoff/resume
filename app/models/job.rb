@@ -4,4 +4,12 @@ class Job < ApplicationRecord
   def self.sort_jobs
     order(start_date: :desc)
   end
+
+  def formatted_start_date
+    start_date.strftime('%B %Y')
+  end
+
+  def formatted_end_date
+    end_date.strftime('%B %Y')
+  end
 end
