@@ -1,10 +1,10 @@
 <h1>Resume</h1>
 
 <% @jobs.each do |job| %>
-<div id="job-description-<%= job.id %>">
-  <p><%= job.title %> at <%= job.company %> from <%= job.formatted_start_date %> to <%= job.formatted_end_date %></p>
-  <p><%= job.location %></p>
-  <p><%= job.description %></p>
-</div>
+  <div id="job-description-<%= job.id %>">
+    <p><strong><%= job.title %></strong> at <%= job.company %> from <%= job.formatted_start_date %> to <%= job.formatted_end_date %></p>
+    <p><%= job.location %></p>
+    <p><%= job.description %></p>
+  </div>
 <% end %>
 

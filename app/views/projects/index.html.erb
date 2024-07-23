@@ -1,2 +1,13 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<h1>Project</h1>
+
+<% @projects.each do |project| %>
+  <div id="project-description-<%= project.id %>">
+    <p><strong>"<%= project.title %>"</strong></p>
+    <p><%= project.description%>
+    <p><%= link_to 'Github Repository', project.git_repo, target: '_blank' %></p>
+    <p>Technologies: <%= project.tech %></p>
+    <% if project.demo_link.present? %>
+      <p><%= link_to 'Demo Link', project.demo_link, target: '_blank' %></p>
+    <% end %>
+  </div>
+<% end %>
