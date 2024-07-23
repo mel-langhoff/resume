@@ -1,1 +1,1 @@
-Hi, I'm Mel. :)
+Personal portfolio, resume, and website.
