@@ -76,6 +76,7 @@ body {
 .content-box img {
   display: block; /* Treats the image as a block element */
   margin: 0 auto; /* Centers the image horizontally */
+  border: 1px solid black;
 }
 
 .content-box p {
