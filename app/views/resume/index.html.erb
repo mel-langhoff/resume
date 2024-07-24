@@ -1,4 +1,6 @@
-<h1>Resume</h1>
+<% content_for :page_title do %>
+  <h1 class="page-title">Resume</h1>
+<% end %>
 
 <% @jobs.each do |job| %>
   <div id="job-description-<%= job.id %>">

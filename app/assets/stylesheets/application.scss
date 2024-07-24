@@ -1,6 +1,11 @@
 /* Import Bootstrap */
 @import "bootstrap";
 
+/* Apply the Georgia font to the entire site */
+body {
+  font-family: 'Georgia', serif;
+}
+
 /* Background image setup */
 .page-background {
   position: relative; /* Allows for overlay positioning */
@@ -65,6 +70,7 @@
   margin: 0 auto; /* Center the box horizontally */
   overflow-y: auto;
   text-align: left;
+  padding: 5px;
 }
 
 .content-box img {
@@ -72,10 +78,26 @@
   margin: 0 auto; /* Centers the image horizontally */
 }
 
+.content-box p {
+  font-size: 14px; /* Set font size for paragraphs */
+  font-weight: normal; /* Set font weight to regular */
+  color: black; /* Set text color to black */
+}
+
+.content-box a {
+  font-weight: bold; /* Make links bold */
+  text-decoration: underline; /* Underline links */
+  color: black; /* Set link color to black */
+}
+
+.content-box a:hover {
+  color: #333; /* Optional: Slightly lighter black on hover for better visibility */
+}
+
 /* Title Styles */
 .page-title {
   margin-bottom: 10px; /* Space between title and content box */
-  font-size: 25; /* Adjust font size as needed */
+  font-size: 32; /* Adjust font size as needed */
   color: black; /* Adjust text color if needed */
   text-align: left; /* Align title to the left */
 }

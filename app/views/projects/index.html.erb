@@ -1,4 +1,6 @@
-<h1>Projects</h1>
+<% content_for :page_title do %>
+  <h1 class="page-title">Projects</h1>
+<% end %>
 
 <% @projects.each do |project| %>
   <div id="project-description-<%= project.id %>">
