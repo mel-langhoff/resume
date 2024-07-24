@@ -4,9 +4,13 @@
 
 <% @jobs.each do |job| %>
   <div id="job-description-<%= job.id %>">
-    <p><strong><%= job.title %></strong> at <%= job.company %> from <%= job.formatted_start_date %> to <%= job.formatted_end_date %></p>
-    <p><%= job.location %></p>
+    <p><strong><%= job.company %></strong> | <%= job.location %>, <%= job.formatted_start_date %> - <%= job.formatted_end_date %></p>
+    <p><%= job.title %></p>
     <p><%= job.description %></p>
+    <ol>
+      <% job.responsibilities.each do |resp| %>
+        <li><%= resp %></li>
+      <% end %>
+    </ol>
   </div>
 <% end %>
-
