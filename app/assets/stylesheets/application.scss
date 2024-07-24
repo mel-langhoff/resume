@@ -30,8 +30,10 @@
 
 /* Main container for content */
 .main-container {
-  max-width: 1200px; /* Adjust as needed */
+  max-width: 601px; /* Adjust as needed */
   margin: 0 auto; /* Centers the container */
+  padding: 10px;
+  overflow: hidden;
 }
 
 /* Header Styles */
@@ -55,9 +57,25 @@
 
 /* Content Box Styles */
 .content-box {
-  background-color: rgba(33, 37, 41, 0.8); /* Darker grey with 60% opacity */
-  border: 2px solid #ddd; /* Border around the box */
-  border-radius: 8px; /* Rounded corners for the box */
-  padding: 1rem; /* Padding inside the box */
-  margin-top: 1rem; /* Space above the content box */
+  background-color: rgba(33, 33, 33, 0.6); /* Darker grey with 90% opacity */
+  border: 1px solid white;
+  border-radius: 8px; /* Optional: rounded corners */
+  max-width: 600px; /* Set the maximum width of the box */
+  max-height: 500px;
+  margin: 0 auto; /* Center the box horizontally */
+  overflow-y: auto;
+  text-align: left;
+}
+
+.content-box img {
+  display: block; /* Treats the image as a block element */
+  margin: 0 auto; /* Centers the image horizontally */
+}
+
+/* Title Styles */
+.page-title {
+  margin-bottom: 10px; /* Space between title and content box */
+  font-size: 25; /* Adjust font size as needed */
+  color: black; /* Adjust text color if needed */
+  text-align: left; /* Align title to the left */
 }

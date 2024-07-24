@@ -12,11 +12,11 @@
 
   <body class="page-background">
     <%= render 'layouts/header' %>
-    
+
     <div class="main-container mt-4">
-      <%= yield :page_title %>
+      <h1 class="page-title"><%= yield :page_title %></h1>
       <div class="content-box">
-        <%= yield %>
+        <%= yield %> <!-- This will include the main content from the view -->
       </div>
     </div>
   </body>
