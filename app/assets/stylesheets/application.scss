@@ -65,12 +65,12 @@ body {
   background-color: rgba(33, 33, 33, 0.15);
   border: 1px solid black;
   /* border-radius: 8px; /* Optional: rounded corners */
-  max-width: 600px; /* Set the maximum width of the box */
-  max-height: 500px;
+  max-width: 80vh; /* Set the maximum width of the box */
+  max-height: 70vw;
   margin: 0 auto; /* Center the box horizontally */
   overflow-y: auto;
   text-align: left;
-  padding: 5px;
+  padding: 10px;
 }
 
 .content-box img {
@@ -95,10 +95,41 @@ body {
   color: #333; /* Optional: Slightly lighter black on hover for better visibility */
 }
 
+/* Styles for unordered lists within the content box */
+.content-box ul {
+  list-style-type: disc; /* Style for list bullets */
+  padding-left: 13px; /* Space between the bullets and the list items */
+  margin-bottom: 10px; /* Space below the list */
+}
+
+.content-box li {
+  font-size: 14px; /* Set font size for list items */
+  color: black; /* Set text color to black */
+  margin-bottom: 10px; /* Space between list items */
+  line-height: 1.5; /* Increase line height for better readability */
+}
+
 /* Title Styles */
 .page-title {
   margin-bottom: 10px; /* Space between title and content box */
   font-size: 32; /* Adjust font size as needed */
   color: black; /* Adjust text color if needed */
   text-align: left; /* Align title to the left */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: rgba(33, 33, 33, 0.15); /* Same background as header */
+  border-top: 1px solid black; /* Same border style as header */
+  text-align: center; /* Center text horizontally */
+  padding: 10px 0; /* Add some padding */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: 10px; /* Make text smaller */
+  color: rgb(29, 17, 17); /* Text color */
+  margin: 0; /* Remove default margins */
 }
