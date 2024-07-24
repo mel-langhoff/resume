@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all.uniq
+    @projects = Project.all.distinct
   end
 
   def show
