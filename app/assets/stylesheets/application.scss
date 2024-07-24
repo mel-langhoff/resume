@@ -1,0 +1,81 @@
+/* Import Bootstrap */
+@import "bootstrap";
+
+/* Background image setup */
+.page-background {
+  position: relative; /* Allows for overlay positioning */
+  min-height: 100vh; /* Ensures the background covers the whole viewport height */
+  overflow: hidden; /* Prevents overflow if needed */
+}
+
+.page-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('#{asset_path('porphyry.jpg')}');
+  background-size: cover; /* Adjusts the size of the background image */
+  background-position: center; /* Centers the background image */
+  background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+  opacity: 0.4; /* Adjusts the opacity of the background image */
+  z-index: 1; /* Places the overlay above the background image but below other content */
+}
+
+.page-background > * {
+  position: relative; /* Ensures that the content within the body is above the overlay */
+  z-index: 2; /* Places the content above the overlay */
+}
+
+/* Main container for content */
+.main-container {
+  max-width: 601px; /* Adjust as needed */
+  margin: 0 auto; /* Centers the container */
+  padding: 10px;
+  overflow: hidden;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  color: inherit !important;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Content Box Styles */
+.content-box {
+  background-color: rgba(33, 33, 33, 0.6); /* Darker grey with 90% opacity */
+  border: 1px solid white;
+  border-radius: 8px; /* Optional: rounded corners */
+  max-width: 600px; /* Set the maximum width of the box */
+  max-height: 500px;
+  margin: 0 auto; /* Center the box horizontally */
+  overflow-y: auto;
+  text-align: left;
+}
+
+.content-box img {
+  display: block; /* Treats the image as a block element */
+  margin: 0 auto; /* Centers the image horizontally */
+}
+
+/* Title Styles */
+.page-title {
+  margin-bottom: 10px; /* Space between title and content box */
+  font-size: 25; /* Adjust font size as needed */
+  color: black; /* Adjust text color if needed */
+  text-align: left; /* Align title to the left */
+}
