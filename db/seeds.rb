@@ -26,6 +26,60 @@ crocs = Job.create!(
   description: "Led a 45-member cross-functional internal team and third-party vendors in migrating SAP environments to the SAP HANA Enterprise Cloud."
 )
 
+tutor = Job.create!(
+  title: "Private Tutor",
+  company: "Self-employed",
+  start_date: DateTime.new(2020, 8, 01),
+  end_date: DateTime.new(2023, 10, 01),
+  description: "Developed and implemented new Agile project management systems, tools, and processes, reducing project lifecycles by 1-2 weeks and improving delivery timelines by 24%."
+)
+
+malhecho = Job.create!(
+  title: "IT Project Manager",
+  company: "Xcel Energy",
+  location: "Remote",
+  start_date: DateTime.new(2022, 7, 01),
+  end_date: DateTime.new(2022, 11, 01),
+  description: "Developed and implemented new Agile project management systems, tools, and processes, reducing project lifecycles by 1-2 weeks and improving delivery timelines by 24%."
+)
+
+sovos = Job.create!(
+  title: "IT Project Manager",
+  company: "Xcel Energy",
+  location: "Remote",
+  start_date: DateTime.new(2022, 7, 01),
+  end_date: DateTime.new(2022, 11, 01),
+  description: "Developed and implemented new Agile project management systems, tools, and processes, reducing project lifecycles by 1-2 weeks and improving delivery timelines by 24%."
+)
+
+college_lib = Job.create!(
+  title: "IT Project Manager",
+  company: "Xcel Energy",
+  location: "Remote",
+  start_date: DateTime.new(2022, 7, 01),
+  end_date: DateTime.new(2022, 11, 01),
+  description: "Developed and implemented new Agile project management systems, tools, and processes, reducing project lifecycles by 1-2 weeks and improving delivery timelines by 24%."
+)
+
+designlab = Job.create!(
+  title: "IT Project Manager",
+  company: "Xcel Energy",
+  location: "Remote",
+  start_date: DateTime.new(2022, 7, 01),
+  end_date: DateTime.new(2022, 11, 01),
+  description: "Developed and implemented new Agile project management systems, tools, and processes, reducing project lifecycles by 1-2 weeks and improving delivery timelines by 24%."
+)
+
+chamberlains = Job.create!(
+  title: "IT Project Manager",
+  company: "Xcel Energy",
+  location: "Remote",
+  start_date: DateTime.new(2022, 7, 01),
+  end_date: DateTime.new(2022, 11, 01),
+  description: "Developed and implemented new Agile project management systems, tools, and processes, reducing project lifecycles by 1-2 weeks and improving delivery timelines by 24%."
+)
+
+
 # projects
 market_money = Project.create!(
   title: "Market Money",
