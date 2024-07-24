@@ -62,8 +62,8 @@ body {
 
 /* Content Box Styles */
 .content-box {
-  background-color: rgba(33, 33, 33, 0.4);
-  border: 1px solid white;
+  background-color: rgba(33, 33, 33, 0.25);
+  border: 1px solid black;
   /* border-radius: 8px; /* Optional: rounded corners */
   max-width: 600px; /* Set the maximum width of the box */
   max-height: 500px;
@@ -76,6 +76,7 @@ body {
 .content-box img {
   display: block; /* Treats the image as a block element */
   margin: 0 auto; /* Centers the image horizontally */
+  border: 1px solid rgb(114, 109, 109);
 }
 
 .content-box p {
