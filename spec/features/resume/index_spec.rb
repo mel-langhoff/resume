@@ -13,6 +13,7 @@ RSpec.describe 'Resume Index Page', type: :feature do
       )
 
     @sling = Job.create!(
+      id: 2,
       title: "Program Manager",
       company: "Sling TV",
       location: "Denver, CO",
