@@ -10,8 +10,14 @@
     <%= javascript_importmap_tags %>  
   </head>
 
-  <body>
+  <body class="page-background">
     <%= render 'layouts/header' %>
-    <%= yield %>
+    
+    <div class="main-container mt-4">
+      <%= yield :page_title %>
+      <div class="content-box">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

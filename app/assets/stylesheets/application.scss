@@ -1,16 +1,63 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Import Bootstrap */
 @import "bootstrap";
+
+/* Background image setup */
+.page-background {
+  position: relative; /* Allows for overlay positioning */
+  min-height: 100vh; /* Ensures the background covers the whole viewport height */
+  overflow: hidden; /* Prevents overflow if needed */
+}
+
+.page-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('#{asset_path('porphyry.jpg')}');
+  background-size: cover; /* Adjusts the size of the background image */
+  background-position: center; /* Centers the background image */
+  background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+  opacity: 0.4; /* Adjusts the opacity of the background image */
+  z-index: 1; /* Places the overlay above the background image but below other content */
+}
+
+.page-background > * {
+  position: relative; /* Ensures that the content within the body is above the overlay */
+  z-index: 2; /* Places the content above the overlay */
+}
+
+/* Main container for content */
+.main-container {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto; /* Centers the container */
+}
+
+/* Header Styles */
+.site-header {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  color: inherit !important;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Content Box Styles */
+.content-box {
+  background-color: rgba(33, 37, 41, 0.8); /* Darker grey with 60% opacity */
+  border: 2px solid #ddd; /* Border around the box */
+  border-radius: 8px; /* Rounded corners for the box */
+  padding: 1rem; /* Padding inside the box */
+  margin-top: 1rem; /* Space above the content box */
+}
