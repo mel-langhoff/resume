@@ -6,11 +6,11 @@
   <div id="job-description-<%= job.id %>">
     <p><strong><%= job.company %></strong> | <%= job.location %>, <%= job.formatted_start_date %> - <%= job.formatted_end_date %></p>
     <p><%= job.title %></p>
-    <p><%= job.description %></p>
-    <ol>
+    <p><em><%= job.description %></em></p>
+    <ul>
       <% job.responsibilities.each do |resp| %>
         <li><%= resp %></li>
       <% end %>
-    </ol>
+    </ul>
   </div>
 <% end %>
