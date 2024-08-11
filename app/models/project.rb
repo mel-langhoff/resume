@@ -7,13 +7,17 @@ class Project < ApplicationRecord
   
   def self.sort_by_type(type)
     if type == 'All'
-      all
+      all.distinct
     else
-      where(project_type: type).order(:title)
+      where(project_type: type).order(:title).distinct
     end
   end
 
   def self.alphabetical
-    order(:title)
+    order(:title).distinct
+  end
+
+  def types
+    # write method for plucking the types for selection
   end
 end
