@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Job, type: :model do
   before :each do 
     @xcel = Job.create!(
+      id: 9,
       title: "IT Project Manager",
       company: "Xcel Energy",
       location: "Remote",
@@ -12,6 +13,7 @@ RSpec.describe Job, type: :model do
       )
     
     @sling = Job.create!(
+      id: 10,
       title: "Program Manager",
       company: "Sling TV",
       location: "Denver, CO",

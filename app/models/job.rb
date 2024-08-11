@@ -2,7 +2,7 @@ class Job < ApplicationRecord
   validates_presence_of :title, :company, :start_date, :description
 
   def self.sort_jobs
-    order(id: :asc).distinct
+    order(start_date: :desc).distinct
   end
 
   def formatted_start_date
