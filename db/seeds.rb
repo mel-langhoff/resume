@@ -146,13 +146,24 @@ market_money = Project.create!(
   title: "Market Money",
   description: "Developing an API enabling access to local farmers markets and vendors.",
   git_repo: "https://github.com/JaredMHobson/market_money",
-  tech: "Ruby on Rails"
+  tech: "Ruby on Rails",
+  type: "rails"
 )
 
 battleship = Project.create!(
   title: "Battleship",
   description: "Terminal Ruby game of Battleship developed with a partner.",
   git_repo: "https://github.com/mel-langhoff/battleship",
-  tech: "Ruby"
+  tech: "Ruby",
+  type: "ruby"
+)
+
+portfolio = Project.create!(
+  title: "Personal Portfolio",
+  description: "My website.",
+  git_repo: "https://github.com/mel-langhoff/resume",
+  demo_link: "www.mel-langhoff.com",
+  tech: "Rails",
+  type: "rails"
 )
 
