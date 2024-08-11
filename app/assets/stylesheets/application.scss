@@ -6,7 +6,8 @@ body {
   font-family: 'Georgia', serif;
   margin: 0; /* Remove default margin */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack items vertically */
+  flex: 1;
   min-height: 100vh; /* Ensure the body takes the full height */
 }
 
@@ -44,8 +45,6 @@ body {
   padding: 10px;
   display: flex;
   flex-direction: column; /* Stack items vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
   flex: 1; /* Takes up available space */
 }
 
@@ -80,9 +79,10 @@ body {
 .content-box {
   background-color: rgba(33, 33, 33, 0.15);
   border: 1px solid black;
-  /* border-radius: 8px; /* Optional: rounded corners */
-  width: 600px; /* Fixed width */
-  height: 500px; /* Fixed height */
+  width: 100%; /* Full width of the container */
+  max-width: 600px; /* Fixed max-width */
+  flex: 1; /* Allows it to grow & shrink */
+  max-height: 500px; /* Maximum height */
   margin: 0 auto; /* Center the box horizontally */
   overflow-y: auto; /* Allows scrolling within the content box */
   text-align: left;
@@ -131,17 +131,9 @@ body {
   color: white;
   padding: 1rem;
   text-align: center; /* Center the text */
-  position: static; /* Position footer at the bottom */
+  position: relative; /* Ensure footer stays at the bottom */
   width: 100%; /* Full width */
-  bottom: 0; /* Align to the bottom */
-  left: 0; /* Align to the left */
-}
-
-/* Optional commented styles for footer */
-.site-footer {
-  background-color: black;
-  color: white;
-  padding: 1rem;
+  margin-top: auto; /* Push the footer to the bottom of the page */
 }
 
 .footer {
@@ -149,7 +141,7 @@ body {
   border-top: 1px solid black; /* Same border style as header */
   text-align: center; /* Center text horizontally */
   padding: 10px 0; /* Add some padding */
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
