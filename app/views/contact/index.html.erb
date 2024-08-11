@@ -2,5 +2,26 @@
   <h1 class="page-title">Contact</h1>
 <% end %>
 
-<p>Send an email!</p>
-<p><%= link_to 'hello@mel-langhoff.com', 'mailto:hello@mel-langhoff.com' %>
+<%= form_with model: @contact, url: contact_path, local: true, data: { turbo: false } do |form| %>
+  <div class="field">
+    <% form.label :name %>
+    <%= form.text_field :name, placeholder: 'Name', required: true %>
+  </div>
+
+  <div class="field">
+    <% form.label :email %>
+    <%= form.email_field :email, placeholder: 'Email', required: true %>
+  </div>
+
+  <div class="field">
+    <% form.label :message %>
+    <%= form.text_area :message, placeholder: 'Message', rows: 4, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Send!", class: 'btn btn-primary' %>
+    <%= button_tag type: 'reset', class: 'btn btn-secondary' do %>
+      Reset
+    <% end %>
+  </div>
+<% end %>

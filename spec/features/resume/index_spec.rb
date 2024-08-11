@@ -23,6 +23,7 @@ RSpec.describe 'Resume Index Page', type: :feature do
       )
 
     @crocs = Job.create!(
+      id: 3,
       title: "SAP Project Manager",
       company: "Crocs",
       location: "Niwot, CO",

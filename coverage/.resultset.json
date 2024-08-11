@@ -232,6 +232,8 @@
           1,
           1,
           1,
+          1,
+          1,
           null,
           1,
           1,
@@ -253,6 +255,12 @@
         ]
       },
       "/Users/mel/Turing/projects/portfolio/portfolio/app/helpers/contact_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/mel/Turing/projects/portfolio/portfolio/app/helpers/contacts_helper.rb": {
         "lines": [
           1,
           null
@@ -368,6 +376,7 @@
           null,
           null,
           null,
+          null,
           1,
           1,
           null,
@@ -389,13 +398,40 @@
           null
         ]
       },
+      "/Users/mel/Turing/projects/portfolio/portfolio/spec/models/contact_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/mel/Turing/projects/portfolio/portfolio/app/models/contact.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mel/Turing/projects/portfolio/portfolio/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/mel/Turing/projects/portfolio/portfolio/spec/models/job_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          8,
+          7,
           null,
           null,
           null,
@@ -404,7 +440,8 @@
           null,
           null,
           null,
-          8,
+          null,
+          7,
           null,
           null,
           null,
@@ -413,7 +450,8 @@
           null,
           null,
           null,
-          8,
+          null,
+          7,
           null,
           null,
           null,
@@ -424,7 +462,6 @@
           null,
           null,
           1,
-          2,
           2,
           2,
           2,
@@ -461,13 +498,6 @@
           1,
           8,
           null,
-          null
-        ]
-      },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
           null
         ]
       },
@@ -514,6 +544,24 @@
         "lines": [
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
           null,
           null
         ]
@@ -554,6 +602,6 @@
         ]
       }
     },
-    "timestamp": 1721827263
+    "timestamp": 1723405943
   }
 }
