@@ -7,7 +7,6 @@ body {
   margin: 0; /* Remove default margin */
   display: flex;
   flex-direction: column; /* Stack items vertically */
-  flex: 1;
   min-height: 100vh; /* Ensure the body takes the full height */
 }
 
@@ -45,7 +44,9 @@ body {
   padding: 10px;
   display: flex;
   flex-direction: column; /* Stack items vertically */
-  flex: 1; /* Takes up available space */
+  flex: 1; /* Takes up available space between header and footer */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
 }
 
 /* Header Styles */
@@ -53,8 +54,10 @@ body {
   background-color: black;
   color: white;
   padding: 1rem;
+  width: 100%; /* Full width */
 }
 
+/* Navigation Link Styles */
 .nav-link {
   color: white !important;
   font-weight: bold;
@@ -81,26 +84,29 @@ body {
   border: 1px solid black;
   width: 100%; /* Full width of the container */
   max-width: 600px; /* Fixed max-width */
-  flex: 1; /* Allows it to grow & shrink */
-  max-height: 500px; /* Maximum height */
+  height: 60%; /* Height relative to its parent */
+  max-height: 400px; /* Maximum height */
   margin: 0 auto; /* Center the box horizontally */
   overflow-y: auto; /* Allows scrolling within the content box */
   text-align: left;
   padding: 10px;
 }
 
+/* Content Box Image Styles */
 .content-box img {
   display: block; /* Treats the image as a block element */
   margin: 0 auto; /* Centers the image horizontally */
   border: 1px solid rgb(114, 109, 109);
 }
 
+/* Content Box Paragraph Styles */
 .content-box p {
   font-size: 14px; /* Set font size for paragraphs */
   font-weight: normal; /* Set font weight to regular */
   color: black; /* Set text color to black */
 }
 
+/* Content Box Link Styles */
 .content-box a {
   font-weight: bold; /* Make links bold */
   text-decoration: underline; /* Underline links */
@@ -131,11 +137,10 @@ body {
   color: white;
   padding: 1rem;
   text-align: center; /* Center the text */
-  position: relative; /* Ensure footer stays at the bottom */
   width: 100%; /* Full width */
-  margin-top: auto; /* Push the footer to the bottom of the page */
 }
 
+/* Fixed Footer Styles */
 .footer {
   background-color: rgba(33, 33, 33, 0.15); /* Same background as header */
   border-top: 1px solid black; /* Same border style as header */
