@@ -84,7 +84,7 @@ body {
   border: 1px solid black;
   width: 100%; /* Full width of the container */
   max-width: 600px; /* Fixed max-width */
-  height: 60%; /* Height relative to its parent */
+  min-height: 300px; /* Minimum height for better visibility on small screens */
   max-height: 400px; /* Maximum height */
   margin: 0 auto; /* Center the box horizontally */
   overflow-y: auto; /* Allows scrolling within the content box */
