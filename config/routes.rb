@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
+  get 'contacts/create'
   root "home#index"
   get 'contact', to: 'contact#index', as: 'contact'
   get 'projects', to: 'projects#index', as: 'projects'
