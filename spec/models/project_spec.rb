@@ -36,13 +36,14 @@ RSpec.describe Project, type: :model do
     it { should validate_presence_of :project_type }
   end
 
-
-  it '#alphabetical' do
-    
+  it '#project_link?' do
+    expect(@portfolio.project_link?).to eq true
+    expect(@battleship.project_link?).to eq false
   end
 
-  it '#oldest_first' do
-
+  it '#alphabetical' do
+    alphabetical_projects = Project.alphabetical
+    expect(alphabetical_projects).to eq([@battleship, @market_money, @portfolio])
   end
 
   describe '#sort_by_type' do
