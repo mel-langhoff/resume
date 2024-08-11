@@ -156,3 +156,26 @@ body {
   color: rgb(29, 17, 17); /* Text color */
   margin: 0; /* Remove default margins */
 }
+
+/* Button Styles*/
+/* Custom primary button color */
+.btn-primary {
+  background-color: #a0578d; /* Blue color */
+  border-color: #a0578d;
+}
+
+.btn-primary:hover {
+  background-color: #c88db8; /* Darker blue on hover */
+  border-color: #c88db8;
+}
+
+/* Custom secondary button color */
+.btn-secondary {
+  background-color: #c88db8; /* Gray color */
+  border-color: #c88db8;
+}
+
+.btn-secondary:hover {
+  background-color: #a0578d; /* Darker gray on hover */
+  border-color: #a0578d;
+}
