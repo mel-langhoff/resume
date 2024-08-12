@@ -167,3 +167,37 @@ portfolio = Project.create!(
   type: "Rails"
 )
 
+vinyls_be = Project.create!(
+  title: "Vinyl Collection BE",
+  description: "Rails API application using Last.fm and MusicBrainz API endpoints",
+  git_repo: "https://github.com/mel-langhoff/vinyl_collection_be",
+  demo_link: "",
+  tech: "Rails, Ruby, ActiveRecord, PostgreSQL",
+  type: "Rails"
+)
+
+vinyls_fe = Project.create!(
+  title: "Vinyl Collection FE",
+  description: "Rails API application serving as a front end for Vinyl Collection BE",
+  git_repo: "https://github.com/mel-langhoff/vinyl_collection_fe",
+  demo_link: "",
+  tech: "Rails, Ruby, CSS, HTML",
+  type: "Rails"
+)
+coupon_codes = Project.create!(
+  title: "Coupon Codes",
+  description: "Coupon code project",
+  git_repo: "https://github.com/mel-langhoff/coupon_codes",
+  demo_link: "",
+  tech: "Rails, Ruby, CSS, HTML",
+  type: "Rails"
+)
+
+coupon_codes = Project.create!(
+  title: "Market Money",
+  description: "Backend Rails API application",
+  git_repo: "https://github.com/mel-langhoff/market_money",
+  demo_link: "",
+  tech: "Rails, Ruby",
+  type: "Rails"
+)
