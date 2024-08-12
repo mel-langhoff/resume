@@ -2,7 +2,7 @@ class Project < ApplicationRecord
   validates_presence_of :title, :git_repo, :tech, :description, :project_type
 
   def project_link?
-    demo_link.present?
+    self.demo_link.present?
   end
   
   def self.sort_by_type(type)
@@ -17,7 +17,7 @@ class Project < ApplicationRecord
     order(:title).distinct
   end
 
-  def types
-    # write method for plucking the types for selection
+  def self.types
+    pluck(:project_type).uniq
   end
 end

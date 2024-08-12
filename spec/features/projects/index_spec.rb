@@ -19,6 +19,16 @@ RSpec.describe 'Resume Index Page', type: :feature do
       tech: "Ruby",
       project_type: "ruby"
     )
+
+    @portfolio = Project.create!(
+      id: 3,
+      title: "Personal Portfolio",
+      description: "My website.",
+      git_repo: "https://github.com/mel-langhoff/resume",
+      demo_link: "www.mel-langhoff.com",
+      tech: "Rails",
+      project_type: "rails"
+    )
   end
 
   it 'contains a projects attributes' do
@@ -29,6 +39,10 @@ RSpec.describe 'Resume Index Page', type: :feature do
       expect(page).to have_link('Github Repository', href: @battleship.git_repo)
       expect(page).to have_content(@battleship.tech)
       expect(page).to have_content(@battleship.description)
+    end
+
+    within '#project-description-3' do
+      expect(page).to have_content("www.mel-langhoff.com")
     end
   end
 end
