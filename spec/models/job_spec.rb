@@ -23,6 +23,7 @@ RSpec.describe Job, type: :model do
       )
     
     @crocs = Job.create!(
+      id: 11,
       title: "SAP Project Manager",
       company: "Crocs",
       location: "Niwot, CO",
