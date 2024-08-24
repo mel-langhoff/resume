@@ -35,10 +35,10 @@
   description: >
     A comprehensive showcase of my skills and projects as a Backend Developer. This portfolio is built with Ruby on Rails, featuring a clean and intuitive design that highlights my professional achievements and personal projects. Key features include:
     
-    - Custom Domain**: Hosted at [mel-langhoff.com](https://mel-langhoff.com), reflecting my personal brand and providing a professional online presence.
-    - Project Highlights**: Detailed entries for each project, including objectives, technologies used, and links to repositories or live demos.
-    - Responsive Design**: Optimized for various devices to ensure a seamless user experience across desktop, tablet, and mobile.
-    - Interactive Components**: Integrated navigation and dynamic content sections to engage visitors and present information effectively.
+    - Custom domain, at [mel-langhoff.com](www.mel-langhoff.com), reflecting my personal brand and providing a professional online presence.
+    - Project highlights detailing entries for each project, including objectives, technologies used, and links to repositories or live demos.
+    - Responsive design that's optimized for various devices to ensure a seamless user experience across desktop, tablet, and mobile.
+    - Interactive components are integrated navigation and dynamic content sections to engage visitors and present information effectively.
     
     This portfolio serves as both a showcase of my technical skills and a platform for demonstrating my approach to software development. It’s a testament to my ability to create functional, aesthetically pleasing web applications that deliver a superior user experience.
   git_repo: "https://github.com/mel-langhoff/resume"
