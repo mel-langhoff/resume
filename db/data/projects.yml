@@ -42,6 +42,6 @@
     
     This portfolio serves as both a showcase of my technical skills and a platform for demonstrating my approach to software development. It’s a testament to my ability to create functional, aesthetically pleasing web applications that deliver a superior user experience.
   git_repo: "https://github.com/mel-langhoff/resume"
-  tech: "Ruby, Rails, Boostrap"
+  tech: "Ruby on Rails, Boostrap"
   project_type: "Rails"
   demo_link: "www.mel-langhoff.com"

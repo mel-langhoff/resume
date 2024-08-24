@@ -4,12 +4,14 @@
 
 <strong>Filter Projects:</strong>
   <div>
-    <%= link_to 'All', projects_path(project_type: 'All') %> |
+    | <%= link_to 'All', projects_path(project_type: 'All') %> |
     <% @types.each do |type| %>
       <%= link_to type.capitalize, projects_path(project_type: type) %> |
     <% end %>
   </div>
 
+<p>
+  
 <% @by_type.each do |project| %>
   <div id="project-description-<%= project.id %>">
     <h2><%= project.title %></h2>
