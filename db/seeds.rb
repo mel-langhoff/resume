@@ -1,4 +1,5 @@
-# jobs
+require 'yaml'
+
 # jobs
 
 tutor = Job.create!(
@@ -85,19 +86,19 @@ sovos = Job.create!(
   ]
 )
 
-chamberlains = Job.create!(
-  title: "Chocolatier",
-  company: "Chamberlains",
-  location: "Atlanta, GA",
-  start_date: DateTime.new(2019, 6, 01),
-  end_date: DateTime.new(2021, 12, 01),
-  description: "Worked as a chocolatier at Chamberlains, a renowned chocolate shop in Atlanta. Specialized in creating high-quality artisanal chocolates and managing the production process.",
-  responsibilities: [
-    "Crafted a variety of artisanal chocolates, utilizing advanced techniques to ensure high-quality products. Developed new chocolate recipes and flavors, contributing to the shop's unique offerings.",
-    "Managed the chocolate production process, from sourcing ingredients to final packaging. Ensured consistency and quality in all products, maintaining high standards of excellence.",
-    "Collaborated with the team to design and implement creative chocolate displays and seasonal specials. Enhanced customer experiences through visually appealing and delicious chocolate creations."
-  ]
-)
+# chamberlains = Job.create!(
+#   title: "Chocolatier",
+#   company: "Chamberlains",
+#   location: "Atlanta, GA",
+#   start_date: DateTime.new(2019, 6, 01),
+#   end_date: DateTime.new(2021, 12, 01),
+#   description: "Worked as a chocolatier at Chamberlains, a renowned chocolate shop in Atlanta. Specialized in creating high-quality artisanal chocolates and managing the production process.",
+#   responsibilities: [
+#     "Crafted a variety of artisanal chocolates, utilizing advanced techniques to ensure high-quality products. Developed new chocolate recipes and flavors, contributing to the shop's unique offerings.",
+#     "Managed the chocolate production process, from sourcing ingredients to final packaging. Ensured consistency and quality in all products, maintaining high standards of excellence.",
+#     "Collaborated with the team to design and implement creative chocolate displays and seasonal specials. Enhanced customer experiences through visually appealing and delicious chocolate creations."
+#   ]
+# )
 
 college_lib = Job.create!(
   title: "Supervisor",
@@ -142,28 +143,68 @@ brittania = Job.create!(
 )
 
 # projects
-market_money = Project.create!(
-  title: "Market Money",
-  description: "Developing an API enabling access to local farmers markets and vendors.",
-  git_repo: "https://github.com/JaredMHobson/market_money",
-  tech: "Ruby on Rails",
-  type: "Rails"
-)
+projects_data = YAML.load_file(Rails.root.join('db', 'data', 'projects.yml'))
 
-battleship = Project.create!(
-  title: "Battleship",
-  description: "Terminal Ruby game of Battleship developed with a partner.",
-  git_repo: "https://github.com/mel-langhoff/battleship",
-  tech: "Ruby",
-  type: "Ruby"
-)
+projects_data.each do |data|
+  Project.create!(data)
+end
 
-portfolio = Project.create!(
-  title: "Personal Portfolio",
-  description: "My website.",
-  git_repo: "https://github.com/mel-langhoff/resume",
-  demo_link: "www.mel-langhoff.com",
-  tech: "Rails",
-  type: "Rails"
-)
+# market_money = Project.create!(
+#   title: "Market Money",
+#   description: "Developing an API enabling access to local farmers markets and vendors.",
+#   git_repo: "https://github.com/mel-langhoff/market_money",
+#   tech: "Ruby on Rails",
+#   type: "Rails"
+# )
 
+# battleship = Project.create!(
+#   title: "Battleship",
+#   description: "Terminal Ruby game of Battleship developed with a partner.",
+#   git_repo: "https://github.com/mel-langhoff/battleship",
+#   tech: "Ruby",
+#   type: "Ruby"
+# )
+
+# portfolio = Project.create!(
+#   title: "Personal Portfolio",
+#   description: "My website.",
+#   git_repo: "https://github.com/mel-langhoff/resume",
+#   demo_link: "www.mel-langhoff.com",
+#   tech: "Rails",
+#   type: "Rails"
+# )
+
+# vinyls_be = Project.create!(
+#   title: "Vinyl Collection BE",
+#   description: "Rails API application using Last.fm and MusicBrainz API endpoints",
+#   git_repo: "https://github.com/mel-langhoff/vinyl_collection_be",
+#   demo_link: "",
+#   tech: "Rails, Ruby, ActiveRecord, PostgreSQL",
+#   type: "Rails"
+# )
+
+# vinyls_fe = Project.create!(
+#   title: "Vinyl Collection FE",
+#   description: "Rails API application serving as a front end for Vinyl Collection BE",
+#   git_repo: "https://github.com/mel-langhoff/vinyl_collection_fe",
+#   demo_link: "",
+#   tech: "Rails, Ruby, CSS, HTML",
+#   type: "Rails"
+# )
+# coupon_codes = Project.create!(
+#   title: "Coupon Codes",
+#   description: "Coupon code project",
+#   git_repo: "https://github.com/mel-langhoff/coupon_codes",
+#   demo_link: "",
+#   tech: "Rails, Ruby, CSS, HTML",
+#   type: "Rails"
+# )
+
+# coupon_codes = Project.create!(
+#   title: "Market Money",
+#   description: "Backend Rails API application",
+#   git_repo: "https://github.com/mel-langhoff/market_money",
+#   demo_link: "",
+#   tech: "Rails, Ruby",
+#   type: "Rails"
+# )

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mel/Turing/projects/portfolio/portfolio/config/environment.rb": {
+      "/Users/mel/projects/resume/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/config/application.rb": {
+      "/Users/mel/projects/resume/config/application.rb": {
         "lines": [
           1,
           null,
@@ -56,7 +56,7 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/config/boot.rb": {
+      "/Users/mel/projects/resume/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -64,7 +64,7 @@
           1
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/config/environments/test.rb": {
+      "/Users/mel/projects/resume/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -132,7 +132,7 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/config/initializers/assets.rb": {
+      "/Users/mel/projects/resume/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -148,7 +148,7 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/config/initializers/content_security_policy.rb": {
+      "/Users/mel/projects/resume/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -159,38 +159,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/mel/Turing/projects/portfolio/portfolio/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/mel/Turing/projects/portfolio/portfolio/config/initializers/inflections.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -209,7 +177,39 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/config/initializers/permissions_policy.rb": {
+      "/Users/mel/projects/resume/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/mel/projects/resume/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mel/projects/resume/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -226,7 +226,7 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/config/routes.rb": {
+      "/Users/mel/projects/resume/config/routes.rb": {
         "lines": [
           1,
           1,
@@ -242,49 +242,49 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/helpers/application_helper.rb": {
+      "/Users/mel/projects/resume/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/helpers/bio_helper.rb": {
+      "/Users/mel/projects/resume/app/helpers/bio_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/helpers/contact_helper.rb": {
+      "/Users/mel/projects/resume/app/helpers/contact_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/helpers/contacts_helper.rb": {
+      "/Users/mel/projects/resume/app/helpers/contacts_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/helpers/home_helper.rb": {
+      "/Users/mel/projects/resume/app/helpers/home_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/helpers/projects_helper.rb": {
+      "/Users/mel/projects/resume/app/helpers/projects_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/helpers/resume_helper.rb": {
+      "/Users/mel/projects/resume/app/helpers/resume_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/spec/features/home/index_spec.rb": {
+      "/Users/mel/projects/resume/spec/features/home/index_spec.rb": {
         "lines": [
           1,
           null,
@@ -305,7 +305,7 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/spec/features/projects/index_spec.rb": {
+      "/Users/mel/projects/resume/spec/features/projects/index_spec.rb": {
         "lines": [
           1,
           null,
@@ -329,6 +329,16 @@
           null,
           null,
           null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           1,
           1,
@@ -336,6 +346,10 @@
           1,
           1,
           1,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           null,
@@ -343,12 +357,22 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/spec/features/resume/index_spec.rb": {
+      "/Users/mel/projects/resume/spec/features/resume/index_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           2,
           null,
           null,
@@ -369,16 +393,6 @@
           null,
           null,
           null,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           1,
           1,
           null,
@@ -400,7 +414,7 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/spec/models/contact_spec.rb": {
+      "/Users/mel/projects/resume/spec/models/contact_spec.rb": {
         "lines": [
           1,
           null,
@@ -413,21 +427,21 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/models/contact.rb": {
+      "/Users/mel/projects/resume/app/models/contact.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/models/application_record.rb": {
+      "/Users/mel/projects/resume/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/spec/models/job_spec.rb": {
+      "/Users/mel/projects/resume/spec/models/job_spec.rb": {
         "lines": [
           1,
           null,
@@ -485,7 +499,7 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/models/job.rb": {
+      "/Users/mel/projects/resume/app/models/job.rb": {
         "lines": [
           1,
           1,
@@ -504,13 +518,13 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/spec/models/project_spec.rb": {
+      "/Users/mel/projects/resume/spec/models/project_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          9,
+          10,
           null,
           null,
           null,
@@ -518,7 +532,7 @@
           null,
           null,
           null,
-          9,
+          10,
           null,
           null,
           null,
@@ -526,7 +540,7 @@
           null,
           null,
           null,
-          9,
+          10,
           null,
           null,
           null,
@@ -561,6 +575,13 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
           1,
           1,
           1,
@@ -569,10 +590,22 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/models/project.rb": {
+      "/Users/mel/projects/resume/app/models/project.rb": {
         "lines": [
           1,
           1,
+          null,
+          1,
+          8,
+          null,
+          null,
+          1,
+          3,
+          2,
+          null,
+          1,
+          null,
+          null,
           null,
           1,
           2,
@@ -580,19 +613,11 @@
           null,
           1,
           2,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
           null,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/home_controller.rb": {
+      "/Users/mel/projects/resume/app/controllers/home_controller.rb": {
         "lines": [
           1,
           1,
@@ -600,17 +625,22 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/application_controller.rb": {
+      "/Users/mel/projects/resume/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/projects_controller.rb": {
+      "/Users/mel/projects/resume/app/controllers/projects_controller.rb": {
         "lines": [
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           null,
           1,
@@ -618,7 +648,7 @@
           null
         ]
       },
-      "/Users/mel/Turing/projects/portfolio/portfolio/app/controllers/resume_controller.rb": {
+      "/Users/mel/projects/resume/app/controllers/resume_controller.rb": {
         "lines": [
           1,
           1,
@@ -628,6 +658,6 @@
         ]
       }
     },
-    "timestamp": 1723411177
+    "timestamp": 1723437076
   }
 }

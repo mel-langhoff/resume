@@ -1,0 +1,47 @@
+# The '>' character allows for multi-line strings in YAML, so you can break your description into multiple lines without needing to use \n for line breaks.
+# The YAML parser will combine the lines into a single string.
+
+- title: "Market Money"
+  description: >
+    A comprehensive API designed to facilitate access to local farmers' markets and vendors.
+    This project involved:
+
+    - Integrating with various market data sources.
+    - Handling data related to vendors, products, and pricing.
+    - Implementing search and filtering capabilities to improve user experience.
+    
+    The API provides detailed information about market schedules, vendor locations,
+    and product availability, making it easier for users to find local produce and goods.
+  git_repo: "https://github.com/mel-langhoff/market_money"
+  tech: "Ruby on Rails, Postman"
+  project_type: "Rails"
+
+- title: "Battleship"
+  description: >
+    A terminal-based Ruby implementation of the classic Battleship game. Developed with a partner,
+    this project required:
+
+    - Careful coordination and clear communication to handle the complexity of the game's logic.
+    - Developing a user-friendly interface for placing ships and taking turns guessing.
+    - Ensuring the game logic correctly handles wins, losses, and invalid moves.
+
+    The game allows two players to place ships and take turns guessing the locations of their
+    opponent's ships until one player sinks all the ships.
+  git_repo: "https://github.com/mel-langhoff/battleship"
+  tech: "Ruby"
+  project_type: "Ruby"
+
+- title: "Personal Portfolio & Website"
+  description: >
+    A comprehensive showcase of my skills and projects as a Backend Developer. This portfolio is built with Ruby on Rails, featuring a clean and intuitive design that highlights my professional achievements and personal projects. Key features include:
+    
+    - Custom Domain**: Hosted at [mel-langhoff.com](https://mel-langhoff.com), reflecting my personal brand and providing a professional online presence.
+    - Project Highlights**: Detailed entries for each project, including objectives, technologies used, and links to repositories or live demos.
+    - Responsive Design**: Optimized for various devices to ensure a seamless user experience across desktop, tablet, and mobile.
+    - Interactive Components**: Integrated navigation and dynamic content sections to engage visitors and present information effectively.
+    
+    This portfolio serves as both a showcase of my technical skills and a platform for demonstrating my approach to software development. It’s a testament to my ability to create functional, aesthetically pleasing web applications that deliver a superior user experience.
+  git_repo: "https://github.com/mel-langhoff/resume"
+  tech: "Ruby on Rails, Boostrap"
+  project_type: "Rails"
+  demo_link: "www.mel-langhoff.com"

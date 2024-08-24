@@ -58,4 +58,11 @@ RSpec.describe Project, type: :model do
       expect(all_projects).to include(@battleship, @market_money, @portfolio)
     end
   end
+
+  describe '#types' do
+    it 'lists all types' do
+      types = Project.types
+      expect(types).to eq(["rails", "ruby"])
+    end
+  end
 end

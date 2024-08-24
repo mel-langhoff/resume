@@ -2,18 +2,22 @@
   <h1 class="page-title">Projects</h1>
 <% end %>
 
-<strong>Filter projects:</strong>
-<%= form_with url: projects_path, method: :get, local: true, data: { turbo: false } do %>
-  <div class="filter-buttons">
-    <%= label_tag :type %>
-    <%= select_tage :type, options_for_select(['All']%>
+<strong>Filter Projects:</strong>
+  <div>
+    | <%= link_to 'All', projects_path(project_type: 'All') %> |
+    <% @types.each do |type| %>
+      <%= link_to type.capitalize, projects_path(project_type: type) %> |
+    <% end %>
+  </div>
 
-<% @projects.each do |project| %>
+<p>
+  
+<% @by_type.each do |project| %>
   <div id="project-description-<%= project.id %>">
-    <p><strong>"<%= project.title %>"</strong></p>
-    <p><%= project.description%></p>
+    <h2><%= project.title %></h2>
+    <p><%= project.description %></p>
+    <p>Tech: <%= project.tech %></p>
     <p><%= link_to 'Github Repository', project.git_repo, target: '_blank' %></p>
-    <p>Technologies: <%= project.tech %></p>
     <% if project.project_link? %>
       <p><%= link_to 'Demo Link', project.demo_link, target: '_blank' %></p>
     <% end %>
