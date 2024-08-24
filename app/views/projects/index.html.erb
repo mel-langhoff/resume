@@ -15,21 +15,9 @@
     <h2><%= project.title %></h2>
     <p><%= project.description %></p>
     <p>Tech: <%= project.tech %></p>
-    <p>Repo: <%= link_to 'Github Repository', project.git_repo %></p>
-    <% if project.project_link? %>
-      <p>Demo: <%= project.demo_link %></p>
-    <% end %>
-  </div>
-<% end %>
-
-<!-- <% @projects.each do |project| %>
-  <div id="project-description-<%= project.id %>">
-    <p><strong>"<%= project.title %>"</strong></p>
-    <p><%= project.description%></p>
     <p><%= link_to 'Github Repository', project.git_repo, target: '_blank' %></p>
-    <p>Technologies: <%= project.tech %></p>
     <% if project.project_link? %>
       <p><%= link_to 'Demo Link', project.demo_link, target: '_blank' %></p>
     <% end %>
   </div>
-<% end %> --> 
+<% end %>

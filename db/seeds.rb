@@ -1,4 +1,5 @@
-# jobs
+require 'yaml'
+
 # jobs
 
 tutor = Job.create!(
@@ -142,21 +143,27 @@ brittania = Job.create!(
 )
 
 # projects
-market_money = Project.create!(
-  title: "Market Money",
-  description: "Developing an API enabling access to local farmers markets and vendors.",
-  git_repo: "https://github.com/mel-langhoff/market_money",
-  tech: "Ruby on Rails",
-  type: "Rails"
-)
+projects_data = YAML.load_file(Rails.root.join('db', 'data', 'projects.yml'))
 
-battleship = Project.create!(
-  title: "Battleship",
-  description: "Terminal Ruby game of Battleship developed with a partner.",
-  git_repo: "https://github.com/mel-langhoff/battleship",
-  tech: "Ruby",
-  type: "Ruby"
-)
+projects_data.each do |data|
+  Project.create!(data)
+end
+
+# market_money = Project.create!(
+#   title: "Market Money",
+#   description: "Developing an API enabling access to local farmers markets and vendors.",
+#   git_repo: "https://github.com/mel-langhoff/market_money",
+#   tech: "Ruby on Rails",
+#   type: "Rails"
+# )
+
+# battleship = Project.create!(
+#   title: "Battleship",
+#   description: "Terminal Ruby game of Battleship developed with a partner.",
+#   git_repo: "https://github.com/mel-langhoff/battleship",
+#   tech: "Ruby",
+#   type: "Ruby"
+# )
 
 # portfolio = Project.create!(
 #   title: "Personal Portfolio",
