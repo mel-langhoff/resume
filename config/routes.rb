@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'games/index'
   get 'contacts/new'
   get 'contacts/create'
   root "home#index"
