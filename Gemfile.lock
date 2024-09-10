@@ -364,6 +364,7 @@ DEPENDENCIES
   capybara
   faker
   faraday
+  i18n
   importmap-rails
   jbuilder
   jquery-rails
