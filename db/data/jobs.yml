@@ -1,112 +1,114 @@
 jobs:
-  
+
   - title: "Technical Project Management Consultant"
     company: "Mountainview Consulting"
     location: "Remote"
-    start_date: 2024-09-01
-    end_date: 
-    description: "Contracted as a technical project management consultant, leveraging knowledge of Agile and programming"
+    start_date: "2024-09-01"
+    end_date:
+    description: "Technical project management consulting focused on Agile delivery systems, workflow tooling, and cross-functional execution."
     responsibilities:
-      - "Contracted to partner with diverse clients to design and implement Agile delivery systems and internal workflow tools, improving project visibility and execution to improve team productivity by 19%."
-      - "Assess existing delivery frameworks, collaborate with cross-functional stakeholders, and implement tailored PMO improvements to increase efficiency, clarity, and predictability across teams, leveraging Agile, Scrum, and Kanban methodologies alongside backend engineering and Ruby on Rails development experience."
-  
-  - title: "Private Tutor"
+      - "Assessed delivery workflows and implemented Agile frameworks and internal workflow tools, improving project visibility and execution and raising team productivity by 12%."
+      - "Collaborated with cross-functional stakeholders to implement PMO improvements and project tracking systems that increased efficiency, clarity, and predictability across teams while reducing operational bottlenecks."
+      - "Led cross-functional technical initiatives involving backend systems, microservices, REST APIs, and SaaS platform implementations."
+      - "Translated complex technical requirements into clear project plans and actionable tasks for engineering teams and business stakeholders."
+
+  - title: "Tutor"
     company: "Self-employed"
     location: "Remote"
-    start_date: 2020-08-01
-    end_date: 
-    description: "As a self-employed private tutor, I provided personalized instruction to students aged 4-18. My focus was on adapting teaching methods to meet individual learning styles and academic goals, ensuring effective and engaging learning experiences."
+    start_date: "2020-08-01"
+    end_date:
+    description: "Provided customized instruction through one-on-one and small group tutoring sessions."
     responsibilities:
-      - "Delivered personalized instruction for students aged 4-18, tailoring lessons to their unique learning styles and academic goals. This approach ensured that each student received targeted support, promoting their academic growth and confidence."
-      - "Created engaging learning environments through both individual and group sessions. Utilized creative teaching methods and interactive activities to maintain student interest and foster a positive learning atmosphere."
-      - "Leveraged my skills in Spanish and various teaching methodologies to enhance educational outcomes. Provided bilingual support and culturally relevant materials, enriching the learning experience for students from diverse backgrounds."
+      - "Delivered personalized instruction through one-on-one and small group tutoring sessions tailored to individual learning needs."
+      - "Developed engaging lesson plans that improved student comprehension, confidence, and participation."
+      - "Provided bilingual support and adapted teaching strategies to serve students from diverse backgrounds."
 
   - title: "Business, Sales, Marketing, eCommerce"
     company: "Malhecho Art"
     location: "Remote"
-    start_date: 2022-03-01
-    end_date: 2023-06-01
-    description: "Managed business operations for J.Malhecho Art, focusing on website management, strategic marketing, and Spanish translation. My role was key in enhancing the company's online presence and driving business growth through effective marketing strategies."
+    start_date: "2022-03-01"
+    end_date: "2023-06-01"
+    description: "Managed business operations, website presence, and marketing strategy for a small creative business."
     responsibilities:
-      - "Enhanced the company's online presence and market visibility through targeted marketing campaigns and strategic networking. This led to increased customer engagement, higher traffic to the website, and improved sales."
-      - "Utilized my project management and social media skills to drive business growth. Coordinated marketing efforts, managed digital content, and implemented strategies that effectively promoted the brand and its offerings."
-      - "Developed and executed business strategies to optimize performance. Analyzed data to inform decision-making, ensuring that marketing and operational strategies were aligned with business goals."
+      - "Managed website content, online presence, and digital marketing initiatives to increase brand visibility and customer engagement."
+      - "Developed marketing strategies and coordinated promotional campaigns across social media and digital platforms."
+      - "Analyzed sales performance and customer engagement data to guide marketing decisions and improve business outcomes."
 
   - title: "IT Project Manager"
     company: "Xcel Energy"
     location: "Remote"
-    start_date: 2022-07-01
-    end_date: 2023-07-01
-    description: "In my role as an IT Project Manager at Xcel Energy, I developed and implemented Agile project management systems. My work significantly improved project efficiency and reduced delivery timelines."
+    start_date: "2022-07-01"
+    end_date: "2023-07-01"
+    description: "Led Agile transformation initiatives and project delivery improvements for enterprise teams."
     responsibilities:
-      - "Contracted to develop and implement new Agile project management standards and systems for Xcel Energy, enhancing operational efficiency and project execution."
-      - "Led a project team to streamline processes and introduced new project management software tools, successfully reducing project lifecycles by 1-2 weeks, translating to a 10% improvement in delivery timelines."
-      - "Managed energy savings implementation projects to demonstrate the new project process, showcasing a new 26% in team efficiency."
+      - "Partnered with stakeholders to develop and implement new Agile project management standards and systems for Xcel Energy."
+      - "Introduced project management software tools and automated Jira workflows, reducing project lifecycles by 1-2 weeks and improving delivery timelines by 10%."
+      - "Managed energy savings implementation and system architecture projects demonstrating a 26% improvement in team efficiency."
 
   - title: "Program Manager"
     company: "Sling TV"
     location: "Denver, CO"
-    start_date: 2022-02-01
-    end_date: 2022-07-01
-    description: "As a Program Manager at Sling TV, I optimized project processes using Agile, Scrum, and Kanban methodologies. My role involved improving productivity and project outcomes for Dish Media and Sling TV."
+    start_date: "2022-02-01"
+    end_date: "2022-07-01"
+    description: "Optimized IT and advertising project delivery through Agile frameworks and improved workflow systems."
     responsibilities:
-      - "Engaged to optimize IT and advertising projects for Dish Media and Sling TV using Agile, Scrum, and Kanban methodologies and by introducing new software solutions and project management processes."
-      - "Spearheaded rollout of new project management software, delivering team training and individual coaching while supporting IT and advertising project delivery."
-      - "Facilitated the redistribution of five team resources and restructured teams to boost productivity by 20%, resulting in improved project outcomes while adhering to Agile best practices and PMO standards."
+      - "Improved IT and advertising project delivery for Dish Media and Sling TV using Agile, Scrum, and Kanban methodologies."
+      - "Led rollout of new project management software while training teams and supporting cross-functional delivery."
+      - "Introduced Jira reporting dashboards and delivery metrics that increased team productivity by 15%."
 
   - title: "SAP Project Manager"
     company: "Crocs"
     location: "Niwot, CO"
-    start_date: 2019-09-01
-    end_date: 2020-04-01
-    description: "Managed the migration of SAP environments to SAP HANA Enterprise Cloud for Crocs. Ensured smooth transitions and effective project management for a successful cloud migration."
+    start_date: "2019-09-01"
+    end_date: "2020-04-01"
+    description: "Managed enterprise SAP cloud migration planning and delivery."
     responsibilities:
-      - "Team Lead of 45 in migrating on-premise SAP environments to SAP HANA Enterprise Cloud, specializing in QA and crafting testing schedules and cutover plans."
-      - "Coordinated with cross-functional teams and vendors, achieving seamless cloud migration and a 100% project success rate."
-      - "Curated risk management strategies, ensuring on-time, precise delivery of project milestones while effectively managing vendor relationships."
-      - "Personally developed comprehensive testing schedules and cutover plans for the SAP cloud migration, ensuring smooth transitions, minimal downtime, and accounting for freezes."
+      - "Led a team of 45 in migrating on-premise SAP environments to SAP HANA Enterprise Cloud."
+      - "Developed testing schedules and cutover plans to ensure smooth system transitions and minimal downtime."
+      - "Coordinated cross-functional teams and vendors to deliver a successful cloud migration with a 100% success rate."
+      - "Managed project risks and vendor relationships to ensure on-time milestone delivery."
 
   - title: "Technical Project Manager"
-    company: "Sovos"
+    company: "Sovos Compliance"
     location: "Atlanta, GA"
-    start_date: 2017-04-01
-    end_date: 2019-01-01
-    description: "Integrated SaaS SAP ERP solutions for Fortune 500 companies, focusing on eInvoicing, eAccounting, and tax compliance. My role involved managing multiple projects and ensuring successful client engagements."
+    start_date: "2017-04-01"
+    end_date: "2019-01-01"
+    description: "Managed SaaS SAP ERP implementations for enterprise clients."
     responsibilities:
-      - "Orchestrated integration of SaaS SAP ERP solutions for Fortune 500 companies, including eInvoicing, eAccounting, and tax compliance functionalities tailored for LATAM countries and Mexico."
-      - "Advised clients at the intersection of business processes, tax legislation, and SAP solution design in English and Spanish."
-      - "Managed up to 25 concurrent projects, achieving an average on-time delivery rate of 94%."
-      - "Developed detailed bilingual training materials and led training sessions for Accounts Payable reporting solutions, improving client satisfaction ratings by 17%."
+      - "Led implementation of SaaS SAP ERP solutions for Fortune 500 companies including eInvoicing and tax compliance platforms."
+      - "Advised clients on business processes, tax legislation, and SAP solution design in English and Spanish."
+      - "Managed up to 25 concurrent projects while coordinating engineering and QA release planning."
+      - "Developed bilingual training materials and led training programs that improved client satisfaction by 34%."
 
   - title: "Supervisor"
     company: "UW-Madison Helen C White College Library"
     location: "Madison, WI"
-    start_date: 2011-03-01
-    end_date: 2016-12-01
-    description: "Supervised operations and staff at the UW-Madison Helen C White College Library, ensuring efficient service delivery and high levels of customer satisfaction."
+    start_date: "2011-03-01"
+    end_date: "2016-12-01"
+    description: "Supervised daily library operations, staff training, and customer service."
     responsibilities:
-      - "Led team training and development initiatives, focusing on improving service quality and staff performance. Implemented new training programs to enhance staff skills and efficiency."
-      - "Managed daily library operations, including scheduling and customer service. Ensured that library services ran smoothly and met the needs of students and faculty."
-      - "Implemented new policies and procedures to improve operational efficiency. Developed strategies to enhance the overall user experience and streamline library processes."
+      - "Led team training and development initiatives focused on improving service quality and staff performance."
+      - "Managed daily operations including scheduling, staffing, and customer support."
+      - "Implemented operational improvements that streamlined library workflows and improved user experience."
 
   - title: "Assistant Coordinator"
     company: "University of Wisconsin-Madison DesignLab"
     location: "Madison, WI"
-    start_date: 2015-08-01
-    end_date: 2016-05-01
-    description: "Supported coordination of design lab activities and student projects at the University of Wisconsin-Madison DesignLab. Facilitated workshops and events to enhance the learning experience."
+    start_date: "2015-08-01"
+    end_date: "2016-05-01"
+    description: "Supported coordination of workshops and events within the DesignLab innovation space."
     responsibilities:
-      - "Assisted in organizing and executing workshops and events, which contributed to a more engaging learning environment for students. Coordinated logistics and provided support to ensure successful events."
-      - "Provided administrative support, managing communication with stakeholders and ensuring smooth operations. Handled scheduling, coordination, and follow-up tasks to support lab activities."
-      - "Collaborated with team members to develop and implement new initiatives. Contributed to continuous improvement efforts and supported the lab's mission of fostering innovation and creativity."
+      - "Organized workshops and events that supported student innovation and collaborative design work."
+      - "Provided operational and administrative support including scheduling and stakeholder communication."
+      - "Assisted in developing initiatives that improved the DesignLab learning environment."
 
   - title: "English Teacher"
     company: "Brittania School of English"
     location: "Barcelona Area, Spain"
-    start_date: 2014-11-01
-    end_date: 2015-11-01
-    description: "Taught English to non-native speakers at Brittania School of English in Barcelona. Focused on language acquisition and communication skills, fostering a dynamic and immersive learning environment."
+    start_date: "2014-11-01"
+    end_date: "2015-11-01"
+    description: "Taught English to non-native speakers in immersive classroom settings."
     responsibilities:
-      - "Developed and implemented customized lesson plans tailored to student needs. Enhanced students' language skills and confidence through engaging and effective teaching methods."
-      - "Facilitated cultural exchange and language immersion experiences, enriching students' understanding of English and diverse cultural contexts. Encouraged active participation and interactive learning."
-      - "Assessed student progress and provided constructive feedback to support their continuous improvement. Monitored academic development and adjusted teaching strategies to meet evolving needs."
+      - "Developed customized lesson plans that strengthened students' English communication skills."
+      - "Facilitated interactive language-learning environments that encouraged participation and engagement."
+      - "Evaluated student progress and adapted instruction to support continuous improvement."
