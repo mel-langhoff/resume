@@ -36,19 +36,9 @@ document.addEventListener("turbo:load", () => {
 
   const accentColor = "#0000EE";
 
-  function getPageHeight() {
-    return Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight,
-      window.innerHeight
-    );
-  }
-
   function resizeCanvas() {
     canvas.width = window.innerWidth;
-    canvas.height = getPageHeight();
+    canvas.height = window.innerHeight;
     buildTextTargets();
     buildParticles();
     buildAccentRain();
@@ -59,6 +49,7 @@ document.addEventListener("turbo:load", () => {
 
     const textAnchor = document.querySelector(".hero-text-anchor");
     const placeholder = document.querySelector(".hero-text-placeholder");
+
     if (!textAnchor || !placeholder) return;
 
     const offscreen = document.createElement("canvas");
@@ -71,12 +62,13 @@ document.addEventListener("turbo:load", () => {
     offCtx.textAlign = "left";
     offCtx.textBaseline = "top";
 
-    const anchorRect = textAnchor.getBoundingClientRect();
-    const placeholderStyles = window.getComputedStyle(placeholder);
+    const rect = textAnchor.getBoundingClientRect();
+    const style = window.getComputedStyle(placeholder);
 
-    const x = anchorRect.left;
-    const y = anchorRect.top;
-    const fontSize = parseFloat(placeholderStyles.fontSize);
+    const x = rect.left;
+    const y = rect.top;
+
+    const fontSize = parseFloat(style.fontSize);
     const lineHeight = fontSize * 0.9;
 
     offCtx.font = `900 ${fontSize}px Arial`;
@@ -122,10 +114,13 @@ document.addEventListener("turbo:load", () => {
       this.target = target;
       this.char = ipaChars[Math.floor(Math.random() * ipaChars.length)];
       this.size = Math.random() * 5 + 17;
+
       this.x = Math.random() * canvas.width;
-      this.y = -Math.random() * window.innerHeight - 50;
+      this.y = -Math.random() * canvas.height;
+
       this.vy = Math.random() * 1.4 + 2.6;
       this.vx = (Math.random() - 0.5) * 0.5;
+
       this.locked = false;
       this.color = "#333333";
     }
@@ -178,11 +173,13 @@ document.addEventListener("turbo:load", () => {
 
     reset() {
       this.x = Math.random() * canvas.width;
-      this.y = -Math.random() * canvas.height - 100;
+      this.y = -Math.random() * canvas.height;
       this.vy = Math.random() * 1.3 + 1.4;
       this.vx = (Math.random() - 0.5) * 0.18;
+
       this.baseOpacity = Math.random() * 0.16 + 0.07;
       this.opacity = this.baseOpacity;
+
       this.fadeSpeed = Math.random() * 0.01 + 0.008;
       this.active = true;
     }
@@ -192,9 +189,6 @@ document.addEventListener("turbo:load", () => {
 
       this.y += this.vy;
       this.x += this.vx;
-
-      if (this.x < -30) this.x = canvas.width + 30;
-      if (this.x > canvas.width + 30) this.x = -30;
 
       const dist = nearestTextTargetDistance(this.x, this.y);
 
@@ -211,7 +205,7 @@ document.addEventListener("turbo:load", () => {
       } else {
         this.opacity -= this.fadeSpeed;
 
-        if (this.opacity <= 0 || this.y > canvas.height + 50) {
+        if (this.opacity <= 0) {
           this.active = false;
         }
       }
@@ -232,7 +226,7 @@ document.addEventListener("turbo:load", () => {
   }
 
   function buildParticles() {
-    particles = textTargets.map((target) => new Particle(target));
+    particles = textTargets.map(target => new Particle(target));
   }
 
   function buildAccentRain() {
@@ -243,33 +237,31 @@ document.addEventListener("turbo:load", () => {
   }
 
   function allParticlesLocked() {
-    return particles.length > 0 && particles.every((particle) => particle.locked);
+    return particles.length && particles.every(p => p.locked);
   }
 
   function accentRainGone() {
-    return accentRain.every((particle) => !particle.active);
+    return accentRain.every(p => !p.active);
   }
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    accentRain.forEach((particle) => {
-      particle.update();
-      particle.draw();
+    accentRain.forEach(p => {
+      p.update();
+      p.draw();
     });
 
-    particles.forEach((particle) => {
-      particle.update();
-      particle.draw();
+    particles.forEach(p => {
+      p.update();
+      p.draw();
     });
 
     if (formationStarted && allParticlesLocked()) {
       rainFadingOut = true;
 
       const heroPhoto = document.getElementById("heroPhoto");
-      if (heroPhoto) {
-        heroPhoto.classList.add("visible");
-      }
+      if (heroPhoto) heroPhoto.classList.add("visible");
     }
 
     if (formationStarted && allParticlesLocked() && accentRainGone()) {
@@ -288,36 +280,26 @@ document.addEventListener("turbo:load", () => {
     formationStarted = true;
   }, 1500);
 
-  let resizeTimeout;
-
   window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
+    formationStarted = false;
+    animationStopped = false;
+    rainFadingOut = false;
 
-    resizeTimeout = setTimeout(() => {
-      formationStarted = false;
-      animationStopped = false;
-      rainFadingOut = false;
+    const heroPhoto = document.getElementById("heroPhoto");
+    if (heroPhoto) heroPhoto.classList.remove("visible");
 
-      const heroPhoto = document.getElementById("heroPhoto");
-      if (heroPhoto) {
-        heroPhoto.classList.remove("visible");
-      }
+    cancelAnimationFrame(animationId);
+    resizeCanvas();
+    animate();
 
-      cancelAnimationFrame(animationId);
-      resizeCanvas();
-      animate();
-
-      setTimeout(() => {
-        formationStarted = true;
-      }, 1500);
-    }, 150);
+    setTimeout(() => {
+      formationStarted = true;
+    }, 1500);
   });
 
   document.addEventListener(
     "turbo:before-cache",
-    () => {
-      cancelAnimationFrame(animationId);
-    },
+    () => cancelAnimationFrame(animationId),
     { once: true }
   );
 });
