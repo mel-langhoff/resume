@@ -1,7 +1,32 @@
-<% content_for :page_title do %>
-  <h1 class="page-title">Hi, I'm Mel</h1>
-<% end %>
+<canvas id="ipaCanvas"></canvas>
 
-<p><%= image_tag 'profile_photo.jpeg', alt: 'Profile Photo' %></p>
-<p>Life-long learner, passionate teacher, and data-driven software developer committed to creative thinking and outside-the-box solutions. Fluent in Spanish, drawing from a background in IT project management, and with a deep appreciation for cultural exchange, I use my diverse experiences to create impactful and resonant results.</p>
+<div class="hero-intro" id="heroIntro">
+  <div class="hero-photo" id="heroPhoto">
+    <%= image_tag 'hiking.jpg', alt: 'Profile Photo', class: "img-fluid rounded" %>
+  </div>
 
+  <div class="hero-text-anchor">
+    <div class="hero-text-placeholder">
+      <div>HI,</div>
+      <div>I'M MEL</div>
+    </div>
+  </div>
+</div>
+
+<section class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h2>About Me</h2>
+
+      <p>
+        Life-long learner, passionate teacher, and data-driven software developer committed
+        to creative thinking and outside-the-box solutions. Fluent in Spanish, drawing from
+        a background in IT project management, and with a deep appreciation for cultural
+        exchange, I use my diverse experiences to create impactful and resonant results.
+      </p>
+    </div>
+
+    <div class="col-md-6 text-center">
+    </div>
+  </div>
+</section>
