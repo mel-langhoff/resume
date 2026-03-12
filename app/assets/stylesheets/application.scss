@@ -280,3 +280,39 @@ main,
   font-size: 1.15rem;
   line-height: 1.7;
 }
+
+.nav-link {
+  position: relative;
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.nav-link span {
+  display: block;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-default {
+  opacity: 1;
+}
+
+.nav-ipa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.nav-link:hover .nav-default {
+  opacity: 0;
+  transform: translateY(-3px);
+}
+
+.nav-link:hover .nav-ipa {
+  opacity: 1;
+}
+
+.site-header {
+  position: relative;
+  top: 30px;
+}

@@ -73,7 +73,7 @@ document.addEventListener("turbo:load", () => {
 
     offCtx.font = `900 ${fontSize}px Arial`;
 
-    offCtx.fillText("HI,", x, y);
+    offCtx.fillText("HI!", x, y);
     offCtx.fillText("I'M MEL", x, y + lineHeight);
 
     const imageData = offCtx.getImageData(0, 0, offscreen.width, offscreen.height).data;
