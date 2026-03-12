@@ -1,5 +1,5 @@
 class ResumeController < ApplicationController
   def index
-    @jobs = Job.all.sort_jobs.last
+    @jobs = Job.all.sort_jobs
   end
 end
