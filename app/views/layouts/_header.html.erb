@@ -1,13 +1,58 @@
 <header class="site-header">
-  <nav class="d-flex justify-content-end">
+  <nav>
     <ul class="nav">
-      <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
-      <li class="nav-item"><%= link_to "About", bio_path, class: "nav-link" %></li>
-      <li class="nav-item"><%= link_to "Resume", "/resume", class: "nav-link" %></li>
-      <li class="nav-item"><%= link_to "Projects", "/projects", class: "nav-link" %></li>
-      <li class="nav-item"><%= link_to "Contact", "/contact", class: "nav-link" %></li>
-      <li class="nav-item"><%= link_to "Github", "https://github.com/mel-langhoff", target: '_blank', class: "nav-link" %></li>
-      <li class="nav-item"><%= link_to "LinkedIn", "https://www.linkedin.com/in/melissalanghoff/", target: '_blank', class: "nav-link" %></li>
+      <li class="nav-item">
+        <%= link_to root_path, class: "nav-link" do %>
+          <span class="nav-default">Home</span>
+          <span class="nav-ipa">/hoʊm/</span>
+        <% end %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to bio_path, class: "nav-link" do %>
+          <span class="nav-default">About</span>
+          <span class="nav-ipa">/əˈbaʊt/</span>
+        <% end %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "/resume", class: "nav-link" do %>
+          <span class="nav-default">Resume</span>
+          <span class="nav-ipa">/ˈrɛzəˌmeɪ/</span>
+        <% end %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "/projects", class: "nav-link" do %>
+          <span class="nav-default">Projects</span>
+          <span class="nav-ipa">/ˈprɑdʒɛkts/</span>
+        <% end %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "mailto:mlanghoff@uwalumni.com", class: "nav-link" do %>
+          <span class="nav-default">Contact</span>
+          <span class="nav-ipa">/ˈkɑnˌtækt/</span>
+        <% end %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "https://github.com/mel-langhoff", target: "_blank", rel: "noopener", class: "nav-link" do %>
+          <span class="nav-default">Github</span>
+          <span class="nav-ipa">/ˈɡɪtˌhʌb/</span>
+        <% end %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "https://www.linkedin.com/in/melissalanghoff/", target: "_blank", rel: "noopener", class: "nav-link" do %>
+          <span class="nav-default">LinkedIn</span>
+          <span class="nav-ipa">/lɪŋktˈɪn/</span>
+        <% end %>
+      </li>
+      
+      
+<div class="hex-deco one" aria-hidden="true"></div>
+<div class="hex-deco two" aria-hidden="true"></div>
     </ul>
   </nav>
 </header>

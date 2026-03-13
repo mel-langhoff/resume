@@ -1,181 +1,244 @@
-/* Import Bootstrap */
-@import "bootstrap";
-
-/* Apply the Georgia font to the entire site */
 body {
-  font-family: 'Georgia', serif;
-  margin: 0; /* Remove default margin */
+  margin: 0;
+  background: #F6D6E3;
+}
+
+#ipaCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
+}
+
+main,
+.content,
+.page-content,
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* TOP NAV */
+
+.site-header {
+  position: relative;
+  width: 100%;
+  padding: 24px 40px 0 40px;
+  z-index: 30;
+}
+
+.site-header nav {
+  width: 100%;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  min-height: 100vh; /* Ensure the body takes the full height */
+  gap: 28px;
+  align-items: center;
 }
 
-/* Background image setup */
-.page-background {
-  position: relative; /* Allows for overlay positioning */
-  flex: 1; /* Takes up available space */
-  overflow: hidden; /* Prevents overflow if needed */
+.nav-item {
+  position: relative;
 }
 
-.page-background::before {
-  content: "";
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  transition: transform 0.18s ease;
+}
+
+.nav-link span {
+  display: block;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-default {
+  opacity: 1;
+}
+
+.nav-ipa {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+}
+
+.nav-link:hover .nav-default,
+.nav-link:focus-visible .nav-default {
+  opacity: 0;
+  transform: translateY(-3px);
+}
+
+.nav-link:hover .nav-ipa,
+.nav-link:focus-visible .nav-ipa {
+  opacity: 1;
+}
+
+/* HERO ROW */
+
+.hero-wrapper {
+  position: relative;
+  z-index: 15;
   width: 100%;
-  height: 100%;
-  background-image: url('#{asset_path('porphyry.jpg')}');
-  background-size: cover; /* Adjusts the size of the background image */
-  background-position: center; /* Centers the background image */
-  background-attachment: fixed; /* Keeps the background image fixed while scrolling */
-  opacity: 0.4; /* Adjusts the opacity of the background image */
-  z-index: 1; /* Places the overlay above the background image but below other content */
 }
 
-.page-background > * {
-  position: relative; /* Ensures that the content within the body is above the overlay */
-  z-index: 2; /* Places the content above the overlay */
-}
-
-/* Main container for content */
-.main-container {
-  max-width: 601px; /* Adjust as needed */
-  margin: 0 auto; /* Centers the container */
-  padding: 10px;
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  flex: 1; /* Takes up available space between header and footer */
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-}
-
-/* Header Styles */
-.site-header {
-  background-color: black;
-  color: white;
-  padding: 1rem;
-  width: 100%; /* Full width */
-}
-
-/* Navigation Link Styles */
-.nav-link {
-  color: white !important;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.nav-link:hover {
-  color: inherit !important;
-  font-weight: normal;
-  font-style: italic;
-}
-
-/* Title Styles */
-.page-title {
-  margin-bottom: 10px; /* Space between title and content box */
-  font-size: 32px; /* Adjust font size as needed */
-  color: black; /* Adjust text color if needed */
-  text-align: center; /* Center the title text */
-}
-
-/* Content Box Styles */
-.content-box {
-  background-color: rgba(33, 33, 33, 0.15);
-  border: 1px solid black;
-  width: 100%; /* Full width of the container */
-  max-width: 600px; /* Fixed max-width */
-  min-height: 300px; /* Minimum height for better visibility on small screens */
-  max-height: 400px; /* Maximum height */
-  margin: 0 auto; /* Center the box horizontally */
-  overflow-y: auto; /* Allows scrolling within the content box */
-  text-align: left;
-  padding: 10px;
-}
-
-/* Content Box Image Styles */
-.content-box img {
-  display: block; /* Treats the image as a block element */
-  margin: 0 auto; /* Centers the image horizontally */
-  border: 1px solid rgb(114, 109, 109);
-}
-
-/* Content Box Paragraph Styles */
-.content-box p {
-  font-size: 14px; /* Set font size for paragraphs */
-  font-weight: normal; /* Set font weight to regular */
-  color: black; /* Set text color to black */
-}
-
-/* Content Box Link Styles */
-.content-box a {
-  font-weight: bold; /* Make links bold */
-  text-decoration: underline; /* Underline links */
-  color: black; /* Set link color to black */
-}
-
-.content-box a:hover {
-  color: #333; /* Optional: Slightly lighter black on hover for better visibility */
-}
-
-/* Styles for unordered lists within the content box */
-.content-box ul {
-  list-style-type: disc; /* Style for list bullets */
-  padding-left: 13px; /* Space between the bullets and the list items */
-  margin-bottom: 10px; /* Space below the list */
-}
-
-.content-box li {
-  font-size: 14px; /* Set font size for list items */
-  color: black; /* Set text color to black */
-  margin-bottom: 10px; /* Space between list items */
-  line-height: 1.5; /* Increase line height for better readability */
-}
-
-/* Footer Styles */
-.site-footer {
-  background-color: black;
-  color: white;
-  padding: 1rem;
-  text-align: center; /* Center the text */
-  width: 100%; /* Full width */
-}
-
-/* Fixed Footer Styles */
-.footer {
-  background-color: rgba(33, 33, 33, 0.15); /* Same background as header */
-  border-top: 1px solid black; /* Same border style as header */
-  text-align: center; /* Center text horizontally */
-  padding: 10px 0; /* Add some padding */
+.hero-intro {
   position: fixed;
-  bottom: 0;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: nowrap;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.hero-photo,
+.about-section {
+  position: relative;
+  z-index: 15;
+}
+
+.hero-text-anchor {
+    position: relative;
+  margin-left: -30px;
+}
+
+/* PHOTO */
+
+.hero-photo {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 1.6s ease, transform 1.6s ease;
+  flex-shrink: 0;
+}
+
+.hero-photo.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-photo img {
+  width: 22vw;
+  max-width: 320px;
+  min-width: 160px;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+/* HI I'M MEL */
+
+.hero-text-anchor {
+  position: relative;
+  min-width: 260px;
+}
+
+.hero-text-placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: clamp(56px, 8vw, 180px);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero-text-placeholder div {
+  display: block;
+}
+
+/* ABOUT */
+
+.about-section {
+  max-width: 420px;
+  flex: 1 1 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// .about-section {
+//   max-width: 420px;
+//   flex: 1 1 300px;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+.about-section p {
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  line-height: 1.7;
+  color: #23232b;
+  margin: 0 0 1rem 0;
+}
+
+.about-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 18px 20px 0 20px;
+  }
+
+  .nav {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+.hero-intro {
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  bottom: 12%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2rem;
+  max-width: 1200px;
   width: 100%;
+
+  z-index: 15;
+  pointer-events: none;
 }
 
-.footer-text {
-  font-size: 10px; /* Make text smaller */
-  color: rgb(29, 17, 17); /* Text color */
-  margin: 0; /* Remove default margins */
-}
+  .about-section {
+    width: auto;
+    max-width: 90vw;
+    min-width: 0;
+    text-align: center;
+  }
 
-/* Button Styles*/
-/* Custom primary button color */
-.btn-primary {
-  background-color: #a0578d;
-  border-color: #a0578d;
-}
+  .hero-photo img {
+    width: 60vw;
+    max-width: 260px;
+    min-width: 140px;
+  }
 
-.btn-primary:hover {
-  background-color: #c88db8;
-  border-color: #c88db8;
-}
-
-/* Custom secondary button color */
-.btn-secondary {
-  background-color: #c88db8;
-  border-color: #c88db8;
-}
-
-.btn-secondary:hover {
-  background-color: #a0578d;
-  border-color: #a0578d;
+  .hero-text-placeholder {
+    font-size: clamp(56px, 14vw, 110px);
+  }
 }

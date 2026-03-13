@@ -10,6 +10,8 @@ class Job < ApplicationRecord
   end
 
   def formatted_end_date
+    return "Present" if end_date.blank?
+
     end_date.strftime('%B %Y')
   end
 end

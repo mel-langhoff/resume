@@ -2,6 +2,12 @@ require 'yaml'
 
 # jobs
 
+
+puts "Clearing jobs..."
+Job.destroy_all
+
+puts "Creating jobs..."
+
 mountainview = Job.create!(
   title: "Technical Project Management Consultant",
   company: "Mountainview Consulting",
@@ -144,8 +150,13 @@ brittania = Job.create!(
     "Evaluated student progress and adapted instruction to support continuous improvement."
   ]
 )
-
+puts "Done!"
 # projects
+
+puts "Clearing projects..."
+Project.destroy_all
+
+puts "Creating projects..."
 
 portfolio = Project.create!(
   title: "Personal Portfolio",
@@ -153,7 +164,7 @@ portfolio = Project.create!(
   git_repo: "https://github.com/mel-langhoff/resume",
   demo_link: "https://www.mel-langhoff.com",
   tech: "Ruby on Rails, Ruby, SQL, ActiveRecord, REST APIs, RSpec, Postman, HTML, CSS, Bootstrap, Heroku",
-  type: "Rails"
+  project_type: "Rails"
 )
 
 coolio_toolios = Project.create!(
@@ -162,5 +173,7 @@ coolio_toolios = Project.create!(
   git_repo: "https://github.com/mel-langhoff/coolio_toolios",
   demo_link: nil,
   tech: "Ruby on Rails, Ruby, Nokogiri, OpenAI API, REST APIs, ActiveRecord, HTML, CSS, Bootstrap, RSpec, Postman, CI/CD",
-  type: "Rails"
+  project_type: "Rails"
 )
+
+puts "Done!"
