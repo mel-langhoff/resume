@@ -70,7 +70,8 @@ document.addEventListener("turbo:load", () => {
 
     offCtx.font = `900 ${fontSize}px Arial`;
     offCtx.fillText("HI :)", x, y);
-    offCtx.fillText("I'M MEL", x, y + lineHeight);
+offCtx.fillText("I'M", x, y + lineHeight);
+offCtx.fillText("MEL", x, y + lineHeight * 2);
 
     const imageData = offCtx.getImageData(0, 0, offscreen.width, offscreen.height).data;
     const gap = 8;
@@ -150,7 +151,7 @@ document.addEventListener("turbo:load", () => {
       ctx.save();
       ctx.font = `900 ${this.size}px Arial`;
       ctx.fillStyle = this.color;
-      ctx.textAlign = "center";
+      ctx.textAlign = "right";
       ctx.textBaseline = "middle";
       ctx.fillText(this.char, this.x, this.y);
       ctx.restore();
