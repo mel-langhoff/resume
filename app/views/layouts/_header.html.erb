@@ -1,7 +1,6 @@
 <header class="site-header">
   <nav>
     <ul class="nav">
-
       <li class="nav-item">
         <%= link_to root_path, class: "nav-link" do %>
           <span class="nav-default">Home</span>
@@ -38,19 +37,22 @@
       </li>
 
       <li class="nav-item">
-        <%= link_to "https://github.com/mel-langhoff", target: "_blank", class: "nav-link" do %>
+        <%= link_to "https://github.com/mel-langhoff", target: "_blank", rel: "noopener", class: "nav-link" do %>
           <span class="nav-default">Github</span>
           <span class="nav-ipa">/ˈɡɪtˌhʌb/</span>
         <% end %>
       </li>
 
       <li class="nav-item">
-        <%= link_to "https://www.linkedin.com/in/melissalanghoff/", target: "_blank", class: "nav-link" do %>
+        <%= link_to "https://www.linkedin.com/in/melissalanghoff/", target: "_blank", rel: "noopener", class: "nav-link" do %>
           <span class="nav-default">LinkedIn</span>
           <span class="nav-ipa">/lɪŋktˈɪn/</span>
         <% end %>
       </li>
-
+      
+      
+<div class="hex-deco one" aria-hidden="true"></div>
+<div class="hex-deco two" aria-hidden="true"></div>
     </ul>
   </nav>
 </header>

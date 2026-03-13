@@ -1,5 +1,5 @@
-import "@hotwired/turbo-rails"
-import "controllers"
+import "@hotwired/turbo-rails";
+import "controllers";
 
 document.addEventListener("turbo:load", () => {
   const canvas = document.getElementById("ipaCanvas");
@@ -49,7 +49,6 @@ document.addEventListener("turbo:load", () => {
 
     const textAnchor = document.querySelector(".hero-text-anchor");
     const placeholder = document.querySelector(".hero-text-placeholder");
-
     if (!textAnchor || !placeholder) return;
 
     const offscreen = document.createElement("canvas");
@@ -64,16 +63,13 @@ document.addEventListener("turbo:load", () => {
 
     const rect = textAnchor.getBoundingClientRect();
     const style = window.getComputedStyle(placeholder);
-
     const x = rect.left;
     const y = rect.top;
-
     const fontSize = parseFloat(style.fontSize);
     const lineHeight = fontSize * 0.9;
 
     offCtx.font = `900 ${fontSize}px Arial`;
-
-    offCtx.fillText("HI", x, y);
+    offCtx.fillText("HI :)", x, y);
     offCtx.fillText("I'M MEL", x, y + lineHeight);
 
     const imageData = offCtx.getImageData(0, 0, offscreen.width, offscreen.height).data;
@@ -114,13 +110,10 @@ document.addEventListener("turbo:load", () => {
       this.target = target;
       this.char = ipaChars[Math.floor(Math.random() * ipaChars.length)];
       this.size = Math.random() * 5 + 17;
-
       this.x = Math.random() * canvas.width;
       this.y = -Math.random() * canvas.height;
-
       this.vy = Math.random() * 1.4 + 2.6;
       this.vx = (Math.random() - 0.5) * 0.5;
-
       this.locked = false;
       this.color = "#333333";
     }
@@ -176,10 +169,8 @@ document.addEventListener("turbo:load", () => {
       this.y = -Math.random() * canvas.height;
       this.vy = Math.random() * 1.3 + 1.4;
       this.vx = (Math.random() - 0.5) * 0.18;
-
       this.baseOpacity = Math.random() * 0.16 + 0.07;
       this.opacity = this.baseOpacity;
-
       this.fadeSpeed = Math.random() * 0.01 + 0.008;
       this.active = true;
     }
@@ -204,7 +195,6 @@ document.addEventListener("turbo:load", () => {
         }
       } else {
         this.opacity -= this.fadeSpeed;
-
         if (this.opacity <= 0) {
           this.active = false;
         }
@@ -226,7 +216,7 @@ document.addEventListener("turbo:load", () => {
   }
 
   function buildParticles() {
-    particles = textTargets.map(target => new Particle(target));
+    particles = textTargets.map((target) => new Particle(target));
   }
 
   function buildAccentRain() {
@@ -237,22 +227,22 @@ document.addEventListener("turbo:load", () => {
   }
 
   function allParticlesLocked() {
-    return particles.length && particles.every(p => p.locked);
+    return particles.length > 0 && particles.every((p) => p.locked);
   }
 
   function accentRainGone() {
-    return accentRain.every(p => !p.active);
+    return accentRain.every((p) => !p.active);
   }
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    accentRain.forEach(p => {
+    accentRain.forEach((p) => {
       p.update();
       p.draw();
     });
 
-    particles.forEach(p => {
+    particles.forEach((p) => {
       p.update();
       p.draw();
     });
