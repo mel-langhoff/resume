@@ -193,4 +193,14 @@ professional_api = Project.create!(
   project_type: "Rails"
 )
 
+top_shelf = Project.create!(
+  title: "Top Shelf Roles,
+  description: "Top Shelf Roles is a Ruby on Rails application that aggregates and ranks curated job postings into a searchable dashboard so users can quickly find the most relevant opportunities without manually searching multiple job boards. Built with Ruby on Rails, PostgreSQL, ActiveRecord, Bootstrap, HTML, CSS, Git, GitHub, and Heroku, it uses web scraping and AI scoring logic to collect job data, rank listings, and filter results by title, company, and location.",
+  git_repo: "https://github.com/mel-langhoff/topshelfroles",
+  demo_link: "https://topshelf.mel-langhoff.com/",
+  tech: "Ruby, Ruby on Rails, PostgreSQL, REST APIs, ActiveRecord, JSON, RSpec, Git",
+  project_type: "Rails"
+)
+
+
 puts "Done!"
