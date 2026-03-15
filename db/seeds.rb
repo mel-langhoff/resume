@@ -166,6 +166,15 @@ portfolio = Project.create!(
   project_type: "Rails"
 )
 
+top_shelf = Project.create!(
+  title: "Top Shelf Roles"
+  description: "Top Shelf Roles is a Ruby on Rails application that aggregates and ranks curated job postings into a searchable dashboard so users can quickly find the most relevant opportunities without manually searching multiple job boards. Built with Ruby on Rails, PostgreSQL, ActiveRecord, Bootstrap, HTML, CSS, Git, GitHub, and Heroku, it uses web scraping and AI scoring logic to collect job data, rank listings, and filter results by title, company, and location.",
+  git_repo: "https://github.com/mel-langhoff/topshelfroles",
+  demo_link: "https://topshelf.mel-langhoff.com/",
+  tech: "Ruby, Ruby on Rails, PostgreSQL, REST APIs, JSON, RSpec, Git",
+  project_type: "Rails"
+)
+
 coolio_toolios = Project.create!(
   title: "Coolio Toolios",
   description: "Developed a Ruby on Rails automation platform that scrapes job postings and generates tailored resumes using Nokogiri web scraping, OpenAI API integrations, and RESTful APIs. Designed microservices-style components for content generation and PDF export, implemented relational data models with ActiveRecord, and built the interface using HTML, CSS, Bootstrap, and Ruby gems. Implemented automated testing with RSpec, integrated API testing with Postman, and configured CI/CD workflows.",
@@ -193,14 +202,7 @@ professional_api = Project.create!(
   project_type: "Rails"
 )
 
-top_shelf = Project.create!(
-  title: "Top Shelf Roles,
-  description: "Top Shelf Roles is a Ruby on Rails application that aggregates and ranks curated job postings into a searchable dashboard so users can quickly find the most relevant opportunities without manually searching multiple job boards. Built with Ruby on Rails, PostgreSQL, ActiveRecord, Bootstrap, HTML, CSS, Git, GitHub, and Heroku, it uses web scraping and AI scoring logic to collect job data, rank listings, and filter results by title, company, and location.",
-  git_repo: "https://github.com/mel-langhoff/topshelfroles",
-  demo_link: "https://topshelf.mel-langhoff.com/",
-  tech: "Ruby, Ruby on Rails, PostgreSQL, REST APIs, ActiveRecord, JSON, RSpec, Git",
-  project_type: "Rails"
-)
+
 
 
 puts "Done!"
