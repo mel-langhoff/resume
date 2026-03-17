@@ -1,58 +1,31 @@
-<header class="site-header">
-  <nav>
-    <ul class="nav">
-      <li class="nav-item">
-        <%= link_to root_path, class: "nav-link" do %>
-          <span class="nav-default">home</span>
-          <span class="nav-ipa">/hoʊm/</span>
-        <% end %>
-      </li>
+<div class="vending-machine">
 
-      <li class="nav-item">
-        <%= link_to bio_path, class: "nav-link" do %>
-          <span class="nav-default">about</span>
-          <span class="nav-ipa">/əˈbaʊt/</span>
-        <% end %>
-      </li>
+  <!-- SLOT -->
+  <div class="slot"></div>
 
-      <li class="nav-item">
-        <%= link_to "/resume", class: "nav-link" do %>
-          <span class="nav-default">resume</span>
-          <span class="nav-ipa">/ˈrɛzəˌmeɪ/</span>
-        <% end %>
-      </li>
+  <!-- BOTTLES -->
+  <div class="bottle-row">
 
-      <li class="nav-item">
-        <%= link_to "/projects", class: "nav-link" do %>
-          <span class="nav-default">projects</span>
-          <span class="nav-ipa">/ˈprɑdʒɛkts/</span>
-        <% end %>
-      </li>
+    <%= link_to root_path, class: "bottle-link" do %>
+      <%= image_tag "home.png", class: "bottle" %>
+    <% end %>
 
-      <li class="nav-item">
-        <%= link_to "/contact", class: "nav-link" do %>
-          <span class="nav-default">contact</span>
-          <span class="nav-ipa">/ˈkɑnˌtækt/</span>
-        <% end %>
-      </li>
+    <%= link_to bio_path, class: "bottle-link" do %>
+      <%= image_tag "about.png", class: "bottle" %>
+    <% end %>
 
-      <li class="nav-item">
-        <%= link_to "https://github.com/mel-langhoff", target: "_blank", rel: "noopener", class: "nav-link" do %>
-          <span class="nav-default">github</span>
-          <span class="nav-ipa">/ˈɡɪtˌhʌb/</span>
-        <% end %>
-      </li>
+    <%= link_to resume_path, class: "bottle-link" do %>
+      <%= image_tag "resume.png", class: "bottle" %>
+    <% end %>
 
-      <li class="nav-item">
-        <%= link_to "https://www.linkedin.com/in/melissalanghoff/", target: "_blank", rel: "noopener", class: "nav-link" do %>
-          <span class="nav-default">,linkedin</span>
-          <span class="nav-ipa">/lɪŋktˈɪn/</span>
-        <% end %>
-      </li>
-      
-      
-<div class="hex-deco one" aria-hidden="true"></div>
-<div class="hex-deco two" aria-hidden="true"></div>
-    </ul>
-  </nav>
-</header>
+    <%= link_to projects_path, class: "bottle-link" do %>
+      <%= image_tag "projects.png", class: "bottle" %>
+    <% end %>
+
+    <%= link_to "mailto:hello@mel-langhoff.com", class: "bottle-link" do %>
+      <%= image_tag "contact.png", class: "bottle" %>
+    <% end %>
+
+  </div>
+
+</div>

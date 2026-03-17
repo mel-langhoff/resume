@@ -1,299 +1,111 @@
+/* RESET */
 body {
   margin: 0;
   background: #F6D6E3;
+  font-family: Arial, sans-serif;
 }
 
+/* CANVAS (DO NOT BLOCK CLICKS) */
 #ipaCanvas {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* IMPORTANT */
   z-index: 10;
 }
 
-main,
-.content,
-.page-content,
-.container {
+/* =========================
+   VENDING MACHINE BACKGROUND
+========================= */
+
+.vending-machine {
   position: relative;
-  z-index: 1;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("/assets/vending_machine.png");
+  background-repeat: no-repeat;
+
+  background-size: contain;   /* 👈 THIS is the correct one */
+  background-position: center;
+
+  background-color: #000;     /* fills empty space nicely */
 }
 
-/* TOP NAV */
+/* =========================
+   BOTTLES
+========================= */
 
-.site-header {
-  position: relative;
-  width: 100%;
-  padding: 24px 40px 0 40px;
-  z-index: 30;
-}
-
-.site-header nav {
-  width: 100%;
-}
-
-.nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.nav-link {
-  position: relative;
-  display: inline-block;
-  color: #1a73e8;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  transition: transform 0.18s ease;
-}
-
-.nav-link span {
-  display: block;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.nav-default {
-  opacity: 1;
-}
-
-.nav-ipa {
+.bottle-row {
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
 
-.nav-link:hover .nav-default,
-.nav-link:focus-visible .nav-default {
-  opacity: 0;
-  transform: translateY(-3px);
-}
-
-.nav-link:hover .nav-ipa,
-.nav-link:focus-visible .nav-ipa {
-  opacity: 1;
-}
-
-/* HERO ROW */
-
-.hero-wrapper {
-  position: relative;
-  z-index: 15;
-  width: 100%;
-}
-
-.hero-intro {
-  position: fixed;
+  top: 25%;          /* 🔥 instead of 120px */
   left: 50%;
-  bottom: 10%;
   transform: translateX(-50%);
+
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: nowrap;
-  z-index: 15;
-  pointer-events: none;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  z-index: 20;
 }
 
-.hero-photo,
-.about-section {
-  position: relative;
-  z-index: 15;
+.bottle {
+  width: 70px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-.hero-text-anchor {
-  position: relative;
-  margin-left: -30px;
+.bottle:hover {
+  transform: scale(1.1);
 }
 
-/* PHOTO */
-
-.hero-photo {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 1.6s ease, transform 1.0s ease;
-  flex-shrink: 0;
+/* DROP */
+.bottle.fall {
+  animation: drop 0.7s ease forwards;
 }
 
-.hero-photo.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes drop {
+  0% { transform: translateY(0); }
+  70% { transform: translateY(300px); }
+  85% { transform: translateY(280px); }
+  100% { transform: translateY(300px); }
 }
 
-.hero-photo img {
-  width: 22vw;
-  max-width: 320px;
-  min-width: 160px;
+/* SHAKE */
+.bottle.shake {
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(5px); }
+  50% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.bottle {
+  width: 17%;   /* 🔥 scales with vending machine */
   height: auto;
-  border-radius: 14px;
-  display: block;
 }
 
-/* HI I'M MEL */
+/* 🔥 POSITION EACH ONE */
 
-.hero-text-anchor {
-  position: relative;
-  min-width: 260px;
+.bottle-home {
+  top: 28%;
+  left: 30%;
 }
 
-.hero-text-placeholder {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  font-size: clamp(56px, 8vw, 180px);
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-  color: transparent;
-  user-select: none;
-  pointer-events: none;
-}
-
-.hero-text-placeholder div {
-  display: block;
-}
-
-/* ABOUT */
-
-.about-section {
-  position: absolute;
-  top: 20%;          /* 👈 FORCE IT INTO VIEW */
+.bottle-about {
+  top: 28%;
   left: 50%;
-  transform: 1;
-
-  width: 420px;
-  max-width: 90vw;
-
-  z-index: 50;       /* 👈 ABOVE EVERYTHING */
-
-  background: rgba(255,255,255,0.6); /* TEMP DEBUG */
-  padding: 20px;
-  border-radius: 12px;
 }
 
-/* 👇 THIS GETS ADDED BY JS */
-.about-section.show {
-  opacity: 1;
-  transform: translateY(0);
+.bottle-resume {
+  top: 28%;
+  left: 70%;
 }
-
-/* paragraph styling */
-
-.about-section p {
-  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
-  line-height: 1.7;
-  color: #23232b;
-  margin: 0 0 1rem 0;
-}
-
-.about-section p:last-child {
-  margin-bottom: 0;
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-  .site-header {
-    padding: 18px 20px 0 20px;
-  }
-
-  .nav {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .hero-intro {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 12%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    max-width: 1200px;
-    width: 100%;
-    z-index: 15;
-    pointer-events: none;
-  }
-
-  .about-section {
-    width: auto;
-    max-width: 90vw;
-    min-width: 0;
-    text-align: center;
-  }
-
-  .hero-photo img {
-    width: 60vw;
-    max-width: 260px;
-    min-width: 140px;
-  }
-
-  .hero-text-placeholder {
-    font-size: clamp(56px, 14vw, 110px);
-  }
-}
-
-#aboutSection {
-  position: fixed;
-  top: 15%;
-  left: 35%;
-
-  width: 420px;
-  max-width: 90vw;
-
-  z-index: 50;
-
-  transform: translate(-50%, 10px);
-
-  opacity: 0;
-  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
-
-  /* 🚫 remove all box styling */
-  background: none;
-  box-shadow: none;
-  border: none;
-  padding: 0;
-}
-
-p {
-  max-width: 600px;
-}
-
-.main-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
-.content-box {
-  width: 100%;
-}
-
-/* optional polish */
-.content-box p {
-  line-height: 1.7;
-  font-size: 1.05rem;
-}
-
-// body {
-//   background-color: #F6D6E3;
-
-//   background-image: url('/assets/floral.png');
-//   background-repeat: repeat;     /* 👈 THIS is the magic */
-//   background-size: auto;         /* keeps original tile size */
-// }
