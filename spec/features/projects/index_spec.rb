@@ -42,7 +42,7 @@ RSpec.describe 'Resume Index Page', type: :feature do
     end
 
     within '#project-description-3' do
-      expect(page).to have_content("www.mel-langhoff.com")
+      expect(page).to have_content("Github")
     end
   end
 end

@@ -147,6 +147,8 @@ GEM
     launchy (3.0.1)
       addressable (~> 2.8)
       childprocess (~> 5.0)
+    letter_opener (1.10.0)
+      launchy (>= 2.2, < 4)
     logger (1.6.0)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -360,6 +362,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   launchy
+  letter_opener (~> 1.10)
   orderly
   pg (~> 1.1)
   pry

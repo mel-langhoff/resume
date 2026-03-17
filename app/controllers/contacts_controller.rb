@@ -1,16 +1,19 @@
-class ContactController < ApplicationController
+class ContactsController < ApplicationController
   def index
     @contact = Contact.new
   end
 
   def create
     @contact = Contact.new(contact_params)
+
     if @contact.save
-      flash[:success] = "Success!"
-      redirect_to new_contact_path
+      ContactMailer.contact_email(@contact).deliver_now
+
+      flash[:success] = "Message sent!"
+      redirect_to contact_path
     else
       flash[:error] = "Please retry :("
-      render :index
+      render :index, status: :unprocessable_entity
     end
   end
 
