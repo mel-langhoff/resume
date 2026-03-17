@@ -4,29 +4,33 @@
  */
 
 /* RESET */
-body {
+html, body {
   margin: 0;
+  height: 100%;
+  overflow: hidden;   /* no scrolling */
+  background: black;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  min-height: 100vh;
-  background: black;
 }
 
-/* MACHINE WRAPPER (controls size + responsiveness) */
+/* FULLSCREEN WRAPPER */
 .vending-machine {
-  position: relative;
-
-  width: 100%;
-  max-width: 700px;   /* 🔥 adjust if you want bigger/smaller */
+  position: fixed;   /* 🔥 locks to screen */
+  inset: 0;          /* top:0 left:0 right:0 bottom:0 */
 }
 
-/* IMAGE (THIS FIXES DRIFTING) */
+
+
+/* IMAGE shrinks to fit viewport */
 .machine-img {
-  width: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+
+  width: auto;
   height: auto;
+
   display: block;
 }
 
@@ -43,19 +47,12 @@ body {
 /* BUTTON HITBOXES */
 .machine-btn {
   position: absolute;
-  display: block;
 
-  width: 6%;
-  height: 12%;
-
-  background: rgba(255, 0, 0, 0.4); /* 🔥 DEBUG — remove later */
+  background: rgba(255, 0, 0, 0.4);
   border: 2px solid red;
 
   z-index: 9999;
   cursor: pointer;
-  text-decoration: none;
-
-  transition: transform 0.1s ease;
 }
 
 /* CLICK FEEL */
