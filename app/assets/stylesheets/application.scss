@@ -1,28 +1,48 @@
-/* RESET */
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+/* =========================
+   BASE RESET (COMBINED)
+========================= */
 html, body {
   margin: 0;
-  height: 100%;
-  overflow: hidden;
   background: black;
+  font-family: Georgia, serif;
+}
+
+/* ONLY HOME PAGE */
+body.full-screen {
+  height: 100vh;
+;
+}
+/* =========================
+   FULLSCREEN (HOME ONLY)
+========================= */
+.full-screen {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* WRAPPER */
+/* =========================
+   VENDING MACHINE (WORKING)
+========================= */
 .machine-wrapper {
   position: relative;
 }
 
-/* IMAGE */
 .machine-img {
   max-width: 100vw;
   max-height: 100vh;
   display: block;
 }
 
-/* OVERLAY */
 .machine-ui {
   position: absolute;
   inset: 0;
@@ -36,27 +56,26 @@ html, body {
   display: block;
   cursor: pointer;
 
-  background: rgba(255, 0, 0, 0.35); /* DEBUG */
+  background: rgba(255, 0, 0, 0.35);
   border: 2px solid red;
 
   z-index: 1000;
 }
 
-/* POSITIONS */
-
-/* TOP ROW */
+/* BUTTON POSITIONS (RESTORED) */
 .machine-btn[data-key="home"]     { top: 31%; left: 30.5%; }
 .machine-btn[data-key="about"]    { top: 31%; left: 38%; }
 .machine-btn[data-key="resume"]   { top: 31%; left: 53.5%; }
 .machine-btn[data-key="projects"] { top: 31%; left: 61.5%; }
 
-/* BOTTOM ROW */
 .machine-btn[data-key="contact"]  { top: 50%; left: 30.5%; }
 .machine-btn[data-key="github"]   { top: 50%; left: 38.5%; }
 .machine-btn[data-key="linkedin"] { top: 50%; left: 53.5%; }
 .machine-btn[data-key="topshelf"] { top: 50%; left: 61.5%; }
 
-/* BOTTLE LAYER */
+/* =========================
+   BOTTLE LAYER
+========================= */
 #bottle-layer {
   position: absolute;
   inset: 0;
@@ -70,25 +89,91 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-// /* DROP */
-// .falling-bottle.drop {
-//   animation: dropAnim 0.7s ease forwards;
-// }
+/* =========================
+   NORMAL PAGES (FIXED)
+========================= */
 
-// /* MOVE TO SLOT */
-// .falling-bottle.to-slot {
-//   transition: all 0.4s cubic-bezier(.2,1.2,.4,1);
-// }
-
-// /* POP */
-// .falling-bottle.pop {
-//   transform: translate(-50%, -50%) scale(1.2);
-// }
-
-/* KEYFRAMES */
-@keyframes dropAnim {
-  0%   { transform: translate(-50%, -50%) rotate(0deg); }
-  70%  { transform: translate(-50%, 200%) rotate(8deg); }
-  85%  { transform: translate(-50%, 180%) rotate(-5deg); }
-  100% { transform: translate(-50%, 200%) rotate(0deg); }
+/* 🔥 KEY FIX: allow scrolling on non-home pages */
+body:not(.full-screen) {
+  display: block;
+  overflow: auto;
 }
+
+/* CONTENT LAYOUT */
+.main-container {
+  min-height: 100vh;
+  padding: 80px 20px;
+}
+
+.content-box {
+  max-width: 1000px;
+  width: 90%;
+  margin: 40px auto;
+}
+
+/* =========================
+   CHIP BAG FULLSCREEN (FIXED)
+========================= */
+
+.chip-wrapper {
+  position: fixed;   /* 🔥 KEY CHANGE */
+  inset: 0;          /* fills entire screen */
+}
+
+.chip-img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;   /* 🔥 THIS is what you want */
+  display: block;
+}
+
+/* TEXTBOX */
+.chip-textbox {
+  position: absolute;
+
+  width: 25%;
+  height: 40%;
+
+  padding: 10px;
+
+  overflow: hidden;
+
+  overflow-y: auto;
+
+  font-size: clamp(12px, 1.1vw, 16px);
+  line-height: 1.3;
+
+  top: 42%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+}
+/* =========================
+   TYPOGRAPHY
+========================= */
+.page-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 32px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+/* =========================
+   FORMS
+========================= */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+.btn {
+  background: black;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+}
+

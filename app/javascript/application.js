@@ -104,3 +104,25 @@ if (!window.vendingInitialized) {
     }, 2100)
   })
 }
+
+document.addEventListener("turbo:load", () => {
+  const box = document.querySelector(".chip-textbox")
+  if (!box) return
+
+  function fitText() {
+    let size = 22
+    box.style.fontSize = size + "px"
+
+    while (
+      (box.scrollHeight > box.clientHeight ||
+       box.scrollWidth > box.clientWidth) &&
+      size > 10
+    ) {
+      size--
+      box.style.fontSize = size + "px"
+    }
+  }
+
+  fitText()
+  window.addEventListener("resize", fitText)
+})

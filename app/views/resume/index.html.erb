@@ -1,16 +1,39 @@
 <% content_for :page_title do %>
-  <h1 class="page-title">Resume</h1>
+  Resume
 <% end %>
 
-<% @jobs.each do |job| %>
-  <div id="job-description-<%= job.id %>">
-    <p><strong><%= job.company %></strong> | <%= job.location %>, <%= job.formatted_start_date %> - <%= job.formatted_end_date %></p>
-    <p><%= job.title %></p>
-    <p><em><%= job.description %></em></p>
-    <ul>
-      <% job.responsibilities.each do |resp| %>
-        <li><%= resp %></li>
+<div class="chip-layout">
+
+  <div class="chip-bg"></div>
+
+  <div class="chip-content">
+
+    <div class="chip-textbox">
+
+      <% @jobs.each do |job| %>
+        <div class="job-card">
+
+          <p class="job-header">
+            <strong><%= job.company %></strong> |
+            <%= job.location %> |
+            <%= job.formatted_start_date %> - <%= job.formatted_end_date %>
+          </p>
+
+          <p class="job-title"><%= job.title %></p>
+
+          <p class="job-desc"><%= job.description %></p>
+
+          <ul>
+            <% job.responsibilities.each do |resp| %>
+              <li><%= resp %></li>
+            <% end %>
+          </ul>
+
+        </div>
       <% end %>
-    </ul>
+
+    </div>
+
   </div>
-<% end %>
+
+</div>
