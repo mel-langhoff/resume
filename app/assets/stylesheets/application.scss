@@ -330,3 +330,38 @@ main,
 .snack {
   background: rgba(255, 0, 0, 0.2);
 }
+
+/* LABEL PAGE BACKGROUND */
+
+.label-page {
+  width: 100%;
+  height: 100vh;
+
+  background-image: url('/assets/nutrition_label.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TEXT BOX INSIDE LABEL */
+
+.label-content {
+  position: absolute;
+
+  /* 🔧 adjust these if needed */
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 320px;
+  height: 220px;
+
+  overflow-y: auto;
+
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
