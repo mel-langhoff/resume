@@ -261,7 +261,7 @@ document.addEventListener("turbo:load", () => {
       if (about) {
         setTimeout(() => {
           about.classList.add("show");
-        }, 300);
+        }, 250);
       }
     }
 

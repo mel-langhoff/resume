@@ -125,7 +125,7 @@ main,
 .hero-photo {
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity 1.6s ease, transform 1.6s ease;
+  transition: opacity 1.6s ease, transform 1.0s ease;
   flex-shrink: 0;
 }
 
@@ -171,7 +171,7 @@ main,
   position: absolute;
   top: 20%;          /* 👈 FORCE IT INTO VIEW */
   left: 50%;
-  transform: translateX(-50%);
+  transform: 1;
 
   width: 420px;
   max-width: 90vw;
@@ -261,7 +261,7 @@ main,
   transform: translate(-50%, 10px);
 
   opacity: 0;
-  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
 
   /* 🚫 remove all box styling */
   background: none;
@@ -269,3 +269,31 @@ main,
   border: none;
   padding: 0;
 }
+
+p {
+  max-width: 600px;
+}
+
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.content-box {
+  width: 100%;
+}
+
+/* optional polish */
+.content-box p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+// body {
+//   background-color: #F6D6E3;
+
+//   background-image: url('/assets/floral.png');
+//   background-repeat: repeat;     /* 👈 THIS is the magic */
+//   background-size: auto;         /* keeps original tile size */
+// }
