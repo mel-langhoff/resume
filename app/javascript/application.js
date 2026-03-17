@@ -1,74 +1,106 @@
 import "@hotwired/turbo-rails"
 import "controllers"
-document.addEventListener("turbo:load", () => {
-  const img = document.querySelector(".machine-img")
-  const buttons = document.querySelectorAll(".machine-btn")
-  const layer = document.getElementById("bottle-layer")
 
-  if (!img || !layer) return
+if (!window.vendingInitialized) {
+  window.vendingInitialized = true
 
-  // 🔥 SINGLE SOURCE OF TRUTH
-const config = {
-  home:     { x: 0.5, y: 0.30, img: "home.png" },
-  about:    { x: 0.5, y: 0.38, img: "about.png" },
-  resume:   { x: 0.5, y: 0.46, img: "resume.png" },
-  projects: { x: 0.5, y: 0.54, img: "projects.png" },
+  document.addEventListener("click", function(e) {
+    const btn = e.target.closest(".machine-btn")
+    if (!btn) return
 
-  contact:  { x: 0.5, y: 0.62, img: "contact.png" },
-  github:   { x: 0.5, y: 0.70, img: "github.png" },
-  linkedin: { x: 0.5, y: 0.78, img: "linkedin.png" },
-  topshelf: { x: 0.5, y: 0.86, img: "topshelf.png" }
-}
+    e.preventDefault()
+    e.stopPropagation() // 🧨 stops double firing
 
-  // function positionButtons() {
-  //   const rect = img.getBoundingClientRect()
+    const layer = document.getElementById("bottle-layer")
+    if (!layer) return
 
-  //   buttons.forEach(btn => {
-  //     const key = btn.dataset.key
-  //     const pos = config[key]
-  //     if (!pos) return
+    // 🧹 REMOVE ANY EXISTING BOTTLES (THIS FIXES YOUR BUG)
+    layer.innerHTML = ""
 
-  //     btn.style.left = `${rect.width * pos.x}px`
-  //     btn.style.top  = `${rect.height * pos.y}px`
-  //   })
-  // }
+    const config = {
+      home:     "home.png",
+      about:    "about.png",
+      resume:   "resume.png",
+      projects: "projects.png",
+      contact:  "contact.png",
+      github:   "github.png",
+      linkedin: "linkedin.png",
+      topshelf: "topshelf.png"
+    }
 
-  function dropBottle(btn, key, url) {
+    const key = btn.dataset.key
+    const url = btn.href
+    const imgName = config[key]
+
     const containerRect = layer.getBoundingClientRect()
     const rect = btn.getBoundingClientRect()
-    const cfg = config[key]
 
     const bottle = document.createElement("img")
-    bottle.src = `/assets/${cfg.img}`
+    bottle.src = `/assets/${imgName}`
     bottle.classList.add("falling-bottle")
 
-    // 🔥 SAME math as buttons → PERFECT alignment
-    bottle.style.left = `${rect.left - containerRect.left + rect.width / 2}px`
-bottle.style.top  = `${rect.top  - containerRect.top  + rect.height / 2 + 40}px`
+    const startX = rect.left - containerRect.left + rect.width / 2
+    const startY = rect.top - containerRect.top + rect.height / 2
+
+    const slotX = containerRect.width / 2
+    const slotY = containerRect.height * 0.78
+    const floorY = containerRect.height * 0.88
+
+    const direction = Math.random() > 0.5 ? 1 : -1
+    const slideX = direction * (Math.random() * 200 + 100)
+    const spin = Math.random() * 360
+
+    bottle.style.left = `${startX}px`
+    bottle.style.top  = `${startY}px`
+    bottle.style.transform = "translate(-50%, -50%) scale(0.6)"
+
     layer.appendChild(bottle)
 
-    void bottle.offsetWidth
-    bottle.classList.add("animate")
+    // MOVE TO SLOT
+    requestAnimationFrame(() => {
+      bottle.style.transition = "all 0.3s ease"
+      bottle.style.left = `${slotX}px`
+      bottle.style.top  = `${slotY}px`
+    })
 
+    // 🚀 FLY OUT
+    setTimeout(() => {
+      bottle.style.transition = "all 0.4s cubic-bezier(.3,1.6,.5,1)"
+      bottle.style.transform = `
+        translate(-50%, -120%)
+        scale(1.3)
+        rotate(${spin}deg)
+      `
+    }, 300)
+
+    // DROP
+    setTimeout(() => {
+      bottle.style.transition = "all 0.4s cubic-bezier(.2,1,.3,1)"
+      bottle.style.top = `${floorY}px`
+      bottle.style.transform = `
+        translate(-50%, -50%)
+        scale(1)
+        rotate(${spin}deg)
+      `
+    }, 700)
+
+    // SLIDE
+    setTimeout(() => {
+      bottle.style.transition = "left 0.8s cubic-bezier(.1,.8,.2,1)"
+      bottle.style.left = `${slotX + slideX}px`
+    }, 1100)
+
+    // FINAL REST
+    setTimeout(() => {
+      bottle.style.transform = `
+        translate(-50%, -50%)
+        rotate(${90 * direction}deg)
+      `
+    }, 1700)
+
+    // NAVIGATE
     setTimeout(() => {
       window.location.href = url
-    }, 900)
-  }
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", function(e) {
-      e.preventDefault()
-
-      const key = this.dataset.key
-      const url = this.href
-
-      this.style.transform = "scale(0.9)"
-      setTimeout(() => this.style.transform = "scale(1)", 100)
-
-      dropBottle(this, key, url)
-    })
+    }, 2100)
   })
-
-  // positionButtons()
-  // window.addEventListener("resize", positionButtons)
-})
+}

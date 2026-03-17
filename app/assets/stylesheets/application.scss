@@ -28,9 +28,7 @@ html, body {
   inset: 0;
 }
 
-/* =========================
-   HITBOXES (VISIBLE)
-========================= */
+/* HITBOXES */
 .machine-btn {
   position: absolute;
   width: 6%;
@@ -38,15 +36,13 @@ html, body {
   display: block;
   cursor: pointer;
 
-  background: rgba(255, 0, 0, 0.35);
+  background: rgba(255, 0, 0, 0.35); /* DEBUG */
   border: 2px solid red;
 
   z-index: 1000;
 }
 
-/* =========================
-   BUTTON POSITIONS
-========================= */
+/* POSITIONS */
 
 /* TOP ROW */
 .machine-btn[data-key="home"]     { top: 31%; left: 30.5%; }
@@ -60,9 +56,7 @@ html, body {
 .machine-btn[data-key="linkedin"] { top: 50%; left: 53.5%; }
 .machine-btn[data-key="topshelf"] { top: 50%; left: 61.5%; }
 
-/* =========================
-   BOTTLE LAYER
-========================= */
+/* BOTTLE LAYER */
 #bottle-layer {
   position: absolute;
   inset: 0;
@@ -70,18 +64,29 @@ html, body {
   z-index: 999;
 }
 
-/* FALLING BOTTLE */
 .falling-bottle {
   position: absolute;
   width: 8%;
   transform: translate(-50%, -50%);
 }
 
-.falling-bottle.animate {
-  animation: dropBottle 0.9s ease forwards;
-}
+// /* DROP */
+// .falling-bottle.drop {
+//   animation: dropAnim 0.7s ease forwards;
+// }
 
-@keyframes dropBottle {
+// /* MOVE TO SLOT */
+// .falling-bottle.to-slot {
+//   transition: all 0.4s cubic-bezier(.2,1.2,.4,1);
+// }
+
+// /* POP */
+// .falling-bottle.pop {
+//   transform: translate(-50%, -50%) scale(1.2);
+// }
+
+/* KEYFRAMES */
+@keyframes dropAnim {
   0%   { transform: translate(-50%, -50%) rotate(0deg); }
   70%  { transform: translate(-50%, 200%) rotate(8deg); }
   85%  { transform: translate(-50%, 180%) rotate(-5deg); }
