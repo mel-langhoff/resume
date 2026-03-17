@@ -1,34 +1,44 @@
-<% content_for :page_title do %>
-  Projects
-<% end %>
+<% content_for :full_screen do %>
+<div class="chip-wrapper">
 
-<div class="content-box">
+  <%= image_tag "chips.png", class: "chip-img" %>
 
-  <div class="filter-bar">
-    <strong>Filter:</strong>
-    | <%= link_to 'All', projects_path(project_type: 'All') %> |
-    <% @types.each do |type| %>
-      <%= link_to type.capitalize, projects_path(project_type: type) %> |
-    <% end %>
-  </div>
-
-  <% @by_type.each do |project| %>
-    <div class="project-card">
-
-      <h2><%= project.title %></h2>
-
-      <p><%= project.description %></p>
-
-      <p class="tech">Tech: <%= project.tech %></p>
-
-      <div class="links">
-        <%= link_to 'GitHub', project.git_repo, target: '_blank' %>
-        <% if project.project_link? %>
-          | <%= link_to 'Demo', project.demo_link, target: '_blank' %>
-        <% end %>
-      </div>
-
-    </div>
+  <!-- 🔥 BACK BUTTON -->
+  <%= link_to root_path, class: "chip-back-btn" do %>
   <% end %>
 
+  <div class="chip-textbox">
+
+    <h2>Projects</h2>
+
+    <div class="filter-bar">
+      <strong>Filter:</strong>
+      | <%= link_to 'All', projects_path(project_type: 'All') %> |
+      <% @types.each do |type| %>
+        <%= link_to type.capitalize, projects_path(project_type: type) %> |
+      <% end %>
+    </div>
+
+    <% @by_type.each do |project| %>
+      <div class="project-card">
+
+        <h2><%= project.title %></h2>
+
+        <p><%= project.description %></p>
+
+        <p class="tech">Tech: <%= project.tech %></p>
+
+        <div class="links">
+          <%= link_to 'GitHub', project.git_repo, target: '_blank' %>
+          <% if project.project_link? %>
+            | <%= link_to 'Demo', project.demo_link, target: '_blank' %>
+          <% end %>
+        </div>
+
+      </div>
+    <% end %>
+
+  </div>
+
 </div>
+<% end %>

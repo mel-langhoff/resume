@@ -1,8 +1,11 @@
-
 <% content_for :full_screen do %>
 <div class="chip-wrapper">
 
   <%= image_tag "chips.png", class: "chip-img" %>
+
+  <!-- 🔥 BACK BUTTON HITBOX -->
+  <%= link_to root_path, class: "chip-back-btn" do %>
+  <% end %>
 
   <div class="chip-textbox">
 

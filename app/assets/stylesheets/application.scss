@@ -4,22 +4,21 @@
  */
 
 /* =========================
-   BASE RESET (COMBINED)
+   BASE RESET
 ========================= */
 html, body {
   margin: 0;
   background: black;
-  font-family: Georgia, serif;
+  font-family: "Inter", sans-serif;
 }
 
-/* ONLY HOME PAGE */
-body.full-screen {
-  height: 100vh;
-;
-}
 /* =========================
    FULLSCREEN (HOME ONLY)
 ========================= */
+body.full-screen {
+  height: 100vh;
+}
+
 .full-screen {
   position: fixed;
   inset: 0;
@@ -31,16 +30,16 @@ body.full-screen {
 }
 
 /* =========================
-   VENDING MACHINE (WORKING)
+   VENDING MACHINE
 ========================= */
 .machine-wrapper {
   position: relative;
 }
 
 .machine-img {
-  max-width: 100vw;
-  max-height: 100vh;
-  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .machine-ui {
@@ -48,30 +47,45 @@ body.full-screen {
   inset: 0;
 }
 
-/* HITBOXES */
-.machine-btn {
+/* =========================
+   HITBOX SYSTEM (FIXED 🔥)
+========================= */
+.machine-btn,
+.chip-back-btn {
   position: absolute;
-  width: 6%;
-  height: 12%;
-  display: block;
-  cursor: pointer;
 
+  /* 🔥 CENTER ANCHOR SYSTEM */
+  transform: translate(-50%, -50%);
+
+  cursor: pointer;
+  z-index: 1000;
+
+  /* DEBUG */
   background: rgba(255, 0, 0, 0.35);
   border: 2px solid red;
-
-  z-index: 1000;
 }
 
-/* BUTTON POSITIONS (RESTORED) */
-.machine-btn[data-key="home"]     { top: 31%; left: 30.5%; }
-.machine-btn[data-key="about"]    { top: 31%; left: 38%; }
-.machine-btn[data-key="resume"]   { top: 31%; left: 53.5%; }
-.machine-btn[data-key="projects"] { top: 31%; left: 61.5%; }
+/* STANDARD BUTTON SIZE */
+.machine-btn {
+  width: 6%;
+  height: 18%;
+}
 
-.machine-btn[data-key="contact"]  { top: 50%; left: 30.5%; }
-.machine-btn[data-key="github"]   { top: 50%; left: 38.5%; }
-.machine-btn[data-key="linkedin"] { top: 50%; left: 53.5%; }
-.machine-btn[data-key="topshelf"] { top: 50%; left: 61.5%; }
+/* =========================
+   BUTTON POSITIONS (NOW TRUE CENTER)
+========================= */
+
+/* TOP ROW */
+.machine-btn[data-key="home"]     { top: 34%; left: 33.5%; }
+.machine-btn[data-key="about"]    { top: 34%; left: 41%; }
+.machine-btn[data-key="resume"]   { top: 34%; left: 56.5%; }
+.machine-btn[data-key="projects"] { top: 34%; left: 63.5%; }
+
+/* BOTTOM ROW */
+.machine-btn[data-key="contact"]  { top: 57%; left: 33.5%; }
+.machine-btn[data-key="github"]   { top: 57%; left: 41%; }
+.machine-btn[data-key="linkedin"] { top: 57%; left: 56.5%; }
+.machine-btn[data-key="topshelf"] { top: 57%; left: 63.5%; }
 
 /* =========================
    BOTTLE LAYER
@@ -90,16 +104,13 @@ body.full-screen {
 }
 
 /* =========================
-   NORMAL PAGES (FIXED)
+   NORMAL PAGES
 ========================= */
-
-/* 🔥 KEY FIX: allow scrolling on non-home pages */
 body:not(.full-screen) {
   display: block;
   overflow: auto;
 }
 
-/* CONTENT LAYOUT */
 .main-container {
   min-height: 100vh;
   padding: 80px 20px;
@@ -112,18 +123,18 @@ body:not(.full-screen) {
 }
 
 /* =========================
-   CHIP BAG FULLSCREEN (FIXED)
+   CHIP BAG
 ========================= */
-
 .chip-wrapper {
-  position: fixed;   /* 🔥 KEY CHANGE */
-  inset: 0;          /* fills entire screen */
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
 .chip-img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;   /* 🔥 THIS is what you want */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* 🔥 THIS */
   display: block;
 }
 
@@ -131,34 +142,50 @@ body:not(.full-screen) {
 .chip-textbox {
   position: absolute;
 
-  width: 25%;
-  height: 40%;
-
-  padding: 10px;
-
-  overflow: hidden;
-
-  overflow-y: auto;
-
-  font-size: clamp(12px, 1.1vw, 16px);
-  line-height: 1.3;
-
+  /* 🔥 CENTER-BASED SYSTEM */
   top: 42%;
   left: 57%;
   transform: translate(-50%, -50%);
+
+  width: 25%;
+  height: 40%;
+
+  padding: 12px;
+
+  overflow-y: auto;
+
+  font-size: 15px;
+  line-height: 1.5;
 }
+
+.chip-textbox p {
+  margin-bottom: 8px;
+}
+
+/* =========================
+   BACK BUTTON (NOW DYNAMIC 🔥)
+========================= */
+.chip-back-btn {
+  top: 88%;
+  left: 31%;
+
+  width: 7%;
+  height: 10%;
+}
+
 /* =========================
    TYPOGRAPHY
 ========================= */
-.page-title {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 32px;
+.page-title,
+h1,
+h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: normal;
 }
 
 h2 {
   margin-bottom: 10px;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 /* =========================
@@ -177,3 +204,18 @@ input, textarea {
   cursor: pointer;
 }
 
+/* =========================
+   GRID DEBUG (KEEP 🔥)
+========================= */
+.chip-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: 
+    linear-gradient(to right, rgba(255,0,0,0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,0,0,0.2) 1px, transparent 1px);
+
+  background-size: 5% 5%;
+  pointer-events: none;
+}
