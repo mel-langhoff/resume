@@ -116,7 +116,7 @@ main,
 }
 
 .hero-text-anchor {
-    position: relative;
+  position: relative;
   margin-left: -30px;
 }
 
@@ -168,18 +168,28 @@ main,
 /* ABOUT */
 
 .about-section {
-  max-width: 420px;
-  flex: 1 1 300px;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  top: 20%;          /* 👈 FORCE IT INTO VIEW */
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 420px;
+  max-width: 90vw;
+
+  z-index: 50;       /* 👈 ABOVE EVERYTHING */
+
+  background: rgba(255,255,255,0.6); /* TEMP DEBUG */
+  padding: 20px;
+  border-radius: 12px;
 }
 
-// .about-section {
-//   max-width: 420px;
-//   flex: 1 1 300px;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
+/* 👇 THIS GETS ADDED BY JS */
+.about-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* paragraph styling */
 
 .about-section p {
   font-size: clamp(0.9rem, 1.1vw, 1.05rem);
@@ -204,26 +214,21 @@ main,
     flex-wrap: wrap;
   }
 
-.hero-intro {
-  position: fixed;
-
-  left: 0;
-  right: 0;
-  bottom: 12%;
-
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 2rem;
-  max-width: 1200px;
-  width: 100%;
-
-  z-index: 15;
-  pointer-events: none;
-}
+  .hero-intro {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 12%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    z-index: 15;
+    pointer-events: none;
+  }
 
   .about-section {
     width: auto;
@@ -241,4 +246,26 @@ main,
   .hero-text-placeholder {
     font-size: clamp(56px, 14vw, 110px);
   }
+}
+
+#aboutSection {
+  position: fixed;
+  top: 15%;
+  left: 35%;
+
+  width: 420px;
+  max-width: 90vw;
+
+  z-index: 50;
+
+  transform: translate(-50%, 10px);
+
+  opacity: 0;
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+
+  /* 🚫 remove all box styling */
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
 }

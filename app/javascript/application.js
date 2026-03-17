@@ -70,8 +70,8 @@ document.addEventListener("turbo:load", () => {
 
     offCtx.font = `900 ${fontSize}px Arial`;
     offCtx.fillText("HI :)", x, y);
-offCtx.fillText("I'M", x, y + lineHeight);
-offCtx.fillText("MEL", x, y + lineHeight * 2);
+    offCtx.fillText("I'M", x, y + lineHeight);
+    offCtx.fillText("MEL", x, y + lineHeight * 2);
 
     const imageData = offCtx.getImageData(0, 0, offscreen.width, offscreen.height).data;
     const gap = 8;
@@ -255,6 +255,16 @@ offCtx.fillText("MEL", x, y + lineHeight * 2);
       if (heroPhoto) heroPhoto.classList.add("visible");
     }
 
+    // 👉 FADE IN ABOUT SECTION HERE
+    if (formationStarted && allParticlesLocked()) {
+      const about = document.querySelector(".about-section");
+      if (about) {
+        setTimeout(() => {
+          about.classList.add("show");
+        }, 300);
+      }
+    }
+
     if (formationStarted && allParticlesLocked() && accentRainGone()) {
       animationStopped = true;
       cancelAnimationFrame(animationId);
@@ -267,9 +277,19 @@ offCtx.fillText("MEL", x, y + lineHeight * 2);
   resizeCanvas();
   animate();
 
-  setTimeout(() => {
-    formationStarted = true;
-  }, 1500);
+setTimeout(() => {
+  formationStarted = true;
+
+  const about = document.getElementById("aboutSection");
+
+  if (about) {
+    setTimeout(() => {
+      about.style.opacity = "1";
+      about.style.transform = "translateY(0)";
+    }, 500);
+  }
+
+}, 1500);
 
   window.addEventListener("resize", () => {
     formationStarted = false;
