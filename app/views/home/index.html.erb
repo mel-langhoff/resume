@@ -1,0 +1,23 @@
+<% content_for :full_screen do %>
+
+<div class="machine-wrapper">
+
+  <%= image_tag "vending_machine.png", class: "machine-img" %>
+
+  <div class="machine-ui">
+
+    <%= link_to root_path, class: "machine-btn home" do %><% end %>
+    <%= link_to bio_path, class: "machine-btn about" do %><% end %>
+    <%= link_to resume_path, class: "machine-btn resume" do %><% end %>
+    <%= link_to projects_path, class: "machine-btn projects" do %><% end %>
+    <%= link_to "mailto:mlanghoff@uwalumni.com", class: "machine-btn contact" do %><% end %>
+
+    <%= link_to "https://topshelf.mel-langhoff.com", target: "_blank", class: "machine-btn topshelf" do %><% end %>
+    <%= link_to "https://linkedin.com/in/melissalanghoff", target: "_blank", class: "machine-btn linkedin" do %><% end %>
+    <%= link_to "https://github.com/mel-langhoff", target: "_blank", class: "machine-btn github" do %><% end %>
+
+  </div>
+
+</div>
+
+<% end %>

@@ -19,24 +19,37 @@
 
   <body class="page-background">
 
-    <%= render 'layouts/header' %>
+    <% unless content_for?(:full_screen) %>
+      <%= render 'layouts/header' %>
+    <% end %>
 
-    <!-- 👇 CENTERED PAGE WRAPPER -->
-    <main class="main-container">
+    <!-- ✅ FULL SCREEN (HOME PAGE) -->
+    <% if content_for?(:full_screen) %>
 
-      <% if content_for?(:page_title) %>
-        <h1 class="page-title text-center mb-4">
-          <%= yield :page_title %>
-        </h1>
-      <% end %>
+      <%= yield :full_screen %>
 
-      <div class="content-box">
-        <%= yield %>
-      </div>
+    <% else %>
 
-    </main>
+      <!-- ✅ NORMAL PAGES -->
+      <main class="main-container">
 
-    <%= render 'layouts/footer' %>
+        <% if content_for?(:page_title) %>
+          <h1 class="page-title text-center mb-4">
+            <%= yield :page_title %>
+          </h1>
+        <% end %>
+
+        <div class="content-box">
+          <%= yield %>
+        </div>
+
+      </main>
+
+    <% end %>
+
+    <% unless content_for?(:full_screen) %>
+      <%= render 'layouts/footer' %>
+    <% end %>
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

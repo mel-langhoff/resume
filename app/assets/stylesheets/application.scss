@@ -1,111 +1,80 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
 /* RESET */
 body {
   margin: 0;
-  background: #F6D6E3;
-  font-family: Arial, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  background: black;
 }
 
-/* CANVAS (DO NOT BLOCK CLICKS) */
-#ipaCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* IMPORTANT */
-  z-index: 10;
-}
-
-/* =========================
-   VENDING MACHINE BACKGROUND
-========================= */
-
+/* MACHINE WRAPPER (controls size + responsiveness) */
 .vending-machine {
   position: relative;
 
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  max-width: 700px;   /* 🔥 adjust if you want bigger/smaller */
+}
 
-  background-image: url("/assets/vending_machine.png");
-  background-repeat: no-repeat;
+/* IMAGE (THIS FIXES DRIFTING) */
+.machine-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-  background-size: contain;   /* 👈 THIS is the correct one */
-  background-position: center;
+/* OVERLAY PERFECTLY MATCHES IMAGE */
+.machine-ui {
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  background-color: #000;     /* fills empty space nicely */
+  width: 100%;
+  height: 100%;
+}
+
+/* BUTTON HITBOXES */
+.machine-btn {
+  position: absolute;
+  display: block;
+
+  width: 6%;
+  height: 12%;
+
+  background: rgba(255, 0, 0, 0.4); /* 🔥 DEBUG — remove later */
+  border: 2px solid red;
+
+  z-index: 9999;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: transform 0.1s ease;
+}
+
+/* CLICK FEEL */
+.machine-btn:active {
+  transform: scale(0.95);
 }
 
 /* =========================
-   BOTTLES
+   BUTTON POSITIONS
 ========================= */
 
-.bottle-row {
-  position: absolute;
+/* TOP ROW */
+.machine-btn.home     { top: 31%; left: 30.5%; }
+.machine-btn.about    { top: 31%; left: 38%; }
+.machine-btn.resume   { top: 31%; left: 53.5%; }
+.machine-btn.projects { top: 31%; left: 61.5%; }
 
-  top: 25%;          /* 🔥 instead of 120px */
-  left: 50%;
-  transform: translateX(-50%);
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  z-index: 20;
-}
-
-.bottle {
-  width: 70px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.bottle:hover {
-  transform: scale(1.1);
-}
-
-/* DROP */
-.bottle.fall {
-  animation: drop 0.7s ease forwards;
-}
-
-@keyframes drop {
-  0% { transform: translateY(0); }
-  70% { transform: translateY(300px); }
-  85% { transform: translateY(280px); }
-  100% { transform: translateY(300px); }
-}
-
-/* SHAKE */
-.bottle.shake {
-  animation: shake 0.2s;
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(5px); }
-  50% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-  100% { transform: translateX(0); }
-}
-
-.bottle {
-  width: 17%;   /* 🔥 scales with vending machine */
-  height: auto;
-}
-
-/* 🔥 POSITION EACH ONE */
-
-.bottle-home {
-  top: 28%;
-  left: 30%;
-}
-
-.bottle-about {
-  top: 28%;
-  left: 50%;
-}
-
-.bottle-resume {
-  top: 28%;
-  left: 70%;
-}
+/* BOTTOM ROW */
+.machine-btn.contact  { top: 50%; left: 30.5%; }
+.machine-btn.github   { top: 50%; left: 38.5%; }
+.machine-btn.linkedin { top: 50%; left: 53.5%; }
+.machine-btn.topshelf { top: 50%; left: 61.5%; }
