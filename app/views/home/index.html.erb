@@ -1,29 +1,13 @@
-<canvas id="ipaCanvas"></canvas>
+<div class="vending-machine">
 
-<div class="hero-wrapper">
-  <div class="hero-intro">
-    <div class="hero-photo" id="heroPhoto">
-      <%= image_tag "hiking.jpg", alt: "Mel Langhoff", class: "hero-image" %>
-    </div>
+  <%= image_tag "vending_machine.png", class: "machine" %>
 
-    <div class="hero-text-anchor">
-      <div class="hero-text-placeholder">
-        <div>HI,</div>
-        <div>I'M MEL</div>
-      </div>
-    </div>
-  </div>
+  <a href="<%= root_path %>" class="snack home"></a>
+  <a href="<%= resume_path %>" class="snack resume"></a>
+  <a href="<%= bio_path %>" class="snack about"></a>
+  <a href="<%= projects_path %>" class="snack projects"></a>
+  <a href="mailto:mlanghoff@uwalumni.com" class="snack contact"></a>
+  <a href="https://github.com/mel-langhoff" target="_blank" class="snack github"></a>
+  <a href="https://linkedin.com/in/mel-langhoff" target="_blank" class="snack linkedin"></a>
 
-  <div class="about-section">
-    <p>
-      Life-long learner, project manager, software developer, educator,
-      and linguist who enjoys solving complex problems in creative ways.
-    </p>
-
-    <p>
-      I thrive where people and technology meet—helping teams organize
-      ideas, ship technical projects, and translate complex systems
-      into clear, practical solutions.
-    </p>
-  </div>
 </div>

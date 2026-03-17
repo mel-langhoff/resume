@@ -1,7 +1,13 @@
 body {
   margin: 0;
-  background: #F6D6E3;
+  background: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* =========================
+   IPA CANVAS BACKGROUND
+========================= */
 
 #ipaCanvas {
   position: fixed;
@@ -21,73 +27,17 @@ main,
   z-index: 1;
 }
 
-/* TOP NAV */
+/* =========================
+   HIDE NAVBAR
+========================= */
 
 .site-header {
-  position: relative;
-  width: 100%;
-  padding: 24px 40px 0 40px;
-  z-index: 30;
+  display: none;
 }
 
-.site-header nav {
-  width: 100%;
-}
-
-.nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.nav-link {
-  position: relative;
-  display: inline-block;
-  color: #1a73e8;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  transition: transform 0.18s ease;
-}
-
-.nav-link span {
-  display: block;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.nav-default {
-  opacity: 1;
-}
-
-.nav-ipa {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
-.nav-link:hover .nav-default,
-.nav-link:focus-visible .nav-default {
-  opacity: 0;
-  transform: translateY(-3px);
-}
-
-.nav-link:hover .nav-ipa,
-.nav-link:focus-visible .nav-ipa {
-  opacity: 1;
-}
-
-/* HERO ROW */
+/* =========================
+   HERO ROW
+========================= */
 
 .hero-wrapper {
   position: relative;
@@ -106,7 +56,6 @@ main,
   gap: 3rem;
   flex-wrap: nowrap;
   z-index: 15;
-  pointer-events: none;
 }
 
 .hero-photo,
@@ -116,11 +65,13 @@ main,
 }
 
 .hero-text-anchor {
-    position: relative;
+  position: relative;
   margin-left: -30px;
 }
 
-/* PHOTO */
+/* =========================
+   PHOTO
+========================= */
 
 .hero-photo {
   opacity: 0;
@@ -143,7 +94,9 @@ main,
   display: block;
 }
 
-/* HI I'M MEL */
+/* =========================
+   HERO TEXT
+========================= */
 
 .hero-text-anchor {
   position: relative;
@@ -158,14 +111,15 @@ main,
   letter-spacing: 0.02em;
   color: transparent;
   user-select: none;
-  pointer-events: none;
 }
 
 .hero-text-placeholder div {
   display: block;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about-section {
   max-width: 420px;
@@ -174,17 +128,10 @@ main,
   margin-right: auto;
 }
 
-// .about-section {
-//   max-width: 420px;
-//   flex: 1 1 300px;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
-
 .about-section p {
   font-size: clamp(0.9rem, 1.1vw, 1.05rem);
   line-height: 1.7;
-  color: #23232b;
+  color: #fff;
   margin: 0 0 1rem 0;
 }
 
@@ -192,43 +139,118 @@ main,
   margin-bottom: 0;
 }
 
-/* MOBILE */
+/* =========================
+   VENDING MACHINE
+========================= */
+
+.vending-machine {
+  position: relative;
+  width: clamp(320px, 90vw, 900px);
+  margin: 0 auto;
+  z-index: 40;
+}
+
+.machine {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.15));
+}
+
+.snack {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.snack-bag {
+  width: 120px;
+}
+
+/* optional hover effect */
+
+.snack:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* =========================
+   SNACK POSITIONS
+========================= */
+
+.home {
+  top: 70px;
+  left: 80px;
+  width: 140px;
+  height: 180px;
+}
+
+.resume {
+  top: 230px;
+  left: 80px;
+  width: 140px;
+  height: 180px;
+}
+
+.about {
+  top: 210px;
+  left: 520px;
+  width: 140px;
+  height: 180px;
+}
+
+.projects {
+  top: 400px;
+  left: 80px;
+  width: 140px;
+  height: 180px;
+}
+
+.contact {
+  top: 400px;
+  left: 300px;
+  width: 140px;
+  height: 180px;
+}
+
+.github {
+  top: 400px;
+  left: 560px;
+  width: 140px;
+  height: 180px;
+}
+
+.linkedin {
+  top: 400px;
+  left: 720px;
+  width: 140px;
+  height: 180px;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
-  .site-header {
-    padding: 18px 20px 0 20px;
+
+  .hero-intro {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 12%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    z-index: 15;
   }
-
-  .nav {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-.hero-intro {
-  position: fixed;
-
-  left: 0;
-  right: 0;
-  bottom: 12%;
-
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 2rem;
-  max-width: 1200px;
-  width: 100%;
-
-  z-index: 15;
-  pointer-events: none;
-}
 
   .about-section {
     width: auto;
     max-width: 90vw;
-    min-width: 0;
     text-align: center;
   }
 
@@ -241,4 +263,70 @@ main,
   .hero-text-placeholder {
     font-size: clamp(56px, 14vw, 110px);
   }
+
+}
+
+.machine {
+  width: 100%;
+  display: block;
+  pointer-events: none; /* THIS IS KEY */
+}
+
+.snack {
+  position: absolute;
+  display: block;
+  z-index: 100;
+}
+
+.home {
+  top: 70px;
+  left: 80px;
+  width: 140px;
+  height: 180px;
+}
+
+.resume {
+  top: 230px;
+  left: 80px;
+  width: 140px;
+  height: 180px;
+}
+
+.about {
+  top: 210px;
+  left: 520px;
+  width: 140px;
+  height: 180px;
+}
+
+.projects {
+  top: 400px;
+  left: 80px;
+  width: 140px;
+  height: 180px;
+}
+
+.contact {
+  top: 400px;
+  left: 300px;
+  width: 140px;
+  height: 180px;
+}
+
+.github {
+  top: 400px;
+  left: 560px;
+  width: 140px;
+  height: 180px;
+}
+
+.linkedin {
+  top: 400px;
+  left: 720px;
+  width: 140px;
+  height: 180px;
+}
+
+.snack {
+  background: rgba(255, 0, 0, 0.2);
 }
