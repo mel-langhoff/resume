@@ -1,59 +1,74 @@
 import "@hotwired/turbo-rails"
 import "controllers"
-
-// =========================
-// VENDING MACHINE ANIMATION
-// =========================
-document.addEventListener("turbo:load", () => {
-  document.querySelectorAll(".bottle").forEach(bottle => {
-
-    bottle.addEventListener("click", function() {
-      this.classList.add("shake")
-
-      setTimeout(() => {
-        this.classList.remove("shake")
-        this.classList.add("fall")
-      }, 200)
-    })
-
-  })
-})
-
-
 document.addEventListener("turbo:load", () => {
   const img = document.querySelector(".machine-img")
   const buttons = document.querySelectorAll(".machine-btn")
+  const layer = document.getElementById("bottle-layer")
 
-  if (!img) return
+  if (!img || !layer) return
 
-  function positionButtons() {
-    const rect = img.getBoundingClientRect()
+  // 🔥 SINGLE SOURCE OF TRUTH
+const config = {
+  home:     { x: 0.5, y: 0.30, img: "home.png" },
+  about:    { x: 0.5, y: 0.38, img: "about.png" },
+  resume:   { x: 0.5, y: 0.46, img: "resume.png" },
+  projects: { x: 0.5, y: 0.54, img: "projects.png" },
 
-    const positions = {
-      home:     { x: 0.305, y: 0.31 },
-      about:    { x: 0.38,  y: 0.31 },
-      resume:   { x: 0.535, y: 0.31 },
-      projects: { x: 0.615, y: 0.31 },
+  contact:  { x: 0.5, y: 0.62, img: "contact.png" },
+  github:   { x: 0.5, y: 0.70, img: "github.png" },
+  linkedin: { x: 0.5, y: 0.78, img: "linkedin.png" },
+  topshelf: { x: 0.5, y: 0.86, img: "topshelf.png" }
+}
 
-      contact:  { x: 0.305, y: 0.50 },
-      github:   { x: 0.385, y: 0.50 },
-      linkedin: { x: 0.535, y: 0.50 },
-      topshelf: { x: 0.615, y: 0.50 }
-    }
+  // function positionButtons() {
+  //   const rect = img.getBoundingClientRect()
 
-    buttons.forEach(btn => {
-      const key = [...btn.classList].find(c => positions[c])
-      if (!key) return
+  //   buttons.forEach(btn => {
+  //     const key = btn.dataset.key
+  //     const pos = config[key]
+  //     if (!pos) return
 
-      const pos = positions[key]
+  //     btn.style.left = `${rect.width * pos.x}px`
+  //     btn.style.top  = `${rect.height * pos.y}px`
+  //   })
+  // }
 
-      btn.style.left = `${rect.left + rect.width * pos.x}px`
-      btn.style.top  = `${rect.top  + rect.height * pos.y}px`
-      btn.style.width  = `${rect.width * 0.06}px`
-      btn.style.height = `${rect.height * 0.12}px`
-    })
+  function dropBottle(btn, key, url) {
+    const containerRect = layer.getBoundingClientRect()
+    const rect = btn.getBoundingClientRect()
+    const cfg = config[key]
+
+    const bottle = document.createElement("img")
+    bottle.src = `/assets/${cfg.img}`
+    bottle.classList.add("falling-bottle")
+
+    // 🔥 SAME math as buttons → PERFECT alignment
+    bottle.style.left = `${rect.left - containerRect.left + rect.width / 2}px`
+bottle.style.top  = `${rect.top  - containerRect.top  + rect.height / 2 + 40}px`
+    layer.appendChild(bottle)
+
+    void bottle.offsetWidth
+    bottle.classList.add("animate")
+
+    setTimeout(() => {
+      window.location.href = url
+    }, 900)
   }
 
-  positionButtons()
-  window.addEventListener("resize", positionButtons)
+  buttons.forEach(btn => {
+    btn.addEventListener("click", function(e) {
+      e.preventDefault()
+
+      const key = this.dataset.key
+      const url = this.href
+
+      this.style.transform = "scale(0.9)"
+      setTimeout(() => this.style.transform = "scale(1)", 100)
+
+      dropBottle(this, key, url)
+    })
+  })
+
+  // positionButtons()
+  // window.addEventListener("resize", positionButtons)
 })
