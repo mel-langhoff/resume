@@ -1,10 +1,11 @@
 <% content_for :full_screen do %>
 
 <div class="chip-wrapper">
-
   <div class="chip-stage">
 
-    <%= link_to root_path, class: "chip-back-btn", data: { turbo: false } %>
+    <%= image_tag "chips.png", class: "chip-img" %>
+
+    <%= link_to "←", root_path, class: "chip-back-btn", data: { turbo: false } %>
 
     <div class="chip-textbox">
 
@@ -20,7 +21,6 @@
           </p>
 
           <p><%= job.title %></p>
-
           <p><%= job.description %></p>
 
           <ul>
@@ -35,7 +35,6 @@
     </div>
 
   </div>
-
 </div>
 
 <% end %>
