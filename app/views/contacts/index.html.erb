@@ -1,48 +1,54 @@
 <% content_for :full_screen do %>
 
-<div class="chip-wrapper">
-  <div class="chip-stage">
+<div class="machine-wrapper full-screen">
 
-    <%= image_tag "chips.png", class: "chip-img" %>
+  <%= image_tag "vending_machine.png", class: "machine-img" %>
 
-    <%= link_to "←", root_path, class: "chip-back-btn", data: { turbo: false } %>
+  <div class="machine-ui">
 
-    <div class="chip-textbox">
+    <%= link_to root_path,
+      class: "machine-btn",
+      data: { key: "home", turbo: false } %>
 
-      <h2>Contact</h2>
+    <%= link_to bio_path,
+      class: "machine-btn",
+      data: { key: "about", turbo: false } %>
 
-      <%= form_with model: @contact, local: true do |f| %>
+    <%= link_to resume_path,
+      class: "machine-btn",
+      data: { key: "resume", turbo: false } %>
 
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, required: true %>
+    <%= link_to projects_path,
+      class: "machine-btn",
+      data: { key: "projects", turbo: false } %>
+
+    <%= link_to "mailto:mlanghoff@uwalumni.com",
+      class: "machine-btn",
+      data: { key: "contact" } %>
+
+    <!-- 🔥 EXTERNAL LINKS -->
+    <%= link_to "https://github.com/mel-langhoff",
+      target: "_blank",
+      rel: "noopener",
+      class: "machine-btn",
+      data: { key: "github", turbo: false } %>
+
+    <%= link_to "https://linkedin.com/in/melissalanghoff",
+      target: "_blank",
+      rel: "noopener",
+      class: "machine-btn",
+      data: { key: "linkedin", turbo: false } %>
+
+    <%= link_to "https://topshelf.mel-langhoff.com",
+      target: "_blank",
+      rel: "noopener",
+      class: "machine-btn",
+      data: { key: "topshelf", turbo: false } %>
+
   </div>
 
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, required: true %>
-  </div>
+  <div id="bottle-layer"></div>
 
-  <div class="form-group">
-    <%= f.label :message %>
-    <%= f.text_area :message, required: true %>
-  </div>
-
-  <%= f.submit "Send", class: "btn" %>
-
-<% end %>
-    </div>
-    <% if @contact.errors.any? %>
-  <div class="error-box">
-    <ul>
-      <% @contact.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-  </div>
 </div>
 
 <% end %>
