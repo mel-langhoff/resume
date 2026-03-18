@@ -38,8 +38,7 @@ html, body {
 /* =========================
    HITBOXES
 ========================= */
-.machine-btn,
-.chip-back-btn {
+.machine-btn{
   position: absolute;
   transform: translate(-50%, -50%);
   cursor: pointer;
@@ -79,7 +78,7 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
-}
+} 
 
 .chip-textbox {
   position: absolute;
@@ -96,6 +95,34 @@ html, body {
   overflow-y: auto;
 }
 
+.chip-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+.chip-back-btn {
+  position: fixed;
+
+  top: 20px;
+  left: 20px;
+
+  width: 60px;
+  height: 60px;
+
+  background: red;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-size: 24px;
+  z-index: 9999;
+}
 /* =========================
    BOTTLE LAYER (FULL SCREEN)
 ========================= */
@@ -133,4 +160,65 @@ html, body {
   50% { transform: translate(6px, -4px); }
   75% { transform: translate(-4px, 3px); }
   100% { transform: translate(0, 0); }
+}
+
+.chip-stage {
+  position: relative;
+}
+
+.chip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.chip-ui {
+  position: absolute;
+  inset: 0;
+}
+
+/* 🔥 THIS IS THE LOCK */
+.chip-back-btn {
+  position: absolute;
+
+  top: 84%;   /* tweak this */
+  left: 38%;  /* tweak this */
+
+  width: 7%;
+  height: 7%;
+
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.chip-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.chip-stage {
+  position: relative;
+
+  width: 600px;   /* 🔥 pick your size */
+}
+
+.chip-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.chip-back-btn {
+  position: absolute;
+
+  top: 70%;
+  left: 25%;
+
+  width: 15%;
+  height: 7%;
+
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+  background: red;
 }
