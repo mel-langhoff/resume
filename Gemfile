@@ -58,11 +58,13 @@ gem "sassc-rails"
 gem "shoulda-matchers"
 
 gem "faraday"
+gem 'mailgun-ruby'
 
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry"
+  gem 'dotenv-rails'
   gem 'rspec-rails'
 end
 

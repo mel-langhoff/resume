@@ -85,3 +85,13 @@ document.addEventListener("turbo:load", () => {
     })
   })
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+  const bottles = document.querySelectorAll(".bottle")
+
+  bottles.forEach((bottle, index) => {
+    setTimeout(() => {
+      bottle.classList.add("show")
+    }, index * 50) // 👈 stagger delay
+  })
+})

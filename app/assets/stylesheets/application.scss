@@ -132,6 +132,17 @@ html, body {
   z-index: 9999;
 }
 
+.bottle {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.bottle.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* =========================
    BOTTLE
 ========================= */
@@ -220,4 +231,13 @@ html, body {
 
   padding: 12px;
   overflow-y: auto;
+}
+
+.error-box {
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid red;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  color: red;
 }
