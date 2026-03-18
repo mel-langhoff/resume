@@ -27,16 +27,7 @@ document.addEventListener("turbo:load", () => {
   // =========================
   if (!layer) return
 
-  const config = {
-    home: "home.png",
-    about: "about.png",
-    resume: "resume.png",
-    projects: "projects.png",
-    contact: "contact.png",
-    github: "github.png",
-    linkedin: "linkedin.png",
-    topshelf: "topshelf.png"
-  }
+const config = window.assetPaths
 
   if (window.vendingClickBound) return
   window.vendingClickBound = true
@@ -79,7 +70,7 @@ document.addEventListener("turbo:load", () => {
     }
 
     // 🔥 set src LAST (this triggers load)
-    bottle.src = `/assets/${img}`
+    bottle.src = img
   })
 })
 
