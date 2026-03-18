@@ -1,38 +1,42 @@
 <% content_for :full_screen do %>
+
 <div class="chip-wrapper">
 
-  <%= image_tag "chips.png", class: "chip-img" %>
+  <div class="chip-stage">
 
-  <!-- 🔥 BACK BUTTON -->
-  <%= link_to root_path, class: "chip-back-btn" do %>
-  <% end %>
+    <%= image_tag "chips.png", class: "chip-img" %>
 
-  <div class="chip-textbox">
+    <%= link_to root_path, class: "chip-back-btn", data: { turbo: false } %>
 
-    <h2>Contact</h2>
+    <div class="chip-textbox">
 
-    <%= form_with url: contacts_path, method: :post, local: true do |f| %>
+      <h2>Contact</h2>
 
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-      </div>
+      <%= form_with url: contacts_path, method: :post, local: true do |f| %>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email %>
-      </div>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :message %>
-        <%= f.text_area :message %>
-      </div>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+        </div>
 
-      <%= f.submit "Send", class: "btn" %>
+        <div class="form-group">
+          <%= f.label :message %>
+          <%= f.text_area :message %>
+        </div>
 
-    <% end %>
+        <%= f.submit "Send", class: "btn" %>
+
+      <% end %>
+
+    </div>
 
   </div>
 
 </div>
+
 <% end %>

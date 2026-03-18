@@ -1,40 +1,43 @@
 <% content_for :full_screen do %>
+
 <div class="chip-wrapper">
 
-  <%= image_tag "chips.png", class: "chip-img" %>
+  <div class="chip-stage">
 
-  <!-- 🔥 BACK BUTTON -->
-  
+    <%= image_tag "chips.png", class: "chip-img" %>
 
-  <div class="chip-textbox">
-  <%= link_to root_path, class: "chip-back-btn" do %>
-<% end %>
+    <%= link_to root_path, class: "chip-back-btn", data: { turbo: false } %>
 
-    <h2>Resume</h2>
+    <div class="chip-textbox">
 
-    <% @jobs.each do |job| %>
-      <div class="job-card">
+      <h2>Resume</h2>
 
-        <p class="job-header">
-          <strong><%= job.company %></strong> |
-          <%= job.location %> |
-          <%= job.formatted_start_date %> - <%= job.formatted_end_date %>
-        </p>
+      <% @jobs.each do |job| %>
+        <div class="job-card">
 
-        <p class="job-title"><%= job.title %></p>
+          <p>
+            <strong><%= job.company %></strong> |
+            <%= job.location %> |
+            <%= job.formatted_start_date %> - <%= job.formatted_end_date %>
+          </p>
 
-        <p class="job-desc"><%= job.description %></p>
+          <p><%= job.title %></p>
 
-        <ul>
-          <% job.responsibilities.each do |resp| %>
-            <li><%= resp %></li>
-          <% end %>
-        </ul>
+          <p><%= job.description %></p>
 
-      </div>
-    <% end %>
+          <ul>
+            <% job.responsibilities.each do |resp| %>
+              <li><%= resp %></li>
+            <% end %>
+          </ul>
+
+        </div>
+      <% end %>
+
+    </div>
 
   </div>
 
 </div>
+
 <% end %>

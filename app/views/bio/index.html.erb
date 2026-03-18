@@ -1,43 +1,43 @@
 <% content_for :full_screen do %>
+
 <div class="chip-wrapper">
 
-  <%= image_tag "chips.png", class: "chip-img" %>
+  <div class="chip-stage">
 
-  <!-- 🔥 BACK BUTTON HITBOX -->
-  <%= link_to root_path, class: "chip-back-btn" do %>
-  <% end %>
+    <!-- 🔥 BACK BUTTON -->
+    <%= link_to root_path, class: "chip-back-btn", data: { turbo: false } %>
 
-  <div class="chip-textbox">
+    <!-- TEXTBOX -->
+    <div class="chip-textbox">
 
-    <p>
-      I grew up in Milwaukee and somehow ended up in a tiny mountain town in Colorado, which feels pretty on brand for how my life has gone—unexpected turns, lots of learning, and a constant pull toward building things that matter.
-    </p>
+      <p>
+        I grew up in Milwaukee and somehow ended up in a tiny mountain town in Colorado, which feels pretty on brand for how my life has gone—unexpected turns, lots of learning, and a constant pull toward building things that matter.
+      </p>
 
-    <p>
-      I’m a backend developer, project manager, linguist, and lifelong student. I’ve never really been just one thing, and I like it that way.
-    </p>
+      <p>
+        I’m a backend developer, project manager, linguist, and lifelong student. I’ve never really been just one thing, and I like it that way.
+      </p>
 
-    <p>
-      Before I started writing code full-time, I was deep in the world of project management and IT consulting—working with teams at Xcel Energy, Sling TV, Crocs, and Sovos. I got really good at organizing chaos: Agile workflows, cloud migrations, SAP systems, and cross-functional teams with too many opinions and not enough alignment.
-    </p>
+      <p>
+        Before I started writing code full-time, I was deep in the world of project management and IT consulting—working with teams at Xcel Energy, Sling TV, Crocs, and Sovos.
+      </p>
 
-    <p>
-      Language has always been a huge part of my life too. I’m fluent in Spanish, and I spent time teaching English in Barcelona, which completely changed how I think about communication.
-    </p>
+      <p>
+        Language has always been a huge part of my life too. I’m fluent in Spanish, and I spent time teaching English in Barcelona.
+      </p>
 
-    <p>
-      Moving into backend development felt like a natural next step. At Turing, I leaned into building real applications—APIs, data models, and systems that actually <em>do</em> something.
-    </p>
+      <p>
+        Moving into backend development felt like a natural next step. At Turing, I leaned into building APIs, data models, and real systems.
+      </p>
 
-    <p>
-      Outside of work, I’m usually making something—cooking, baking, experimenting, glass etching, or being outside in the mountains.
-    </p>
+      <p>
+        Outside of work, I’m usually making something—cooking, baking, glass etching, or being outside in the mountains.
+      </p>
 
-    <p>
-      That mix—technical, creative, a little unconventional—is kind of the through-line of everything I do.
-    </p>
+    </div>
 
   </div>
 
 </div>
+
 <% end %>

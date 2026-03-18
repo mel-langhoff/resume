@@ -1,32 +1,20 @@
-/*
- *= require_tree .
- *= require_self
- */
-
 /* =========================
    BASE RESET
 ========================= */
 html, body {
   margin: 0;
+  padding: 0;
   background: black;
   font-family: "Inter", sans-serif;
 }
 
 /* =========================
-   FULLSCREEN (HOME ONLY)
+   FULLSCREEN
 ========================= */
-body.full-screen {
-  height: 100vh;
-}
-
 .full-screen {
   position: fixed;
   inset: 0;
   overflow: hidden;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* =========================
@@ -48,174 +36,101 @@ body.full-screen {
 }
 
 /* =========================
-   HITBOX SYSTEM (FIXED 🔥)
+   HITBOXES
 ========================= */
 .machine-btn,
 .chip-back-btn {
   position: absolute;
-
-  /* 🔥 CENTER ANCHOR SYSTEM */
   transform: translate(-50%, -50%);
-
   cursor: pointer;
   z-index: 1000;
 
-  /* DEBUG */
-  background: rgba(255, 0, 0, 0.35);
+  background: rgba(255, 0, 0, 0.35); /* debug */
   border: 2px solid red;
 }
 
-/* STANDARD BUTTON SIZE */
 .machine-btn {
   width: 6%;
   height: 18%;
 }
 
-/* =========================
-   BUTTON POSITIONS (NOW TRUE CENTER)
-========================= */
-
-/* TOP ROW */
+/* BUTTON POSITIONS */
 .machine-btn[data-key="home"]     { top: 34%; left: 33.5%; }
 .machine-btn[data-key="about"]    { top: 34%; left: 41%; }
 .machine-btn[data-key="resume"]   { top: 34%; left: 56.5%; }
 .machine-btn[data-key="projects"] { top: 34%; left: 63.5%; }
 
-/* BOTTOM ROW */
 .machine-btn[data-key="contact"]  { top: 57%; left: 33.5%; }
 .machine-btn[data-key="github"]   { top: 57%; left: 41%; }
 .machine-btn[data-key="linkedin"] { top: 57%; left: 56.5%; }
 .machine-btn[data-key="topshelf"] { top: 57%; left: 63.5%; }
 
 /* =========================
-   BOTTLE LAYER
-========================= */
-#bottle-layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 999;
-}
-
-.falling-bottle {
-  position: absolute;
-  width: 8%;
-  transform: translate(-50%, -50%);
-}
-
-/* =========================
-   NORMAL PAGES
-========================= */
-body:not(.full-screen) {
-  display: block;
-  overflow: auto;
-}
-
-.main-container {
-  min-height: 100vh;
-  padding: 80px 20px;
-}
-
-.content-box {
-  max-width: 1000px;
-  width: 90%;
-  margin: 40px auto;
-}
-
-/* =========================
-   CHIP BAG
+   CHIP PAGE
 ========================= */
 .chip-wrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background: url("/assets/chips.png") no-repeat top center;
+  background-size: 85%;
 }
 
-.chip-img {
+.chip-stage {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: contain;  /* 🔥 THIS */
-  display: block;
 }
 
-/* TEXTBOX */
 .chip-textbox {
   position: absolute;
+  z-index: 10;
 
-  /* 🔥 CENTER-BASED SYSTEM */
-  top: 42%;
-  left: 57%;
+  top: 44%;
+  left: 54%;
   transform: translate(-50%, -50%);
 
-  width: 25%;
-  height: 40%;
+  width: 15%;
+  height: 38%;
 
   padding: 12px;
-
   overflow-y: auto;
-
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.chip-textbox p {
-  margin-bottom: 8px;
 }
 
 /* =========================
-   BACK BUTTON (NOW DYNAMIC 🔥)
+   BOTTLE LAYER (FULL SCREEN)
 ========================= */
-.chip-back-btn {
-  top: 88%;
-  left: 31%;
+#bottle-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 
-  width: 7%;
-  height: 10%;
-}
-
-/* =========================
-   TYPOGRAPHY
-========================= */
-.page-title,
-h1,
-h2 {
-  font-family: "DM Serif Display", serif;
-  font-weight: normal;
-}
-
-h2 {
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-/* =========================
-   FORMS
-========================= */
-input, textarea {
-  width: 100%;
-  padding: 10px;
-}
-
-.btn {
-  background: black;
-  color: white;
-  padding: 10px 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* =========================
-   GRID DEBUG (KEEP 🔥)
-========================= */
-.chip-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: 
-    linear-gradient(to right, rgba(255,0,0,0.2) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,0,0,0.2) 1px, transparent 1px);
-
-  background-size: 5% 5%;
   pointer-events: none;
+  z-index: 9999;
+}
+
+/* =========================
+   BOTTLE
+========================= */
+.falling-bottle {
+  position: absolute;
+  width: 120px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* =========================
+   SCREEN SHAKE
+========================= */
+.screen-hit {
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-6px, 4px); }
+  50% { transform: translate(6px, -4px); }
+  75% { transform: translate(-4px, 3px); }
+  100% { transform: translate(0, 0); }
 }
