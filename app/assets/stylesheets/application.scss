@@ -1,3 +1,8 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
 /* =========================
    BASE RESET
 ========================= */
@@ -66,13 +71,11 @@ html, body {
 .machine-btn[data-key="topshelf"] { top: 57%; left: 63.5%; }
 
 /* =========================
-   CHIP PAGE
+   CHIP PAGE (FINAL WORKING)
 ========================= */
 .chip-wrapper {
   position: fixed;
   inset: 0;
-  background: url("/assets/chips.png") no-repeat top center;
-  background-size: 85%;
 }
 
 .chip-stage {
@@ -81,6 +84,21 @@ html, body {
   height: 100%;
 }
 
+/* 🔥 THIS WAS THE KEY FIX */
+.chip-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.chip-ui {
+  position: absolute;
+  inset: 0;
+}
+
+/* TEXTBOX */
 .chip-textbox {
   position: absolute;
   z-index: 10;
@@ -94,10 +112,26 @@ html, body {
 
   padding: 12px;
   overflow-y: auto;
+
+  background: rgba(0,0,0,0.6); /* 👈 added so you can SEE it */
+  color: white;
+  border-radius: 8px;
+}
+
+/* BACK BUTTON */
+.chip-back-btn {
+  position: absolute;
+  top: 84%;
+  left: 38%;
+  width: 7%;
+  height: 7%;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: 20;
 }
 
 /* =========================
-   BOTTLE LAYER (FULL SCREEN)
+   BOTTLE LAYER
 ========================= */
 #bottle-layer {
   position: fixed;
@@ -105,14 +139,10 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
-
   pointer-events: none;
   z-index: 9999;
 }
 
-/* =========================
-   BOTTLE
-========================= */
 .falling-bottle {
   position: absolute;
   width: 120px;

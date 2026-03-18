@@ -1,43 +1,20 @@
-<% content_for :full_screen do %>
-
 <div class="chip-wrapper">
-
   <div class="chip-stage">
 
-    <!-- 🔥 BACK BUTTON -->
+    <%= image_tag "chips.png", class: "chip-img" %>
+
     <%= link_to root_path, class: "chip-back-btn", data: { turbo: false } %>
 
-    <!-- TEXTBOX -->
     <div class="chip-textbox">
+      <h2>About</h2>
 
       <p>
-        I grew up in Milwaukee and somehow ended up in a tiny mountain town in Colorado, which feels pretty on brand for how my life has gone—unexpected turns, lots of learning, and a constant pull toward building things that matter.
-      </p>
-
-      <p>
-        I’m a backend developer, project manager, linguist, and lifelong student. I’ve never really been just one thing, and I like it that way.
-      </p>
-
-      <p>
-        Before I started writing code full-time, I was deep in the world of project management and IT consulting—working with teams at Xcel Energy, Sling TV, Crocs, and Sovos.
-      </p>
-
-      <p>
-        Language has always been a huge part of my life too. I’m fluent in Spanish, and I spent time teaching English in Barcelona.
-      </p>
-
-      <p>
-        Moving into backend development felt like a natural next step. At Turing, I leaned into building APIs, data models, and real systems.
-      </p>
-
-      <p>
-        Outside of work, I’m usually making something—cooking, baking, glass etching, or being outside in the mountains.
+        Backend developer with a background in project management, Agile delivery,
+        and building scalable tools. Passionate about Ruby on Rails, APIs, and
+        creating things that actually get used.
       </p>
 
     </div>
 
   </div>
-
 </div>
-
-<% end %>

@@ -1,7 +1,4 @@
-<% content_for :full_screen do %>
-
 <div class="chip-wrapper">
-
   <div class="chip-stage">
 
     <%= image_tag "chips.png", class: "chip-img" %>
@@ -14,29 +11,20 @@
 
       <%= form_with url: contacts_path, method: :post, local: true do |f| %>
 
-        <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-        </div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
 
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email %>
-        </div>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
 
-        <div class="form-group">
-          <%= f.label :message %>
-          <%= f.text_area :message %>
-        </div>
+        <%= f.label :message %>
+        <%= f.text_area :message %>
 
-        <%= f.submit "Send", class: "btn" %>
+        <%= f.submit "Send" %>
 
       <% end %>
 
     </div>
 
   </div>
-
 </div>
-
-<% end %>

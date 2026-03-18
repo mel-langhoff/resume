@@ -1,0 +1,17 @@
+<div class="chip-wrapper full-screen">
+
+  <%= image_tag "chips.png", class: "chip-img" %>
+
+  <div class="chip-ui">
+
+    <%= link_to "←", request.referer || root_path,
+      class: "chip-back-btn",
+      data: { turbo: false } %>
+
+    <div class="chip-textbox">
+      <!-- your content -->
+    </div>
+
+  </div>
+
+</div>

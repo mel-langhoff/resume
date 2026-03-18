@@ -1,7 +1,4 @@
-<% content_for :full_screen do %>
-
 <div class="chip-wrapper">
-
   <div class="chip-stage">
 
     <%= image_tag "chips.png", class: "chip-img" %>
@@ -22,14 +19,7 @@
           </p>
 
           <p><%= job.title %></p>
-
           <p><%= job.description %></p>
-
-          <ul>
-            <% job.responsibilities.each do |resp| %>
-              <li><%= resp %></li>
-            <% end %>
-          </ul>
 
         </div>
       <% end %>
@@ -37,7 +27,4 @@
     </div>
 
   </div>
-
 </div>
-
-<% end %>
