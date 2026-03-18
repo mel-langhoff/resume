@@ -1,0 +1,30 @@
+<div class="chip-wrapper">
+  <div class="chip-stage">
+
+    <%= image_tag "chips.png", class: "chip-img" %>
+
+    <%= link_to root_path, class: "chip-back-btn", data: { turbo: false } %>
+
+    <div class="chip-textbox">
+
+      <h2>Contact</h2>
+
+      <%= form_with url: contacts_path, method: :post, local: true do |f| %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+
+        <%= f.label :message %>
+        <%= f.text_area :message %>
+
+        <%= f.submit "Send" %>
+
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

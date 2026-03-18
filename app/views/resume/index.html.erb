@@ -1,16 +1,30 @@
-<% content_for :page_title do %>
-  <h1 class="page-title">Resume</h1>
-<% end %>
+<div class="chip-wrapper">
+  <div class="chip-stage">
 
-<% @jobs.each do |job| %>
-  <div id="job-description-<%= job.id %>">
-    <p><strong><%= job.company %></strong> | <%= job.location %>, <%= job.formatted_start_date %> - <%= job.formatted_end_date %></p>
-    <p><%= job.title %></p>
-    <p><em><%= job.description %></em></p>
-    <ul>
-      <% job.responsibilities.each do |resp| %>
-        <li><%= resp %></li>
+    <%= image_tag "chips.png", class: "chip-img" %>
+
+    <%= link_to root_path, class: "chip-back-btn", data: { turbo: false } %>
+
+    <div class="chip-textbox">
+
+      <h2>Resume</h2>
+
+      <% @jobs.each do |job| %>
+        <div class="job-card">
+
+          <p>
+            <strong><%= job.company %></strong> |
+            <%= job.location %> |
+            <%= job.formatted_start_date %> - <%= job.formatted_end_date %>
+          </p>
+
+          <p><%= job.title %></p>
+          <p><%= job.description %></p>
+
+        </div>
       <% end %>
-    </ul>
+
+    </div>
+
   </div>
-<% end %>
+</div>

@@ -1,15 +1,20 @@
-<% content_for :page_title do %>
-  <h1 class="page-title">About</h1>
-<% end %>
+<div class="chip-wrapper">
+  <div class="chip-stage">
 
-<p>From my hometown of Milwaukee, WI to a picturesque mountain town in Colorado, my journey with technology has been a blend of diverse experiences and profound interest in continually learning. I'm Mel Langhoff, a backend web developer, project manager, linguist, and life-long student.</p>
+    <%= image_tag "chips.png", class: "chip-img" %>
 
-<p>Growing up in a world full of flavors and cultures, I found my path through a myriad of professions, each one shaping my approach to problem-solving and creativity. My career began in the realm of technology, where I dove into project management and IT consulting. My roles at Xcel Energy, Sling TV, Crocs, and Sovos Compliance allowed me to master Agile methodologies, cloud migration, and SAP systems. Each project was a puzzle, each challenge an opportunity to innovate and excel.</p>
+    <%= link_to root_path, class: "chip-back-btn", data: { turbo: false } %>
 
-<p>My passion for languages and teaching has been a constant thread through my life. Fluent in Spanish, I've not only navigated the complexities of international projects but also immersed myself in cultural exchanges. My time as an English teacher in Barcelona enriched my understanding of communication and empathy. The lessons learned from teaching -- patience, clarity, and a love for learning -- fuel my approach to coding and collaboration.</p>
+    <div class="chip-textbox">
+      <h2>About</h2>
 
-<p>The transition to backend development was a natural evolution. At Turing School of Software & Design, I've harnessed my technical skills and project management expertise to build robust, user-centric applications. My projects showcase my commitment to creating functional, impactful solutions that bridge the gap between technology and user needs.</p>
+      <p>
+        Backend developer with a background in project management, Agile delivery,
+        and building scalable tools. Passionate about Ruby on Rails, APIs, and
+        creating things that actually get used.
+      </p>
 
-<p>Outside of my professional life, I'm an avid cyclist and skateboarder, a food and cooking enthusiast, and a lover of literature and langauges. No matter what I am doing, I am always learning -- whether it's exploring new recipes, cycling down a country road, skating at the park, diving into the intricacies of linguistics, or losing myself in a good book, these hobbies keep me grounded and inspired. They remind me that creativity and problem-solving extend beyond the digital world and into every aspect of life. Through dedication to my hobbies, I have been able to have the perserverence to improve my abilities and strengthen myself by setting new goals and working to achieve new things.</p>
+    </div>
 
-<p>My journey is a testament to the power of diverse experiences and the pursuit of continuous growth. Each chapter, from managing complex IT projects to crafting code, has equipped me with a unique perspective and a passion for innovation. As I continue to evolve in the tech world, I remain committed to leveraging my skills and experiences to make a meaningful impact.</p>
+  </div>
+</div>

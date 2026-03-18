@@ -1,244 +1,166 @@
-body {
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+/* =========================
+   BASE RESET
+========================= */
+html, body {
   margin: 0;
-  background: #F6D6E3;
+  padding: 0;
+  background: black;
+  font-family: "Inter", sans-serif;
 }
 
-#ipaCanvas {
+/* =========================
+   FULLSCREEN
+========================= */
+.full-screen {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* =========================
+   VENDING MACHINE
+========================= */
+.machine-wrapper {
+  position: relative;
+}
+
+.machine-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.machine-ui {
+  position: absolute;
+  inset: 0;
+}
+
+/* =========================
+   HITBOXES
+========================= */
+.machine-btn,
+.chip-back-btn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 1000;
+
+  background: rgba(255, 0, 0, 0.35); /* debug */
+  border: 2px solid red;
+}
+
+.machine-btn {
+  width: 6%;
+  height: 18%;
+}
+
+/* BUTTON POSITIONS */
+.machine-btn[data-key="home"]     { top: 34%; left: 33.5%; }
+.machine-btn[data-key="about"]    { top: 34%; left: 41%; }
+.machine-btn[data-key="resume"]   { top: 34%; left: 56.5%; }
+.machine-btn[data-key="projects"] { top: 34%; left: 63.5%; }
+
+.machine-btn[data-key="contact"]  { top: 57%; left: 33.5%; }
+.machine-btn[data-key="github"]   { top: 57%; left: 41%; }
+.machine-btn[data-key="linkedin"] { top: 57%; left: 56.5%; }
+.machine-btn[data-key="topshelf"] { top: 57%; left: 63.5%; }
+
+/* =========================
+   CHIP PAGE (FINAL WORKING)
+========================= */
+.chip-wrapper {
+  position: fixed;
+  inset: 0;
+}
+
+.chip-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 🔥 THIS WAS THE KEY FIX */
+.chip-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.chip-ui {
+  position: absolute;
+  inset: 0;
+}
+
+/* TEXTBOX */
+.chip-textbox {
+  position: absolute;
+  z-index: 10;
+
+  top: 44%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+
+  width: 15%;
+  height: 38%;
+
+  padding: 12px;
+  overflow-y: auto;
+
+  background: rgba(0,0,0,0.6); /* 👈 added so you can SEE it */
+  color: white;
+  border-radius: 8px;
+}
+
+/* BACK BUTTON */
+.chip-back-btn {
+  position: absolute;
+  top: 84%;
+  left: 38%;
+  width: 7%;
+  height: 7%;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: 20;
+}
+
+/* =========================
+   BOTTLE LAYER
+========================= */
+#bottle-layer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: 10;
+  z-index: 9999;
 }
 
-main,
-.content,
-.page-content,
-.container {
-  position: relative;
-  z-index: 1;
-}
-
-/* TOP NAV */
-
-.site-header {
-  position: relative;
-  width: 100%;
-  padding: 24px 40px 0 40px;
-  z-index: 30;
-}
-
-.site-header nav {
-  width: 100%;
-}
-
-.nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.nav-link {
-  position: relative;
-  display: inline-block;
-  color: #1a73e8;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  transition: transform 0.18s ease;
-}
-
-.nav-link span {
-  display: block;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.nav-default {
-  opacity: 1;
-}
-
-.nav-ipa {
+.falling-bottle {
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
-.nav-link:hover .nav-default,
-.nav-link:focus-visible .nav-default {
-  opacity: 0;
-  transform: translateY(-3px);
-}
-
-.nav-link:hover .nav-ipa,
-.nav-link:focus-visible .nav-ipa {
-  opacity: 1;
-}
-
-/* HERO ROW */
-
-.hero-wrapper {
-  position: relative;
-  z-index: 15;
-  width: 100%;
-}
-
-.hero-intro {
-  position: fixed;
-  left: 50%;
-  bottom: 10%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: nowrap;
-  z-index: 15;
+  width: 120px;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
-.hero-photo,
-.about-section {
-  position: relative;
-  z-index: 15;
+/* =========================
+   SCREEN SHAKE
+========================= */
+.screen-hit {
+  animation: shake 0.2s;
 }
 
-.hero-text-anchor {
-    position: relative;
-  margin-left: -30px;
-}
-
-/* PHOTO */
-
-.hero-photo {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 1.6s ease, transform 1.6s ease;
-  flex-shrink: 0;
-}
-
-.hero-photo.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero-photo img {
-  width: 22vw;
-  max-width: 320px;
-  min-width: 160px;
-  height: auto;
-  border-radius: 14px;
-  display: block;
-}
-
-/* HI I'M MEL */
-
-.hero-text-anchor {
-  position: relative;
-  min-width: 260px;
-}
-
-.hero-text-placeholder {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  font-size: clamp(56px, 8vw, 180px);
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-  color: transparent;
-  user-select: none;
-  pointer-events: none;
-}
-
-.hero-text-placeholder div {
-  display: block;
-}
-
-/* ABOUT */
-
-.about-section {
-  max-width: 420px;
-  flex: 1 1 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-// .about-section {
-//   max-width: 420px;
-//   flex: 1 1 300px;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
-
-.about-section p {
-  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
-  line-height: 1.7;
-  color: #23232b;
-  margin: 0 0 1rem 0;
-}
-
-.about-section p:last-child {
-  margin-bottom: 0;
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-  .site-header {
-    padding: 18px 20px 0 20px;
-  }
-
-  .nav {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-.hero-intro {
-  position: fixed;
-
-  left: 0;
-  right: 0;
-  bottom: 12%;
-
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 2rem;
-  max-width: 1200px;
-  width: 100%;
-
-  z-index: 15;
-  pointer-events: none;
-}
-
-  .about-section {
-    width: auto;
-    max-width: 90vw;
-    min-width: 0;
-    text-align: center;
-  }
-
-  .hero-photo img {
-    width: 60vw;
-    max-width: 260px;
-    min-width: 140px;
-  }
-
-  .hero-text-placeholder {
-    font-size: clamp(56px, 14vw, 110px);
-  }
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-6px, 4px); }
+  50% { transform: translate(6px, -4px); }
+  75% { transform: translate(-4px, 3px); }
+  100% { transform: translate(0, 0); }
 }

@@ -1,29 +1,31 @@
-<canvas id="ipaCanvas"></canvas>
+<% content_for :full_screen do %>
 
-<div class="hero-wrapper">
-  <div class="hero-intro">
-    <div class="hero-photo" id="heroPhoto">
-      <%= image_tag "hiking.jpg", alt: "Mel Langhoff", class: "hero-image" %>
-    </div>
+<div class="machine-wrapper full-screen">
 
-    <div class="hero-text-anchor">
-      <div class="hero-text-placeholder">
-        <div>HI,</div>
-        <div>I'M MEL</div>
-      </div>
-    </div>
+  <%= image_tag "vending_machine.png", class: "machine-img" %>
+
+  <div class="machine-ui">
+
+    <%= link_to root_path, class: "machine-btn", data: { key: "home", turbo: false } do %><% end %>
+
+<%= link_to bio_path, class: "machine-btn", data: { key: "about", turbo: false } do %><% end %>
+
+<%= link_to resume_path, class: "machine-btn", data: { key: "resume", turbo: false } do %><% end %>
+
+<%= link_to projects_path, class: "machine-btn", data: { key: "projects", turbo: false } do %><% end %>
+
+<%= link_to "mailto:mlanghoff@uwalumni.com", class: "machine-btn", data: { key: "contact" } do %><% end %>
+
+<%= link_to "https://topshelf.mel-langhoff.com", target: "_blank", class: "machine-btn", data: { key: "topshelf" } do %><% end %>
+
+<%= link_to "https://linkedin.com/in/melissalanghoff", target: "_blank", class: "machine-btn", data: { key: "linkedin" } do %><% end %>
+
+<%= link_to "https://github.com/mel-langhoff", target: "_blank", class: "machine-btn", data: { key: "github" } do %><% end %>
+
   </div>
 
-  <div class="about-section">
-    <p>
-      Life-long learner, project manager, software developer, educator,
-      and linguist who enjoys solving complex problems in creative ways.
-    </p>
+  <div id="bottle-layer"></div>
 
-    <p>
-      I thrive where people and technology meet—helping teams organize
-      ideas, ship technical projects, and translate complex systems
-      into clear, practical solutions.
-    </p>
-  </div>
 </div>
+
+<% end %>

@@ -1,37 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mel Langhoff | Developer, Project Manager, Linguist</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mel Langhoff</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-        
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <%= javascript_importmap_tags %>  
-
-    <!-- Favicon -->
-    <%= favicon_link_tag 'favicon1.png' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
   </head>
 
-  <body class="page-background">
-    <%= render 'layouts/header' %>
-
-    <div class="main-container mt-4">
-      <h1 class="page-title"><%= yield :page_title %></h1>
-      <div class="content-box">
-        <%= yield %> <!-- This will include the main content from the view -->
-      </div>
-    </div>  
-    <%= render 'layouts/footer' %>        
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <body>
+    <%= yield %>
   </body>
 </html>
