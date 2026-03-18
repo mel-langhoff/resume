@@ -159,48 +159,52 @@ puts "Creating projects..."
 
 portfolio = Project.create!(
   title: "Personal Portfolio",
-  description: "Built and deployed a full-stack Ruby on Rails web application hosted on Heroku to showcase portfolio projects and dynamically manage resume content. Designed relational data models with ActiveRecord and implemented backend functionality using Ruby, SQL, and RESTful APIs. Developed and tested application features with RSpec, performed API testing with Postman, and designed the frontend using HTML, CSS, and Bootstrap.",
+  description: "Designed and deployed an interactive full-stack Ruby on Rails portfolio application featuring a custom vending machine UI with animated navigation, delayed rendering, and user-triggered interactions. Built RESTful backend services with ActiveRecord and PostgreSQL to dynamically manage project content and resume data. Implemented frontend behavior using JavaScript, HTML, CSS, and Bootstrap, including animation sequencing, image preloading, and Turbo-compatible event handling. Tested application features with RSpec, validated endpoints with Postman, and deployed to Heroku with a custom domain and production configuration.",
   git_repo: "https://github.com/mel-langhoff/resume",
   demo_link: "https://www.mel-langhoff.com",
-  tech: "Ruby on Rails, Ruby, SQL, ActiveRecord, REST APIs, RSpec, Postman, HTML, CSS, Bootstrap, Heroku, Git",
+  tech: "Ruby on Rails, Ruby, PostgreSQL, ActiveRecord, REST APIs, JavaScript, RSpec, Postman, HTML, CSS, Bootstrap, Turbo, Heroku, Git",
   project_type: "Rails"
 )
 
 top_shelf = Project.create!(
   title: "Top Shelf Roles",
-  description: "Top Shelf Roles is a Ruby on Rails application that aggregates and ranks curated job postings into a searchable dashboard so users can quickly find the most relevant opportunities without manually searching multiple job boards. Built with Ruby on Rails, PostgreSQL, ActiveRecord, Bootstrap, HTML, CSS, Git, GitHub, and Heroku, it uses web scraping and AI scoring logic to collect job data, rank listings, and filter results by title, company, and location.",
+  description: "Developed a Ruby on Rails application that aggregates, scores, and ranks curated backend engineering job postings into a searchable dashboard, reducing the need to manually browse multiple job boards. Implemented web scraping services to collect job data from multiple sources and built AI-driven scoring logic to evaluate role relevance based on keywords and requirements. Designed relational data models with ActiveRecord and PostgreSQL, and built filtering and search functionality by title, company, and location. Developed a responsive frontend using HTML, CSS, and Bootstrap, and deployed to Heroku with continuous updates to job data.",
   git_repo: "https://github.com/mel-langhoff/topshelfroles",
   demo_link: "https://topshelf.mel-langhoff.com/",
-  tech: "Ruby, Ruby on Rails, PostgreSQL, REST APIs, JSON, RSpec, Git",
+  tech: "Ruby, Ruby on Rails, PostgreSQL, ActiveRecord, REST APIs, JSON, Web Scraping, RSpec, Bootstrap, HTML, CSS, Git, Heroku",
   project_type: "Rails"
 )
 
-coolio_toolios = Project.create!(
-  title: "Coolio Toolios",
-  description: "Developed a Ruby on Rails automation platform that scrapes job postings and generates tailored resumes using Nokogiri web scraping, OpenAI API integrations, and RESTful APIs. Designed microservices-style components for content generation and PDF export, implemented relational data models with ActiveRecord, and built the interface using HTML, CSS, Bootstrap, and Ruby gems. Implemented automated testing with RSpec, integrated API testing with Postman, and configured CI/CD workflows.",
+pimp = Project.create!(
+  title: "Pimp My Res",
+  description: "Built a Ruby on Rails automation platform that scrapes job postings and generates tailored resumes using Nokogiri web scraping and OpenAI API integrations. Designed modular, service-oriented components for data ingestion, content generation, and PDF export, enabling dynamic resume customization per job posting. Implemented relational data models with ActiveRecord and PostgreSQL to manage structured professional data and job metadata. Developed the user interface with HTML, CSS, and Bootstrap, and integrated automated testing with RSpec, API validation with Postman, and CI/CD workflows for continuous improvement.",
   git_repo: "https://github.com/mel-langhoff/coolio_toolios",
   demo_link: nil,
-  tech: "Ruby on Rails, Ruby, Nokogiri, OpenAI API, REST APIs, ActiveRecord,  HTML, CSS, Bootstrap, Git, RSpec, Postman, CI/CD",
+  tech: "Ruby on Rails, Ruby, PostgreSQL, Nokogiri, OpenAI API, REST APIs, ActiveRecord, HTML, CSS, Bootstrap, RSpec, Postman, CI/CD, Git",
   project_type: "Rails"
-)
-
-black_thursday = Project.create!(
-  title: "Black Thrusday",
-  description: "Black Thursday is a Ruby application that parses and analyzes e-commerce data from CSV files. Built with Ruby, CSV parsing, and RSpec, it models relationships between merchants, customers, invoices, and transactions using object-oriented design. The project focuses on test-driven development and business intelligence queries to extract insights from sales data.",
-  git_repo: "https://github.com/mel-langhoff/black_thursday",
-  demo_link: nil,
-  tech: "Ruby, CSV, RSpec, Git",
-  project_type: "Ruby"
 )
 
 professional_api = Project.create!(
   title: "Professional API",
-  description: "Professional API is a Ruby on Rails backend application that collects and structures professional experience data to power automated résumé generation and formatting. Built with Ruby on Rails, RESTful APIs, and PostgreSQL, it stores structured career information and exposes it through endpoints for use in résumé-building tools. The project demonstrates backend API design, data modeling, and automated document generation workflows.",
+  description: "Engineered a Ruby on Rails backend API that collects, structures, and serves professional experience data to support automated résumé generation and formatting tools. Designed RESTful endpoints and relational data models using ActiveRecord and PostgreSQL to store and expose structured career information. Enabled integration with external services and frontend applications for dynamic resume assembly and customization. Demonstrates backend API design, data normalization, and scalable architecture for content-driven applications.",
   git_repo: "https://github.com/mel-langhoff/professional_api",
   demo_link: nil,
-  tech: "Ruby, Ruby on Rails, PostgreSQL, REST APIs, ActiveRecord, JSON, RSpec, Git",
+  tech: "Ruby, Ruby on Rails, PostgreSQL, ActiveRecord, REST APIs, JSON, RSpec, Git",
   project_type: "Rails"
 )
+
+puts "Done!"
+
+# black_thursday = Project.create!(
+#   title: "Black Thrusday",
+#   description: "Black Thursday is a Ruby application that parses and analyzes e-commerce data from CSV files. Built with Ruby, CSV parsing, and RSpec, it models relationships between merchants, customers, invoices, and transactions using object-oriented design. The project focuses on test-driven development and business intelligence queries to extract insights from sales data.",
+#   git_repo: "https://github.com/mel-langhoff/black_thursday",
+#   demo_link: nil,
+#   tech: "Ruby, CSV, RSpec, Git",
+#   project_type: "Ruby"
+# )
+
+
 
 
 

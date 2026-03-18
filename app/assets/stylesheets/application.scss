@@ -87,7 +87,7 @@ html, body {
   inset: 0;
 }
 
-/* TEXTBOX */
+//* TEXTBOX */
 .chip-textbox {
   position: absolute;
   z-index: 10;
@@ -101,8 +101,34 @@ html, body {
 
   padding: 12px;
   overflow-y: auto;
+
+  font-size: 11px;   /* ✅ base text */
+  line-height: 1.4;
 }
 
+/* HEADINGS */
+.chip-textbox h1,
+.chip-textbox h2,
+.chip-textbox h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* LABELS */
+.chip-textbox label {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* INPUTS */
+.chip-textbox input,
+.chip-textbox textarea {
+  font-size: 11px;  /* ✅ fixed typo (was 11x) */
+  padding: 4px;
+}
 /* BACK BUTTON */
 .chip-back-btn {
   position: absolute;
@@ -116,6 +142,17 @@ html, body {
 
   transform: translate(-50%, -50%);
   z-index: 20;
+}
+
+.chip-profile-pic {
+  width: 70%;
+  display: block;
+  margin: 0 auto 10px;
+
+  aspect-ratio: 1 / 1;   /* perfect square */
+  object-fit: cover;
+
+  border: 1px solid black;
 }
 
 /* =========================
