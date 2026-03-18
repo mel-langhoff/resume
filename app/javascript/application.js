@@ -125,7 +125,7 @@ function startAnimation(bottle, url) {
       // navigate
       setTimeout(() => {
         window.location.href = url
-      }, 800)
+      }, 1000)
 
     })
   })
