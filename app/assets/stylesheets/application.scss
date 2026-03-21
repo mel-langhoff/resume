@@ -1,139 +1,280 @@
-// import "@hotwired/turbo-rails"
-// import "controllers"
-/*
- *= require_tree .
- *= require_self
- */
-document.addEventListener("turbo:load", () => {
-  const layer = document.getElementById("bottle-layer")
+/* =========================
+   BASE RESET
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  font-family: "Inter", sans-serif;
+}
 
-  // =========================
-  // 🍾 BOTTLE APPEAR DELAY
-  // =========================
-  const bottles = document.querySelectorAll(".bottle")
+/* =========================
+   FULLSCREEN
+========================= */
+.full-screen {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
 
-  const baseDelay = 600
-  const stagger = 120
+/* =========================
+   VENDING MACHINE
+========================= */
+.machine-wrapper {
+  position: relative;
+}
 
-  bottles.forEach((bottle, index) => {
-    bottle.classList.remove("show")
+.machine-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-    const jitter = Math.random() * 80
+.machine-ui {
+  position: absolute;
+  inset: 0;
+}
 
-    setTimeout(() => {
-      bottle.classList.add("show")
-    }, baseDelay + (index * stagger) + jitter)
-  })
+/* =========================
+   HITBOXES
+========================= */
+.machine-btn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 1000;
 
-  // =========================
-  // 🥤 VENDING MACHINE CLICK
-  // =========================
-  if (!layer) return
+  width: 6%;
+  height: 18%;
+}
 
-  const config = {
-    home: "home.png",
-    about: "about.png",
-    resume: "resume.png",
-    projects: "projects.png",
-    contact: "contact.png",
-    github: "github.png",
-    linkedin: "linkedin.png",
-    topshelf: "topshelf.png"
-  }
+/* BUTTON POSITIONS */
+.machine-btn[data-key="home"]     { top: 34%; left: 33.5%; }
+.machine-btn[data-key="about"]    { top: 34%; left: 41%; }
+.machine-btn[data-key="resume"]   { top: 34%; left: 56.5%; }
+.machine-btn[data-key="projects"] { top: 34%; left: 63.5%; }
 
-  if (window.vendingClickBound) return
-  window.vendingClickBound = true
+.machine-btn[data-key="contact"]  { top: 57%; left: 33.5%; }
+.machine-btn[data-key="github"]   { top: 57%; left: 41%; }
+.machine-btn[data-key="linkedin"] { top: 57%; left: 56.5%; }
+.machine-btn[data-key="topshelf"] { top: 57%; left: 63.5%; }
 
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".machine-btn")
-    if (!btn) return
+/* =========================
+   CHIP PAGE
+========================= */
+.chip-wrapper {
+  display: flex;
+  justify-content: center;
+}
 
-    e.preventDefault()
+/* 🔥 FIXED (NO SASS ERROR) */
+.chip-stage {
+  position: relative;
+  width: 100vw;
+  max-width: 900px;
+}
 
-    const key = btn.dataset.key
-    const url = btn.href
-    const img = config[key]
+/* IMAGE */
+.chip-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-    if (!img) {
-      window.location.href = url
-      return
-    }
+/* UI LAYER */
+.chip-ui {
+  position: absolute;
+  inset: 0;
+}
 
-    // 🧹 clear previous bottle
-    layer.innerHTML = ""
+//* TEXTBOX */
+.chip-textbox {
+  position: absolute;
+  z-index: 10;
 
-    // ✅ create image BUT DO NOT animate yet
-    const bottle = new Image()
-    bottle.className = "falling-bottle"
+  top: 44%;
+  left: 54%;
+  transform: translate(-50%, -50%);
 
-    layer.appendChild(bottle)
+  width: 15%;
+  height: 38%;
 
-    // =========================
-    // ⛔ WAIT FOR IMAGE LOAD
-    // =========================
-    bottle.onload = () => {
-      startAnimation(bottle, url)
-    }
+  padding: 12px;
+  overflow-y: auto;
 
-    // fallback
-    bottle.onerror = () => {
-      console.error("Image failed to load:", img)
-      window.location.href = url
-    }
+  font-size: 11px;   /* ✅ base text */
+  line-height: 1.4;
+}
 
-    // 🔥 set src LAST
-    bottle.src = `/assets/${img}`
-  })
-})
+/* HEADINGS */
+.chip-textbox h1,
+.chip-textbox h2,
+.chip-textbox h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
 
-// =========================
-// 🎬 ANIMATION FUNCTION
-// =========================
-function startAnimation(bottle, url) {
-  const slotX = window.innerWidth / 2
-  const slotY = window.innerHeight + 20
+/* LABELS */
+.chip-textbox label {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
 
-  bottle.style.left = `${slotX}px`
-  bottle.style.top = `${slotY}px`
-  bottle.style.transform = "translate(-50%, -50%) scale(0.8)"
-  bottle.style.transition = "none"
+/* INPUTS */
+.chip-textbox input,
+.chip-textbox textarea {
+  font-size: 11px;  /* ✅ fixed typo (was 11x) */
+  padding: 4px;
+}
+/* BACK BUTTON */
+.chip-back-btn {
+  position: absolute;
 
-  bottle.offsetHeight
+  top: 78%;
+  left: 34%;
 
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
+  width: 7%;
+  height: 6%;
+  aspect-ratio: 1 / 1;
 
-      // pop out
-      bottle.style.transition = "top 0.15s ease"
-      bottle.style.top = `${window.innerHeight * 0.9}px`
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
 
-      // launch
-      setTimeout(() => {
-        bottle.style.transition = "all 0.5s cubic-bezier(.2,1.8,.3,1)"
-        bottle.style.top = `${window.innerHeight * 0.4}px`
-        bottle.style.transform = `
-          translate(-50%, -50%)
-          scale(5)
-          rotate(${Math.random() * 720}deg)
-        `
+.chip-profile-pic {
+  width: 70%;
+  display: block;
+  margin: 0 auto 10px;
 
-        document.body.classList.add("screen-hit")
+  aspect-ratio: 1 / 1;   /* perfect square */
+  object-fit: cover;
 
-        setTimeout(() => {
-          document.body.classList.remove("screen-hit")
-        }, 200)
+  border: 1px solid black;
+}
 
-      }, 150)
+/* =========================
+   BOTTLE LAYER
+========================= */
+#bottle-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 
-      // navigate (DELAY ADDED ONLY HERE)
-      bottle.addEventListener("transitionend", (e) => {
-        if (e.propertyName === "transform") {
-          setTimeout(() => {
-            window.location.href = url
-          }, 2000)
-        }
-      }, { once: true })
+  pointer-events: none;
+  z-index: 9999;
+}
 
-    })
-  })
+.bottle {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.bottle.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   BOTTLE
+========================= */
+.falling-bottle {
+  position: absolute;
+  width: 120px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* =========================
+   SCREEN SHAKE
+========================= */
+.screen-hit {
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-6px, 4px); }
+  50% { transform: translate(6px, -4px); }
+  75% { transform: translate(-4px, 3px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* =========================
+   CHIP PAGE (FULLSCREEN + SCROLL)
+========================= */
+
+/* allow scrolling */
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* center the whole thing */
+.chip-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 👈 important for scroll */
+  padding: 20px 0;
+}
+
+/* main container */
+.chip-stage {
+  position: relative;
+
+  width: 100vw;
+  max-width: 1100px; /* 🔥 adjust size here */
+
+}
+
+/* image fills container */
+.chip-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* overlay layer */
+.chip-ui {
+  position: absolute;
+  inset: 0;
+}
+
+/* textbox (scrolls INSIDE) */
+.chip-textbox {
+  position: absolute;
+  z-index: 10;
+
+  top: 37%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+
+  /* 🔥 responsive sizing */
+  width: 25%;
+  height: 42%;
+
+  /* 🔥 keeps it usable on small screens */
+  min-width: 200px;
+  max-width: 300px;
+
+  min-height: 200px;
+  max-height: 500px;
+
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.error-box {
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid red;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  color: red;
 }
