@@ -72,13 +72,12 @@ document.addEventListener("turbo:load", () => {
       startAnimation(bottle, url)
     }
 
-    // fallback (in case of weird load issues)
     bottle.onerror = () => {
       console.error("Image failed to load:", img)
       window.location.href = url
     }
 
-    // 🔥 set src LAST (this triggers load)
+    // 🔥 set src LAST
     bottle.src = `/assets/${img}`
   })
 })
@@ -95,16 +94,21 @@ function startAnimation(bottle, url) {
   bottle.style.transform = "translate(-50%, -50%) scale(0.8)"
   bottle.style.transition = "none"
 
+  // force layout
   bottle.offsetHeight
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
 
-      // pop out of slot
+      // =========================
+      // 🍾 POP OUT OF SLOT
+      // =========================
       bottle.style.transition = "top 0.15s ease"
       bottle.style.top = `${window.innerHeight * 0.9}px`
 
-      // 🚀 launch
+      // =========================
+      // 🚀 LAUNCH ANIMATION
+      // =========================
       setTimeout(() => {
         bottle.style.transition = "all 0.5s cubic-bezier(.2,1.8,.3,1)"
         bottle.style.top = `${window.innerHeight * 0.4}px`
@@ -114,6 +118,7 @@ function startAnimation(bottle, url) {
           rotate(${Math.random() * 720}deg)
         `
 
+        // 💥 screen impact effect
         document.body.classList.add("screen-hit")
 
         setTimeout(() => {
@@ -122,10 +127,14 @@ function startAnimation(bottle, url) {
 
       }, 150)
 
-      // navigate
-      setTimeout(() => {
-        window.location.href = url
-      }, 1000)
+      // =========================
+      // 🧠 NAVIGATE WHEN ANIMATION ENDS
+      // =========================
+      bottle.addEventListener("transitionend", (e) => {
+        if (e.propertyName === "transform") {
+          window.location.href = url
+        }
+      }, { once: true })
 
     })
   })
