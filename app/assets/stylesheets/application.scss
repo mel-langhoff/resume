@@ -1,6 +1,9 @@
 // import "@hotwired/turbo-rails"
 import "controllers"
-
+/*
+ *= require_tree .
+ *= require_self
+ */
 document.addEventListener("turbo:load", () => {
   const layer = document.getElementById("bottle-layer")
 
