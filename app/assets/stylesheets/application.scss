@@ -1,3 +1,8 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
 /* =========================
    BASE RESET
 ========================= */
@@ -60,7 +65,7 @@ html, body {
 .machine-btn[data-key="topshelf"] { top: 57%; left: 63.5%; }
 
 /* =========================
-   CHIP PAGE
+   CHIP PAGE (FINAL WORKING)
 ========================= */
 .chip-wrapper {
   display: flex;
@@ -164,7 +169,6 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
-
   pointer-events: none;
   z-index: 9999;
 }
@@ -182,7 +186,6 @@ html, body {
 
 /* =========================
    BOTTLE
-========================= */
 .falling-bottle {
   position: absolute;
   width: 120px;
