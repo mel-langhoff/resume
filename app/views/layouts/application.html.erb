@@ -9,7 +9,55 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="page-background">
+
+    <% unless content_for?(:full_screen) %>
+      <%= render 'layouts/header' %>
+    <% end %>
+
+    <!-- ✅ FULL SCREEN (HOME PAGE) -->
+    <% if content_for?(:full_screen) %>
+
+      <%= yield :full_screen %>
+
+    <% else %>
+
+      <!-- ✅ NORMAL PAGES -->
+      <main class="main-container">
+
+        <% if content_for?(:page_title) %>
+          <h1 class="page-title text-center mb-4">
+            <%= yield :page_title %>
+          </h1>
+        <% end %>
+
+        <div class="content-box">
+          <%= yield %>
+        </div>
+
+      </main>
+
+    <% end %>
+
+    <% unless content_for?(:full_screen) %>
+      <%= render 'layouts/footer' %>
+    <% end %>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  window.assetPaths = {
+    home: "<%= asset_path('home.png') %>",
+    about: "<%= asset_path('about.png') %>",
+    resume: "<%= asset_path('resume.png') %>",
+    projects: "<%= asset_path('projects.png') %>",
+    contact: "<%= asset_path('contact.png') %>",
+    github: "<%= asset_path('github.png') %>",
+    linkedin: "<%= asset_path('linkedin.png') %>",
+    topshelf: "<%= asset_path('topshelf.png') %>"
+  }
+</script>
   </body>
 </html>

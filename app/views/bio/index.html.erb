@@ -1,13 +1,20 @@
 <div class="chip-wrapper">
   <div class="chip-stage">
 
+    <!-- 🔥 CHIP IMAGE -->
     <%= image_tag "chips.png", class: "chip-img" %>
 
-    <%= link_to root_path, class: "chip-back-btn", data: { turbo: false } %>
+    <!-- 🔥 BACK BUTTON -->
+    <div class="chip-ui">
+      <%= link_to "←", root_path, class: "chip-back-btn", data: { turbo: false } %>
+    </div>
 
     <div class="chip-textbox">
       <h2>About</h2>
 
+    <p>
+    <%= image_tag "hiking.jpg", class: "chip-profile-pic" %>
+    <p>
       <p>
         Backend developer with a background in project management, Agile delivery,
         and building scalable tools. Passionate about Ruby on Rails, APIs, and

@@ -1,30 +1,54 @@
-<div class="chip-wrapper">
-  <div class="chip-stage">
+<% content_for :full_screen do %>
 
-    <%= image_tag "chips.png", class: "chip-img" %>
+<div class="machine-wrapper full-screen">
 
-    <%= link_to root_path, class: "chip-back-btn", data: { turbo: false } %>
+  <%= image_tag "vending_machine.png", class: "machine-img" %>
 
-    <div class="chip-textbox">
+  <div class="machine-ui">
 
-      <h2>Contact</h2>
+    <%= link_to root_path,
+      class: "machine-btn",
+      data: { key: "home", turbo: false } %>
 
-      <%= form_with url: contacts_path, method: :post, local: true do |f| %>
+    <%= link_to bio_path,
+      class: "machine-btn",
+      data: { key: "about", turbo: false } %>
 
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+    <%= link_to resume_path,
+      class: "machine-btn",
+      data: { key: "resume", turbo: false } %>
 
-        <%= f.label :email %>
-        <%= f.email_field :email %>
+    <%= link_to projects_path,
+      class: "machine-btn",
+      data: { key: "projects", turbo: false } %>
 
-        <%= f.label :message %>
-        <%= f.text_area :message %>
+    <%= link_to "mailto:mlanghoff@uwalumni.com",
+      class: "machine-btn",
+      data: { key: "contact" } %>
 
-        <%= f.submit "Send" %>
+    <!-- 🔥 EXTERNAL LINKS -->
+    <%= link_to "https://github.com/mel-langhoff",
+      target: "_blank",
+      rel: "noopener",
+      class: "machine-btn",
+      data: { key: "github", turbo: false } %>
 
-      <% end %>
+    <%= link_to "https://linkedin.com/in/melissalanghoff",
+      target: "_blank",
+      rel: "noopener",
+      class: "machine-btn",
+      data: { key: "linkedin", turbo: false } %>
 
-    </div>
+    <%= link_to "https://topshelf.mel-langhoff.com",
+      target: "_blank",
+      rel: "noopener",
+      class: "machine-btn",
+      data: { key: "topshelf", turbo: false } %>
 
   </div>
+
+  <div id="bottle-layer"></div>
+
 </div>
+
+<% end %>

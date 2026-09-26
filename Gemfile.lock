@@ -109,6 +109,10 @@ GEM
     date (3.3.4)
     diff-lcs (1.5.1)
     docile (1.4.0)
+    dotenv (3.2.0)
+    dotenv-rails (3.2.0)
+      dotenv (= 3.2.0)
+      railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.0)
     execjs (2.9.1)
@@ -117,6 +121,8 @@ GEM
     faraday (2.10.0)
       faraday-net_http (>= 2.0, < 3.2)
       logger
+    faraday-multipart (1.2.0)
+      multipart-post (~> 2.0)
     faraday-net_http (3.1.0)
       net-http
     ffi (1.17.0)
@@ -158,6 +164,11 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mailgun-ruby (1.4.2)
+      faraday (~> 2.1)
+      faraday-multipart (< 2)
+      mini_mime
+      zeitwerk
     marcel (1.0.4)
     matrix (0.4.2)
     method_source (1.1.0)
@@ -165,6 +176,7 @@ GEM
     mini_portile2 (2.8.9)
     minitest (5.24.1)
     msgpack (1.7.2)
+    multipart-post (2.4.1)
     mutex_m (0.2.0)
     net-http (0.4.1)
       uri
@@ -356,6 +368,7 @@ DEPENDENCIES
   bootsnap
   bootstrap
   capybara
+  dotenv-rails
   faker
   faraday
   importmap-rails
@@ -363,6 +376,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   letter_opener (~> 1.10)
+  mailgun-ruby
   orderly
   pg (~> 1.1)
   pry

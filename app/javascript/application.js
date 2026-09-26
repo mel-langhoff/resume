@@ -3,6 +3,28 @@ import "controllers"
 
 document.addEventListener("turbo:load", () => {
   const layer = document.getElementById("bottle-layer")
+
+  // =========================
+  // 🍾 BOTTLE APPEAR DELAY
+  // =========================
+  const bottles = document.querySelectorAll(".bottle")
+
+  const baseDelay = 600
+  const stagger = 120
+
+  bottles.forEach((bottle, index) => {
+    bottle.classList.remove("show")
+
+    const jitter = Math.random() * 80
+
+    setTimeout(() => {
+      bottle.classList.add("show")
+    }, baseDelay + (index * stagger) + jitter)
+  })
+
+  // =========================
+  // 🥤 VENDING MACHINE CLICK
+  // =========================
   if (!layer) return
 
   const config = {
@@ -16,7 +38,9 @@ document.addEventListener("turbo:load", () => {
     topshelf: "topshelf.png"
   }
 
-  // ✅ ONE listener (no duplication)
+  if (window.vendingClickBound) return
+  window.vendingClickBound = true
+
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".machine-btn")
     if (!btn) return
@@ -35,53 +59,83 @@ document.addEventListener("turbo:load", () => {
     // 🧹 clear previous bottle
     layer.innerHTML = ""
 
-    const bottle = document.createElement("img")
-    bottle.src = `/assets/${img}`
+    // ✅ create image BUT DO NOT animate yet
+    const bottle = new Image()
     bottle.className = "falling-bottle"
-
-    const slotX = window.innerWidth / 2
-    const slotY = window.innerHeight + 20   // 🔥 true bottom
-
-    bottle.style.left = `${slotX}px`
-    bottle.style.top = `${slotY}px`
-    bottle.style.transform = "translate(-50%, -50%) scale(0.8)"
-    bottle.style.transition = "none"
 
     layer.appendChild(bottle)
 
-    // 🔥 force render
-    bottle.offsetHeight
+    // =========================
+    // ⛔ WAIT FOR IMAGE LOAD
+    // =========================
+    bottle.onload = () => {
+      startAnimation(bottle, url)
+    }
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
+    bottle.onerror = () => {
+      console.error("Image failed to load:", img)
+      window.location.href = url
+    }
 
-        // pop out of slot
-        bottle.style.transition = "top 0.15s ease"
-        bottle.style.top = `${window.innerHeight * 0.9}px`
-
-        // 🚀 shoot at face
-        setTimeout(() => {
-          bottle.style.transition = "all 0.5s cubic-bezier(.2,1.8,.3,1)"
-          bottle.style.top = `${window.innerHeight * 0.4}px`
-          bottle.style.transform = `
-            translate(-50%, -50%)
-            scale(5)
-            rotate(${Math.random() * 720}deg)
-          `
-
-          document.body.classList.add("screen-hit")
-          setTimeout(() => {
-            document.body.classList.remove("screen-hit")
-          }, 200)
-
-        }, 150)
-
-        // navigate
-        setTimeout(() => {
-          window.location.href = url
-        }, 800)
-
-      })
-    })
+    // 🔥 set src LAST
+    bottle.src = `/assets/${img}`
   })
 })
+
+// =========================
+// 🎬 ANIMATION FUNCTION
+// =========================
+function startAnimation(bottle, url) {
+  const slotX = window.innerWidth / 2
+  const slotY = window.innerHeight + 20
+
+  bottle.style.left = `${slotX}px`
+  bottle.style.top = `${slotY}px`
+  bottle.style.transform = "translate(-50%, -50%) scale(0.8)"
+  bottle.style.transition = "none"
+
+  // force layout
+  bottle.offsetHeight
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+
+      // =========================
+      // 🍾 POP OUT OF SLOT
+      // =========================
+      bottle.style.transition = "top 0.15s ease"
+      bottle.style.top = `${window.innerHeight * 0.9}px`
+
+      // =========================
+      // 🚀 LAUNCH ANIMATION
+      // =========================
+      setTimeout(() => {
+        bottle.style.transition = "all 0.5s cubic-bezier(.2,1.8,.3,1)"
+        bottle.style.top = `${window.innerHeight * 0.4}px`
+        bottle.style.transform = `
+          translate(-50%, -50%)
+          scale(5)
+          rotate(${Math.random() * 720}deg)
+        `
+
+        // 💥 screen impact effect
+        document.body.classList.add("screen-hit")
+
+        setTimeout(() => {
+          document.body.classList.remove("screen-hit")
+        }, 200)
+
+      }, 150)
+
+      // =========================
+      // 🧠 NAVIGATE WHEN ANIMATION ENDS
+      // =========================
+      bottle.addEventListener("transitionend", (e) => {
+        if (e.propertyName === "transform") {
+          window.location.href = url
+        }
+      }, { once: true })
+
+    })
+  })
+}
